@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/dm2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                                <span class="chip bg-color">树莓派</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,43 +404,83 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在树莓派4B上配置一个 <em>ubuntu 20 LTS</em> 网络环境折腾了挺久的，在此记录一下以免下次再次采坑。</p>
-<pre class="line-numbers language-none"><code class="language-none"># 编辑 /etc/netplan/50-cloud-init.yaml 改成如下
+<pre class="line-numbers language-none"><code class="language-none">
+# 编辑 /etc/netplan/50-cloud-init.yaml 改成如下
+
 network:
+
     ethernets:
+
         eth0:
+
             dhcp4: true
+
             optional: true
+
     version: 2
+
     wifis:
+
         wlan0:
+
             access-points:
+
                 "Danke42168_1":  # 这个是wifi名字
+
                     password: "wifi.danke.life"   # 这是wifi密码
+
             dhcp4: true
-            optional: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果没有显示器可以先修改 root文件夹下的 <strong>network-config</strong> 文件， <strong>一定要在第一次开机前设置，否则无法生效</strong>。不过由于安装包用的是国外的源，所以一般还是要接上显示器来配置国内源<br>如果想设置固定ip可以追加配置，最终配置如下：</p>
-<pre class="line-numbers language-none"><code class="language-none"># This file is generated from information provided by the datasource.  Changes
+
+            optional: true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>如果没有显示器可以先修改 root文件夹下的 <strong>network-config</strong> 文件， <strong>一定要在第一次开机前设置，否则无法生效</strong>。不过由于安装包用的是国外的源，所以一般还是要接上显示器来配置国内源</p>
+<p>如果想设置固定ip可以追加配置，最终配置如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">
+# This file is generated from information provided by the datasource.  Changes
+
 # to it will not persist across an instance reboot.  To disable cloud-init's
+
 # network configuration capabilities, write a file
+
 # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+
 # network: {config: disabled}
+
 network:
+
     ethernets:
+
         eth0:
+
             dhcp4: true
+
             optional: true
+
     version: 2
+
     wifis:
+
         wlan0:
+
             access-points:
+
                 "Danke42168_1":
+
                     password: "wifi.danke.life"
+
             dhcp4: true
+
             optional: true
+
             addresses: [192.168.124.18/24]
+
             gateway4: 192.168.124.1
+
             nameservers:
-                addresses: [192.168.124.1, 8.8.8.8]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                addresses: [192.168.124.1, 8.8.8.8]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -499,7 +543,11 @@ network:
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                                    <span class="chip bg-color">树莓派</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -574,7 +622,7 @@ network:
                 <a href="/2020/09/05/shu-mei-pai-4b-ubuntu-20-she-zhi-a-li-yuan/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="树莓派4b ubuntu 20 设置阿里源">
+                        <img src="http://img.ginta.top/chaoshou2.jpg" class="responsive-img" alt="树莓派4b ubuntu 20 设置阿里源">
                         
                         <span class="card-title">树莓派4b ubuntu 20 设置阿里源</span>
                     </div>
@@ -614,7 +662,7 @@ network:
                 <a href="/2020/08/30/docker-pull-geng-huan-yuan/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="docker pull更换源">
+                        <img src="http://img.ginta.top/chaoshou2.jpg" class="responsive-img" alt="docker pull更换源">
                         
                         <span class="card-title">docker pull更换源</span>
                     </div>
@@ -640,6 +688,14 @@ network:
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -735,7 +791,7 @@ network:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

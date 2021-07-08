@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/qinshi2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -404,16 +408,17 @@
 <p>该技术让我们可以使用面向对象的方法来进行数据库的操作，从而不必理会不同数据库之间 <em>sql</em> 语句的差异。</p>
 <p><img src="http://img.ginta.top/markdownx/2019/12/02/23d52908-3a2b-45ae-a4b2-f761781d870e.png" alt="ORM示意图"></p>
 <p>如上图所示，类对应的就是数据库中的表，类中的属性对应数据表中的字段，类的实例对象就是数据库中的一条条数据了。</p>
-<pre class="line-numbers language-none"><code class="language-none">from django.db import models
+<pre><code>from django.db import models
 
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    last_name = models.CharField(max_length=30)
+</code></pre>
 <p>这里的 <strong>Person</strong> 在数据库中就是一张表，表名可以自定义。<em>first_name</em> 和 <em>last_name</em> 就是其中的两个字段，<em>max_length</em> 就是长度约束，比如 <em>MySQL</em> 数据库中对于字符字段可以设置其最大长度。<br>如果我们想新建一条数据，可以通过以下方法：</p>
-<pre class="line-numbers language-none"><code class="language-none">from .models import Person
+<pre><code>from .models import Person
 person = Person(first_name="泷谷", last_name="源治")
-person.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+person.save()
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>ORM</strong> 让开发人员大大减少了工作量，使得代码更加清晰，方便维护。当然每个技术有优点就有缺陷，<strong>ORM</strong> 虽然使开发效率提高了，但是缺牺牲了一些性能；另外一些复杂的 <em>sql</em> 语句并不能通过 <strong>ORM</strong> 来实现。不过对于大多开发者来说还是利大于弊。</p>
 
                 
@@ -478,7 +483,11 @@ person.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -553,7 +562,7 @@ person.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                 <a href="/2020/02/21/linux-wen-jian-yin-cang-shu-xing/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Linux 文件隐藏属性">
+                        <img src="http://img.ginta.top/dm3.jpg" class="responsive-img" alt="Linux 文件隐藏属性">
                         
                         <span class="card-title">Linux 文件隐藏属性</span>
                     </div>
@@ -593,7 +602,7 @@ person.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                 <a href="/2020/02/18/linux-wen-jian-shu-xing/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Linux文件属性">
+                        <img src="http://img.ginta.top/dm3.jpg" class="responsive-img" alt="Linux文件属性">
                         
                         <span class="card-title">Linux文件属性</span>
                     </div>
@@ -714,7 +723,7 @@ person.save()<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

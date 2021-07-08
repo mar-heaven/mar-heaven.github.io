@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/sky1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -369,7 +369,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    370
+                    365
                 </div>
                 
 
@@ -399,7 +399,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre class="line-numbers language-none"><code class="language-none">POST lagou/testjob/_bulk
+                <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre><code>POST lagou/testjob/_bulk
 {"index":{"_id":1}}
 {"salary":10, "title": "Python"}
 {"index":{"_id":2}}
@@ -407,7 +407,8 @@
 {"index":{"_id":3}}
 {"salary":30, "title": "Django"}
 {"index":{"_id":4}}
-{"salary":40, "title": "Elasticsearch"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+{"salary":40, "title": "Elasticsearch"}
+</code></pre>
 <h2 id="组合查询"><a href="#组合查询" class="headerlink" title="组合查询"></a>组合查询</h2><h3 id="bool查询"><a href="#bool查询" class="headerlink" title="bool查询"></a>bool查询</h3><blockquote>
 <p>用 bool 包括 must should must_not filter 来完成，<br>格式如下</p>
 </blockquote>
@@ -415,130 +416,34 @@
 <li>filter 过渡字段</li>
 <li>must 所有都要有</li>
 <li>should 满足一个或多个</li>
-<li>must_not 一个都不能满足<pre class="line-numbers language-none"><code class="language-none">bool: {
-    "filter": [],
-    "must": [],
-    "should": [],
-    "must_not"
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>must_not 一个都不能满足<pre><code>bool: {
+  "filter": [],
+  "must": [],
+  "should": [],
+  "must_not"
+}
+</code></pre>
+</li>
 </ul>
 <ol>
-<li>filter查询<pre class="line-numbers language-none"><code class="language-none">
-select * from testjob where salary=20
-薪资为20k的工作
-GET lagou/testjob/_search
-{
-  "query": {
-    "bool": {
-      "must": {
-        "match_all":{}
-      },
-      "filter": {
-        "term": {
-          "salary": "20"
-        }
-      }
-    }
-  }
-}
-
-# 多个
-GET lagou/testjob/_search
-{
-  "query": {
-    "bool": {
-      "filter": {
-        "terms": {
-          "salary": ["10", "20"]
-        }
-      }
-    }
-  }
-}
-
-
-# select * from testjob where title="Python"
-# text字段会先分词，再全部转为小写入库
-# term不会预处理，直接大写查询，但是倒排索引已经全部小写了
-# 所以查不到，要不就用小写，要不就用match
-GET lagou/testjob/_search
-{
-  "query": {
-    "bool": {
-      "filter": {
-        "term": {
-          "title":"Python"
-        }
-      }
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>filter查询<br>```</li>
 </ol>
-<h3 id="bool组合过滤查询"><a href="#bool组合过滤查询" class="headerlink" title="bool组合过滤查询"></a>bool组合过滤查询</h3><pre class="line-numbers language-none"><code class="language-none"># 查询薪资等于20k或者工作为Python的工作，排除价格为30k的
-# select * from testjob where (salary=20 OR title="Python") AND (salary !=30)
-GET lagou/testjob/_search
-{
-  "query": {
-    "bool": {
-      "should":[ 
-        {"term": {"salary":20}},
-        {"term":{"title":"python"}}
-      ],
-      "must_not": [
-        {"term":{"salary":30}},
-        {"term":{"salary":10}}
-      ]
-    }
-  }
-}
+<p>select * from testjob where salary=20<br>薪资为20k的工作<br>GET lagou/testjob/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “must”: {<br>        “match_all”:{}<br>      },<br>      “filter”: {<br>        “term”: {<br>          “salary”: “20”<br>        }<br>      }<br>    }<br>  }<br>}</p>
+<h1 id="多个"><a href="#多个" class="headerlink" title="多个"></a>多个</h1><p>GET lagou/testjob/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “filter”: {<br>        “terms”: {<br>          “salary”: [“10”, “20”]<br>        }<br>      }<br>    }<br>  }<br>}</p>
+<h1 id="select-from-testjob-where-title-”Python”"><a href="#select-from-testjob-where-title-”Python”" class="headerlink" title="select * from testjob where title=”Python”"></a>select * from testjob where title=”Python”</h1><h1 id="text字段会先分词，再全部转为小写入库"><a href="#text字段会先分词，再全部转为小写入库" class="headerlink" title="text字段会先分词，再全部转为小写入库"></a>text字段会先分词，再全部转为小写入库</h1><h1 id="term不会预处理，直接大写查询，但是倒排索引已经全部小写了"><a href="#term不会预处理，直接大写查询，但是倒排索引已经全部小写了" class="headerlink" title="term不会预处理，直接大写查询，但是倒排索引已经全部小写了"></a>term不会预处理，直接大写查询，但是倒排索引已经全部小写了</h1><h1 id="所以查不到，要不就用小写，要不就用match"><a href="#所以查不到，要不就用小写，要不就用match" class="headerlink" title="所以查不到，要不就用小写，要不就用match"></a>所以查不到，要不就用小写，要不就用match</h1><p>GET lagou/testjob/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “filter”: {<br>        “term”: {<br>          “title”:”Python”<br>        }<br>      }<br>    }<br>  }<br>}</p>
+<pre><code>
+### bool组合过滤查询
+</code></pre>
+<h1 id="查询薪资等于20k或者工作为Python的工作，排除价格为30k的"><a href="#查询薪资等于20k或者工作为Python的工作，排除价格为30k的" class="headerlink" title="查询薪资等于20k或者工作为Python的工作，排除价格为30k的"></a>查询薪资等于20k或者工作为Python的工作，排除价格为30k的</h1><h1 id="select-from-testjob-where-salary-20-OR-title-”Python”-AND-salary-30"><a href="#select-from-testjob-where-salary-20-OR-title-”Python”-AND-salary-30" class="headerlink" title="select * from testjob where (salary=20 OR title=”Python”) AND (salary !=30)"></a>select * from testjob where (salary=20 OR title=”Python”) AND (salary !=30)</h1><p>GET lagou/testjob/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “should”:[<br>        {“term”: {“salary”:20}},<br>        {“term”:{“title”:”python”}}<br>      ],<br>      “must_not”: [<br>        {“term”:{“salary”:30}},<br>        {“term”:{“salary”:10}}<br>      ]<br>    }<br>  }<br>}</p>
+<h1 id="嵌套查询"><a href="#嵌套查询" class="headerlink" title="嵌套查询"></a>嵌套查询</h1><h1 id="select-from-testjob-where-title-”python”-or-title-”django”-AND-salary-40"><a href="#select-from-testjob-where-title-”python”-or-title-”django”-AND-salary-40" class="headerlink" title="select * from testjob where title=”python” or (title=”django” AND salary=40)"></a>select * from testjob where title=”python” or (title=”django” AND salary=40)</h1><p>GET lagou/testjob/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “should”:[<br>        {“term”: {“title”:”python”}},<br>        {“bool”:{<br>          “must”: [<br>            {“term”: {“title”:”elasticsearch”}},<br>            {“term”: {“salary”: 40}}<br>          ]}<br>        }<br>      ]<br>    }<br>  }<br>}</p>
+<pre><code>
+### 过滤空和非空
+</code></pre>
+<h1 id="建立测试数据"><a href="#建立测试数据" class="headerlink" title="建立测试数据"></a>建立测试数据</h1><p>POST lagou/testjob2/_bulk<br>{“index”:{“_id”:”1”}}<br>{“tags”:[“search”]}<br>{“index”:{“_id”:”2”}}<br>{“tags”:[“search”, “python”]}<br>{“index”:{“_id”:”3”}}<br>{“orther_field”:[“some data”]}<br>{“index”:{“_id”:”4”}}<br>{“tags”:null}<br>{“index”:{“_id”:”5”}}<br>{“tags”:[“search”, null]}</p>
+<pre><code>
+</code></pre>
+<h1 id="处理非空值的方法"><a href="#处理非空值的方法" class="headerlink" title="处理非空值的方法"></a>处理非空值的方法</h1><h1 id="select-tags-from-testjob2-where-tags-is-not-NULL"><a href="#select-tags-from-testjob2-where-tags-is-not-NULL" class="headerlink" title="select tags from testjob2 where tags is not NULL"></a>select tags from testjob2 where tags is not NULL</h1><p>GET lagou/testjob2/_search<br>{<br>  “query”: {<br>    “bool”: {<br>      “filter”: {<br>        “exists”: {<br>          “field”: “tags”<br>        }<br>      }<br>    }<br>  }<br>}<br>```</p>
 
-# 嵌套查询
-# select * from testjob where title="python" or (title="django" AND salary=40)
-GET lagou/testjob/_search
-{
-  "query": {
-    "bool": {
-      "should":[ 
-        {"term": {"title":"python"}},
-        {"bool":{
-          "must": [
-            {"term": {"title":"elasticsearch"}},
-            {"term": {"salary": 40}}
-          ]}
-        }
-      ]
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="过滤空和非空"><a href="#过滤空和非空" class="headerlink" title="过滤空和非空"></a>过滤空和非空</h3><pre class="line-numbers language-none"><code class="language-none">
-# 建立测试数据
-POST lagou/testjob2/_bulk
-{"index":{"_id":"1"}}
-{"tags":["search"]}
-{"index":{"_id":"2"}}
-{"tags":["search", "python"]}
-{"index":{"_id":"3"}}
-{"orther_field":["some data"]}
-{"index":{"_id":"4"}}
-{"tags":null}
-{"index":{"_id":"5"}}
-{"tags":["search", null]}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-none"><code class="language-none"># 处理非空值的方法
-# select tags from testjob2 where tags is not NULL
-GET lagou/testjob2/_search
-{
-  "query": {
-    "bool": {
-      "filter": {
-        "exists": {
-          "field": "tags"
-        }
-      }
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -673,12 +578,12 @@ GET lagou/testjob2/_search
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/12/drf-yi-ci-cuo-wu-pai-cha/">
+                <a href="/2019/12/28/2019-he-2020/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="drf 一次错误排查">
+                        <img src="http://img.ginta.top/dragin1.jpg" class="responsive-img" alt="2019和2020">
                         
-                        <span class="card-title">drf 一次错误排查</span>
+                        <span class="card-title">2019和2020</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -689,14 +594,14 @@ GET lagou/testjob2/_search
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Django/" class="post-category">
-                                    Django
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -716,7 +621,7 @@ GET lagou/testjob2/_search
                 <a href="/2019/12/28/elasticsearch-ji-ben-cha-xun/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Elasticsearch基本查询">
+                        <img src="http://img.ginta.top/qinshi2.jpg" class="responsive-img" alt="Elasticsearch基本查询">
                         
                         <span class="card-title">Elasticsearch基本查询</span>
                     </div>
@@ -837,7 +742,7 @@ GET lagou/testjob2/_search
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

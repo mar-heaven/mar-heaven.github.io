@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/fantasy2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                                <span class="chip bg-color">自动化</span>
+                            </a>
+                        
+                            <a href="/tags/uwsgi/">
+                                <span class="chip bg-color">uwsgi</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -369,7 +381,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    740
+                    741
                 </div>
                 
 
@@ -401,59 +413,50 @@
             <div id="articleContent">
                 <h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><em>django</em> 默认的服务是单进程的，而且处理静态文件也比较慢，我们采用 <strong>django + uwsgi + nginx</strong> 来提高并发数的同时减少静态文件的访问时间。</p>
 <h3 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h3><ol>
-<li>安装nginx<br><code>apt-get install nginx</code></li>
-<li>进入 <strong>/etc/nginx</strong> 路径下可以看到两个文件夹，<strong>sites-available</strong> 和 <strong>sites-enabled</strong>，前者是网站的可用配置文件夹，后者是启用的配置，一般都是把配置文件放到 <strong>sites-available</strong> 再通过软链接的方式在 <strong>sites-enabled</strong> 中启用配置。</li>
-<li>进入 <strong>sites-available</strong> 文件夹中，新建配置文件arrange.conf，内容如下<pre class="line-numbers language-none"><code class="language-none">server {
-    listen 80;     # 网站对外的端口为80
-    server_name ginta.top;  # 服务名字（一般是用域名方便理解）
-    charset utf-8;   # 字符编码
+<li><p>安装nginx<br><code>apt-get install nginx</code></p>
+</li>
+<li><p>进入 <strong>/etc/nginx</strong> 路径下可以看到两个文件夹，<strong>sites-available</strong> 和 <strong>sites-enabled</strong>，前者是网站的可用配置文件夹，后者是启用的配置，一般都是把配置文件放到 <strong>sites-available</strong> 再通过软链接的方式在 <strong>sites-enabled</strong> 中启用配置。</p>
+</li>
+<li><p>进入 <strong>sites-available</strong> 文件夹中，新建配置文件arrange.conf，内容如下</p>
+<pre><code>server {
+ listen 80;     # 网站对外的端口为80
+ server_name ginta.top;  # 服务名字（一般是用域名方便理解）
+ charset utf-8;   # 字符编码
 
-    client_max_body_size 75M;     # 上传文件的最大尺寸
+ client_max_body_size 75M;     # 上传文件的最大尺寸
 
-    location /static {
-        alias /home/admin/code/Workspace/arrange/static;      # 静态文件的访问路径
-    }
-    
-    location /media{
-        alias /home/admin/code/Workspace/arrange/media;      # 媒体资源的访问路径
-    }
+ location /static {
+     alias /home/admin/code/Workspace/arrange/static;      # 静态文件的访问路径
+ }
+ 
+ location /media{
+     alias /home/admin/code/Workspace/arrange/media;      # 媒体资源的访问路径
+ }
 
-    location / {                  # 发送请求给django，nginx处理不了，我们要转发给uwsgi，除了 static 和 media 其他的转发给uwsgi
-        uwsgi_pass 127.0.0.1:8001;
-        include /etc/nginx/uwsgi_params;  # uwsgi协议配置文件，类似于nginx.conf，django没有，但是nginx下有个这样的文件
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>删除 <strong>sites-enabled</strong> 文件夹下的default文件，否则服务可能无法启动，卡在nginx欢迎界面</li>
+ location / {                  # 发送请求给django，nginx处理不了，我们要转发给uwsgi，除了 static 和 media 其他的转发给uwsgi
+     uwsgi_pass 127.0.0.1:8001;
+     include /etc/nginx/uwsgi_params;  # uwsgi协议配置文件，类似于nginx.conf，django没有，但是nginx下有个这样的文件
+ }
+}
+</code></pre>
+</li>
+<li><p>删除 <strong>sites-enabled</strong> 文件夹下的default文件，否则服务可能无法启动，卡在nginx欢迎界面</p>
+</li>
 </ol>
 <p><img src="https://img-blog.csdnimg.cn/20190826214047909.png" alt="在这里插入图片描述"></p>
 <h3 id="uWSGI"><a href="#uWSGI" class="headerlink" title="uWSGI"></a>uWSGI</h3><ol>
 <li>安装uWSGI，可能出现的错误在这里有 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35068933/article/details/100049788">解决方式</a>.<br><code>pip install uwsgi</code></li>
-<li>测试，创建一个 <strong>foobar.py</strong> 的文件，内容如下 :<pre class="line-numbers language-none"><code class="language-none">def application(env, start_response):
-    start_response('200 OK', [('Content-Type','text/html')])
-    return [b"Hello World"]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<li>测试，创建一个 <strong>foobar.py</strong> 的文件，内容如下 :<pre><code>def application(env, start_response):
+ start_response('200 OK', [('Content-Type','text/html')])
+ return [b"Hello World"]
+</code></pre>
 然后通过服务器的 <em>9090</em> 端口进行测试<br><code>uwsgi --http :9090 --wsgi-file foobar.py</code><br>访问成功即可。</li>
-<li>编写项目uwsgi配置文件<br>然后选择一个目录新建个文件作为项目的 <em>uwsgi</em> 配置文件,我这里是 <strong>arrange.ini</strong><pre class="line-numbers language-none"><code class="language-none">[uwsgi]
-chdir = /home/admin/code/Workspace/arrange  # 项目的绝对路径
-virtualenv = /home/admin/code/Envs/blog       # 我这里用的是虚拟环境
-module = arrange.wsgi:application     # 项目的wsgi，我的项目名是 **arrange**
-
-master = True   #  启动主程序
-processes = 4  # 使用的进程数
-harakiri = 60   # 请求60s超时关闭
-max-requests = 5000    # 请求超过5000进程重启防止内存泄漏
- 
-socket = 127.0.0.1:8001   # 监听的端口
-uid = nginx  #  使用nginx代替root用户 （安全一些）      
-gid = nginx  #  使用nginx代替root用户     
-
-pidfile = /home/admin/mysite_uwsgi/master.pid     # 通过 pidfile 对主进程进行关闭，启动或者重启操作
-daemonize = /home/admin/mysite_uwsgi/arrange.log  # 指定日志存放路径
-vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>启动项目uwsgi<br><code>uwsgi --ini arrange.ini</code></li>
-<li>进入 <strong>/etc/nginx/</strong> 路径，简历配置文件软链接<br><code>sudo ln -s /etc/nginx/sites-available/arrange.conf /etc/nginx/sites-enabled/arrange.conf</code></li>
-<li>测试一下nginx有没有问题<br><code>sudo nginx -t</code><br><img src="https://img-blog.csdnimg.cn/20190826214422441.png" alt="在这里插入图片描述"><br>出现 <strong>successful</strong> 表示没有问题</li>
-<li>重启nginx<br><code>sudo service nginx restart</code></li>
+<li>编写项目uwsgi配置文件<br>然后选择一个目录新建个文件作为项目的 <em>uwsgi</em> 配置文件,我这里是 <strong>arrange.ini</strong><br>```<br>[uwsgi]<br>chdir = /home/admin/code/Workspace/arrange  # 项目的绝对路径<br>virtualenv = /home/admin/code/Envs/blog       # 我这里用的是虚拟环境<br>module = arrange.wsgi:application     # 项目的wsgi，我的项目名是 <strong>arrange</strong></li>
 </ol>
+<p>master = True   #  启动主程序<br>processes = 4  # 使用的进程数<br>harakiri = 60   # 请求60s超时关闭<br>max-requests = 5000    # 请求超过5000进程重启防止内存泄漏</p>
+<p>socket = 127.0.0.1:8001   # 监听的端口<br>uid = nginx  #  使用nginx代替root用户 （安全一些）<br>gid = nginx  #  使用nginx代替root用户     </p>
+<p>pidfile = /home/admin/mysite_uwsgi/master.pid     # 通过 pidfile 对主进程进行关闭，启动或者重启操作<br>daemonize = /home/admin/mysite_uwsgi/arrange.log  # 指定日志存放路径<br>vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收</p>
+<p>```<br>4. 启动项目uwsgi<br><code>uwsgi --ini arrange.ini</code><br>5. 进入 **/etc/nginx/** 路径，简历配置文件软链接<br><code>sudo ln -s /etc/nginx/sites-available/arrange.conf /etc/nginx/sites-enabled/arrange.conf</code><br>6. 测试一下nginx有没有问题<br><code>sudo nginx -t</code><br><img src="https://img-blog.csdnimg.cn/20190826214422441.png" alt="在这里插入图片描述"><br>出现 **successful** 表示没有问题<br>7. 重启nginx<br><code>sudo service nginx restart</code></p>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p><strong>uwsgi</strong> 重启服务,由于我们配置了pidfile路径，所以可以很快捷地重启<br><code>uwsgi --reload /home/admin/mysite_uwsgi/master.pid</code><br>想看看启动没有可以通过 <strong>ps</strong> 指令<br><code>ps -aux | grep uwsgi</code><br><img src="https://img-blog.csdnimg.cn/20190826215035845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
                 
@@ -518,7 +521,19 @@ vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<sp
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                                    <span class="chip bg-color">自动化</span>
+                                </a>
+                            
+                                <a href="/tags/uwsgi/">
+                                    <span class="chip bg-color">uwsgi</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -593,7 +608,7 @@ vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<sp
                 <a href="/2019/11/28/django-allauth-a-li-yun-fa-song-you-jian-chu-xian-nginx-504-jie-jue-fang-fa/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="django-allauth 阿里云发送邮件出现nginx 504解决方法">
+                        <img src="http://img.ginta.top/huoying2.jpg" class="responsive-img" alt="django-allauth 阿里云发送邮件出现nginx 504解决方法">
                         
                         <span class="card-title">django-allauth 阿里云发送邮件出现nginx 504解决方法</span>
                     </div>
@@ -621,6 +636,18 @@ vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<sp
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%82%AE%E4%BB%B6/">
+                        <span class="chip bg-color">邮件</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -630,12 +657,12 @@ vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/27/django-signals/">
+                <a href="/2019/11/27/django2.0-chong-xie-yong-hu-mo-xing/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="django Signals">
+                        <img src="http://img.ginta.top/lc3.jpg" class="responsive-img" alt="Django2.0 重写用户模型">
                         
-                        <span class="card-title">django Signals</span>
+                        <span class="card-title">Django2.0 重写用户模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -754,7 +781,7 @@ vacuum = True # 当服务器关闭会自动把pidfile和daemonize进程回收<sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

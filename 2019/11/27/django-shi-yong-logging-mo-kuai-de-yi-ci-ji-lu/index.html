@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/sky1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,89 +408,94 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>偶尔浏览 <a target="_blank" rel="noopener" href="https://stackoverflow.com/">Stack overflow</a> 看到有人提出的关于日志记录的问题，比较感兴趣就尝试了一下，问题截图如下:<br><img src="https://img-blog.csdnimg.cn/20191030170258391.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191030170206321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191030170226488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>意思是他想把不同的日志等级分别记录在不同的文件中，比如 <em>INFO</em> 和 <em>ERROR</em> 分别记录到 <em>info.log</em> 以及 <em>error.log</em> 文件中，然而经过上图的尝试发现只有 <em>ERROR</em> 级别的错误记录到 <em>error.log</em> 的文件中了，而 <em>INFO</em> 级别的却没有记录，有一条解答算是比较清晰的 <strong>In your settings you have two entries for django, and django is writing logs based on the last entry.</strong> 意思是： **当你设置两个 <em>django</em>  的 <em>loggers</em>，那么默认会执行最后一个，也就是倒数第二章图的这部分有效</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'file.ERROR'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'ERROR'</span><span class="token punctuation">,</span>
-    <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python"> 'django': {
+     'handlers': ['file.ERROR'],
+     'level': 'ERROR',
+     'propagate': True,
+ },
+</code></pre>
 <p>解决办法也同样给出了：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'django.request'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'file.DEBUG'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-            <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'DEBUG'</span><span class="token punctuation">,</span>
-            <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-            <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'file.INFO'</span><span class="token punctuation">,</span> <span class="token string">'file.ERROR'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment"># &lt;-- Here</span>
-            <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>
-            <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">'loggers': {
+        'django.request': {
+            'handlers': ['file.DEBUG'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['file.INFO', 'file.ERROR'],  # &lt;-- Here
+            'level': 'INFO',
+            'propagate': True,
+        }
+}
+</code></pre>
 <p>本着 <strong>实践是检验真理的唯一标准</strong> ，忍不住写了个小的demo试了一下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># views.py</span>
-<span class="token keyword">class</span> <span class="token class-name">IndexView</span><span class="token punctuation">(</span>View<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        log<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'info log file'</span><span class="token punctuation">)</span>
-        log<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">'error log file'</span><span class="token punctuation">)</span>
+<pre><code class="python"># views.py
+class IndexView(View):
+    def get(self, request):
+        log.info('info log file')
+        log.error('error log file')
 
-        <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'return'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># settings.py</span>
-<span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">'info.file'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>
-        <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">'logging.handlers.RotatingFileHandler'</span><span class="token punctuation">,</span>
-        <span class="token comment"># 日志位置,日志文件名,日志保存目录必须手动创建</span>
-        <span class="token string">'filename'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"logs/info.log"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token comment"># 日志格式:详细格式</span>
-        <span class="token string">'formatter'</span><span class="token punctuation">:</span> <span class="token string">'verbose'</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'error.file'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'ERROR'</span><span class="token punctuation">,</span>
-        <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">'logging.handlers.RotatingFileHandler'</span><span class="token punctuation">,</span>
-        <span class="token comment"># 日志位置,日志文件名,日志保存目录必须手动创建</span>
-        <span class="token string">'filename'</span><span class="token punctuation">:</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>BASE_DIR<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"logs/error.log"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token comment"># 日志格式:详细格式</span>
-        <span class="token string">'formatter'</span><span class="token punctuation">:</span> <span class="token string">'verbose'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        return HttpResponse('return')
+</code></pre>
+<pre><code class="python"># settings.py
+'handlers': {
+    'info.file': {
+        'level': 'INFO',
+        'class': 'logging.handlers.RotatingFileHandler',
+        # 日志位置,日志文件名,日志保存目录必须手动创建
+        'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/info.log"),
+        # 日志格式:详细格式
+        'formatter': 'verbose'
+    },
+    'error.file': {
+        'level': 'ERROR',
+        'class': 'logging.handlers.RotatingFileHandler',
+        # 日志位置,日志文件名,日志保存目录必须手动创建
+        'filename': os.path.join(os.path.dirname(BASE_DIR), "logs/error.log"),
+        # 日志格式:详细格式
+        'formatter': 'verbose',
+    },
+},
 
 
-<span class="token comment"># 日志对象，第一次</span>
-<span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'info.file'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token comment"># 是否让日志信息继续冒泡给其他的日志处理系统</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'error.file'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token comment"># 是否让日志信息继续冒泡给其他的日志处理系统</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'ERROR'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 日志对象，第一次
+'loggers': {
+    'django': {
+        'handlers': ['info.file'],
+        'propagate': False,  # 是否让日志信息继续冒泡给其他的日志处理系统
+        'level': 'INFO',
+    },
+    'django': {
+        'handlers': ['error.file'],
+        'propagate': False,  # 是否让日志信息继续冒泡给其他的日志处理系统
+        'level': 'ERROR',
+    },
+}
+</code></pre>
 <p>第一次的结果就是，<em>level</em> 为 <em>INFO</em> 的 <em>loggers</em> 没有记录，也就是只记录了 <em>error</em> 的日志</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 日志对象，第二次</span>
-<span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'error.file'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token comment"># 是否让日志信息继续冒泡给其他的日志处理系统</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'ERROR'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'info.file'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token comment"># 是否让日志信息继续冒泡给其他的日志处理系统</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python"># 日志对象，第二次
+'loggers': {
+    'django': {
+        'handlers': ['error.file'],
+        'propagate': False,  # 是否让日志信息继续冒泡给其他的日志处理系统
+        'level': 'ERROR',
+    },
+    'django': {
+        'handlers': ['info.file'],
+        'propagate': False,  # 是否让日志信息继续冒泡给其他的日志处理系统
+        'level': 'INFO',
+    },
+}
+</code></pre>
 <p>第二次结果相反，只有 <em>info.log</em> 文件中保存有记录。说明回答问题的这位还是很负责的！<br>最后测试了一下正确的方式：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token string">'loggers'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">'django'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token string">'handlers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'info.file'</span><span class="token punctuation">,</span> <span class="token string">'error.file'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token string">'propagate'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>  <span class="token comment"># 是否让日志信息继续冒泡给其他的日志处理系统</span>
-        <span class="token string">'level'</span><span class="token punctuation">:</span> <span class="token string">'INFO'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code class="python">'loggers': {
+    'django': {
+        'handlers': ['info.file', 'error.file'],
+        'propagate': False,  # 是否让日志信息继续冒泡给其他的日志处理系统
+        'level': 'INFO',
+    },
+}
+</code></pre>
 <p>最终结果是 <em>INFO</em> 级别以及比它更低级别的日志都记录到了 <em>info.log</em> 中，就是说 <em>error</em> 等级别也一块进去了，而 <em>error</em> 以及比他更低级别的日志会记录到 <em>error.log</em> 文件中，也就是说 <em>error</em> 以及比它低级别的日志会保存两份。这符合 <strong>logging</strong> 库的说明。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>虽然找到了问题所在，不过提问者貌似想把不同级别的分别存储到一个文件中，就是 <em>info.log</em> 只保存 <em>INFO</em> 级别的日志，而不会保留 <em>error</em> 的日志。虽然这种需求不是很常见，毕竟 <em>ERROR</em> 以下级别的日志同样重要，也许有的公司人员比较充足，可以分2个人来分别解决 <em>ERROR</em> 以及 <em>CRITICAL</em>(严重错误，比如项目根本无法启动)也说不定~</p>
 
@@ -548,7 +561,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -623,7 +644,7 @@
                 <a href="/2019/11/27/ubuntu-python3.7-an-zhuang-uwsgi-chang-jian-cuo-wu/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="ubuntu python3.7 安装uwsgi 常见错误">
+                        <img src="http://img.ginta.top/fantasy2.jpg" class="responsive-img" alt="ubuntu python3.7 安装uwsgi 常见错误">
                         
                         <span class="card-title">ubuntu python3.7 安装uwsgi 常见错误</span>
                     </div>
@@ -651,6 +672,14 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -663,7 +692,7 @@
                 <a href="/2019/11/27/pipenv-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="pipenv 使用">
+                        <img src="http://img.ginta.top/lc1.jpg" class="responsive-img" alt="pipenv 使用">
                         
                         <span class="card-title">pipenv 使用</span>
                     </div>
@@ -689,6 +718,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -784,7 +821,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

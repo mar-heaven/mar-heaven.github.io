@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/lc1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -402,7 +406,7 @@
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近因为一次误操作不小心把博客的数据库文件删除了，当时感觉自然是难受的。不过幸运的是之前移动博客文件的时候曾把数据和项目打包了，所以文件又找回来了！！！<br>虽然文件是找回来了，不过这种情况难免再次发生，而且下次就不一定能找回来了。于是决定写一个定时任务每天备份一下数据库文件。</p>
 <p>使用的第三方库是 <strong>apscheduler</strong>，简单的介绍可以看 <a href="http://ginta.top/detail/41/">apscheduler</a>，更具体的请参考 <a target="_blank" rel="noopener" href="https://apscheduler.readthedocs.io/en/stable/">文档</a></p>
 <p>代码如下：</p>
-<pre class="line-numbers language-none"><code class="language-none"># backup_db.py 
+<pre><code># backup_db.py 
 import os
 import datetime
 
@@ -428,7 +432,8 @@ if __name__ == "__main__":
     print("backup_script start!")
     sched = BlockingScheduler()
     sched.add_job(backup_db, 'interval', [file_path, backup_dir], seconds=60 * 60 * 24)
-    sched.start()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    sched.start()
+</code></pre>
 <p>然后执行 <code>nohup python -u backup_db.py &gt; /root/data/log/back_db/backup_db.log 2&gt;&amp;1 &amp;</code> 就放到后台了</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>实现了每天定时备份一次数据库，但是也很不优雅。</p>
 <ol>
@@ -498,7 +503,11 @@ if __name__ == "__main__":
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -570,12 +579,12 @@ if __name__ == "__main__":
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/31/git-she-zhi-dai-li/">
+                <a href="/2020/03/28/apscheduler/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Git设置代理">
+                        <img src="http://img.ginta.top/sky2.jpg" class="responsive-img" alt="apscheduler">
                         
-                        <span class="card-title">Git设置代理</span>
+                        <span class="card-title">apscheduler</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -586,19 +595,27 @@ if __name__ == "__main__":
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-28
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                                    其他
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -613,7 +630,7 @@ if __name__ == "__main__":
                 <a href="/2020/03/27/fang-fo-chong-sheng/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="仿佛重生">
+                        <img src="http://img.ginta.top/qinshi1.jpg" class="responsive-img" alt="仿佛重生">
                         
                         <span class="card-title">仿佛重生</span>
                     </div>
@@ -734,7 +751,7 @@ if __name__ == "__main__":
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/qinshi2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -369,7 +369,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    470
+                    477
                 </div>
                 
 
@@ -399,7 +399,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre class="line-numbers language-none"><code class="language-none"># 添加映射  
+                <h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre><code># 添加映射  
 PUT lagou
 {
   "mappings": {
@@ -464,139 +464,50 @@ POST lagou/job/
     "comments":60,
     "add_time":"2019-1-22"
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+</code></pre>
 <h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h3><ol>
-<li><p>match(会对输入进行分词)</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "match": {
-      "title": "爬取"
-    }
-  }
-}
-
-GET lagou/_search
-{
-  "query": {
-    "match": {
-      "title": "爬取"
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>term(不会分词)</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "term": {
-      "title": "python爬虫"
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>terms(满足任何一个)</p>
-<pre class="line-numbers language-none"><code class="language-none"># terms查询
-GET lagou/_search
-{
-  "query": {
-    "terms": {
-      "title": ["工程师", "django", "系统"]
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>query查询(控制查询的返回数量)</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "match": {
-      "title": "python"
-    }
-  },
-  "from":1,
-  "size":2
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>match_all查询</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "match_all": {}
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>multi_match查询</p>
-<pre class="line-numbers language-none"><code class="language-none"># 比如可以指定多个字段
-# 比如查询title和desc这两个字段里面包含python的关键词文档
-# 可以设置权重
-GET lagou/_search
-{
-  "query": {
-    "multi_match": {
-      "query": "python",
-      "fields": ["title^3", "desc"]
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>stored_fields指定返回的字段(mappings设置了store的)</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "stored_fields": ["title"],
-  "query": {
-    "match": {
-      "title": "python"
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>sort(排序返回 asc,desc)</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "match_all": {}
-  },
-  "sort": [
-    {
-      "comments": {
-        "order": "desc"
-      }
-    }
-  ]
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>range(范围查询)<br>boost: 权重</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "range": {
-      "comments": {
-        "gte": 10,
-        "lte": 20,
-        "boost": 2.0
-      }
-    }
-  }
-}
-
-GET lagou/_search
-{
-  "query": {
-    "range": {
-      "add_time": {
-        "gt": "2019-4-1"
-      }
-    }
-  }
-}
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>match_phrase(短语查询，自动分词，满足所有则返回)<br>slop: 两个词之前的距离</p>
-<pre class="line-numbers language-none"><code class="language-none">GET lagou/_search
-{
-  "query": {
-    "match_phrase": {
-      "title": {
-        "query": "python系统",
-        "slop": 6
-      }
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>match(会对输入进行分词)<br>```<br>GET lagou/_search<br>{<br>“query”: {<br> “match”: {<br>   “title”: “爬取”<br> }<br>}<br>}</li>
 </ol>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “match”: {<br>      “title”: “爬取”<br>    }<br>  }<br>}</p>
+<pre><code>
+2. term(不会分词)
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “term”: {<br>      “title”: “python爬虫”<br>    }<br>  }<br>}</p>
+<pre><code>
+3. terms(满足任何一个)
+</code></pre>
+<h1 id="terms查询"><a href="#terms查询" class="headerlink" title="terms查询"></a>terms查询</h1><p>GET lagou/_search<br>{<br>  “query”: {<br>    “terms”: {<br>      “title”: [“工程师”, “django”, “系统”]<br>    }<br>  }<br>}</p>
+<pre><code>
+4. query查询(控制查询的返回数量)
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “match”: {<br>      “title”: “python”<br>    }<br>  },<br>  “from”:1,<br>  “size”:2<br>}</p>
+<pre><code>
+5. match_all查询
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “match_all”: {}<br>  }<br>}</p>
+<pre><code>
+6. multi_match查询
+</code></pre>
+<h1 id="比如可以指定多个字段"><a href="#比如可以指定多个字段" class="headerlink" title="比如可以指定多个字段"></a>比如可以指定多个字段</h1><h1 id="比如查询title和desc这两个字段里面包含python的关键词文档"><a href="#比如查询title和desc这两个字段里面包含python的关键词文档" class="headerlink" title="比如查询title和desc这两个字段里面包含python的关键词文档"></a>比如查询title和desc这两个字段里面包含python的关键词文档</h1><h1 id="可以设置权重"><a href="#可以设置权重" class="headerlink" title="可以设置权重"></a>可以设置权重</h1><p>GET lagou/_search<br>{<br>  “query”: {<br>    “multi_match”: {<br>      “query”: “python”,<br>      “fields”: [“title^3”, “desc”]<br>    }<br>  }<br>}</p>
+<pre><code>
+7. stored_fields指定返回的字段(mappings设置了store的)
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “stored_fields”: [“title”],<br>  “query”: {<br>    “match”: {<br>      “title”: “python”<br>    }<br>  }<br>}</p>
+<pre><code>
+8. sort(排序返回 asc,desc)
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “match_all”: {}<br>  },<br>  “sort”: [<br>    {<br>      “comments”: {<br>        “order”: “desc”<br>      }<br>    }<br>  ]<br>}</p>
+<pre><code>
+9. range(范围查询)
+boost: 权重
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “range”: {<br>      “comments”: {<br>        “gte”: 10,<br>        “lte”: 20,<br>        “boost”: 2.0<br>      }<br>    }<br>  }<br>}</p>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “range”: {<br>      “add_time”: {<br>        “gt”: “2019-4-1”<br>      }<br>    }<br>  }<br>}</p>
+<pre><code>
+10. match_phrase(短语查询，自动分词，满足所有则返回)
+slop: 两个词之前的距离
+</code></pre>
+<p>GET lagou/_search<br>{<br>  “query”: {<br>    “match_phrase”: {<br>      “title”: {<br>        “query”: “python系统”,<br>        “slop”: 6<br>      }<br>    }<br>  }<br>}<br>```</p>
 
                 
             </div>
@@ -735,7 +646,7 @@ GET lagou/_search
                 <a href="/2019/12/28/elasticsearch-zu-he-cha-xun/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Elasticsearch组合查询">
+                        <img src="http://img.ginta.top/sky1.jpg" class="responsive-img" alt="Elasticsearch组合查询">
                         
                         <span class="card-title">Elasticsearch组合查询</span>
                     </div>
@@ -775,7 +686,7 @@ GET lagou/_search
                 <a href="/2019/12/28/elasticsearch-cao-zuo/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Elasticsearch操作">
+                        <img src="http://img.ginta.top/chaoshou2.jpg" class="responsive-img" alt="Elasticsearch操作">
                         
                         <span class="card-title">Elasticsearch操作</span>
                     </div>
@@ -896,7 +807,7 @@ GET lagou/_search
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

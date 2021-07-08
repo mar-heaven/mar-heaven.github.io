@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/chaoshou2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -401,11 +405,15 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>每次使用docker pull的时候总是要等待很久，在不翻墙的情况下建议使用国内的源</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>在 /etc/docker/daemon.json 文件中添加以下参数（没有该文件则新建）：<pre class="line-numbers language-none"><code class="language-none">{
-  "registry-mirrors": ["https://9cpn8tt6.mirror.aliyuncs.com"]
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li>服务重启<pre class="line-numbers language-none"><code class="language-none">systemctl daemon-reload
-systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>在 /etc/docker/daemon.json 文件中添加以下参数（没有该文件则新建）：<pre><code>{
+"registry-mirrors": ["https://9cpn8tt6.mirror.aliyuncs.com"]
+}
+</code></pre>
+</li>
+<li>服务重启<pre><code>systemctl daemon-reload
+systemctl restart docker
+</code></pre>
+</li>
 </ol>
 
                 
@@ -470,7 +478,11 @@ systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -545,7 +557,7 @@ systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span
                 <a href="/2020/09/05/shu-mei-pai-ubuntu-20-wang-luo-she-zhi/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="树莓派ubuntu 20 网络设置">
+                        <img src="http://img.ginta.top/dm2.jpg" class="responsive-img" alt="树莓派ubuntu 20 网络设置">
                         
                         <span class="card-title">树莓派ubuntu 20 网络设置</span>
                     </div>
@@ -573,6 +585,14 @@ systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                        <span class="chip bg-color">树莓派</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -585,7 +605,7 @@ systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span
                 <a href="/2020/05/31/shu-mei-pai-frp-nei-wang-chuan-tou/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="树莓派frp内网穿透">
+                        <img src="http://img.ginta.top/huoying1.jpg" class="responsive-img" alt="树莓派frp内网穿透">
                         
                         <span class="card-title">树莓派frp内网穿透</span>
                     </div>
@@ -706,7 +726,7 @@ systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

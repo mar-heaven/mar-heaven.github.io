@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/fantasy2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                <span class="chip bg-color">多线程</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,7 +404,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>以前我们定义多线程任务的时候都是通过循环来控制线程数量，很不优雅：</p>
-<pre class="line-numbers language-none"><code class="language-none">import threading
+<pre><code>import threading
 
 
 class MyThread(threading.Thread):
@@ -422,11 +426,12 @@ if __name__ == "__main__":
         t.start()
         t_list.append(t)
     for t in t_list:
-        t.join()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        t.join()
+</code></pre>
 <p>这样做当然也是可以的，不过一方面是代码有些难看，虽然逻辑上是清晰的，另外一方面是我们无法知道哪个线程完成了，而且控制并发的方式也仅限于给循环的变量不同，说白了还是看起来不舒服。</p>
 <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>我们要寻求一种方式既可以实现多线程的效果，让代码看起来优雅一点。而且程序还可以知道哪些任务完成了</p>
 <h3 id="线程池-1"><a href="#线程池-1" class="headerlink" title="线程池"></a>线程池</h3><p><em>Python3</em> 的线程池是在 <strong>concurrent</strong> 包下的 <strong>ThreadPoolExecutor</strong> 来实现的<br>现在我们写一个简单的线程池例子</p>
-<pre class="line-numbers language-none"><code class="language-none">from concurrent.futures import ThreadPoolExecutor,
+<pre><code>from concurrent.futures import ThreadPoolExecutor,
 def get_html(times):
     time.sleep(times)
     print("get page {} success".format(times))
@@ -435,7 +440,8 @@ def get_html(times):
 executor = ThreadPoolExecutor(max_workers=32)
 task1 = executor.submit(get_html, (3))
 task2 = executor.submit(get_html, (2))
-task3 = executor.submit(get_html, (3))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+task3 = executor.submit(get_html, (3))
+</code></pre>
 <p>如果我们想知道哪个任务执行完没有，可以用到 <em>done()</em> 方法</p>
 <blockquote>
 <p>task1.done()</p>
@@ -444,38 +450,41 @@ task3 = executor.submit(get_html, (3))<span aria-hidden="true" class="line-numbe
 <p>在任务 <strong>还未开始</strong> 的时候我们可以使用 <em>cancel</em> 方法取消，如：<code>task2.cancel()</code></p>
 <p>通过 <em>submit()</em> 函数提交执行的函数到线程池中, 是立即返回，也就是说主线程还是在向下进行的。<em>max_workers</em> 参数是控制同时执行的最大任务数，这里我们有三个任务，但是最大任务数为 2。<em>submit</em> 有两个参数，一个就是所要执行的函数，<strong>一定不能加括号</strong>，另一个就是函数参数，<strong>这里哪怕只有一个参数也要像我这样括起来，不然会出问题！</strong>。由于<em>max_workers</em>  是2，一开始有两个在执行，如果有一个先执行完毕了，第三个任务才会开始执行。比起之前的 <em>for</em>  循环要好看不少。</p>
 <p>如果有N个任务我们肯定不能一个个定义，用列表生成式就可以：</p>
-<pre class="line-numbers language-none"><code class="language-none"># ... 其他代码
+<pre><code># ... 其他代码
 def get_html(url):
     time.sleep(times)
     print("get page {} success".format(times))
     return times
 executor = ThreadPoolExecutor(max_workers=2)
 urls = [3,2,4]
-all_task = [executor.submit(get_html, (url) ) for url in urls]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+all_task = [executor.submit(get_html, (url) ) for url in urls]
+</code></pre>
 <h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><p>我们想看看有多少个任务完成了，可以用 <em>concurrent.futures</em> 里的 <em>as_completed(task)</em> 方法，有一个参数可以是单独的 <em>task</em> 或者一个列表：</p>
-<pre class="line-numbers language-none"><code class="language-none"># ... 其他代码
+<pre><code># ... 其他代码
 all_task = [executor.submit(get_html, (url) ) for url in urls]
 
 for future in as_completed(all_task):
     data = future.result()
-    print("get {} page".format(data))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    print("get {} page".format(data))
+</code></pre>
 <p>我们的 <em>task</em> 返回值在 <em>future.result()</em> 中 <em>as_completed</em> 在遍历的时候如果有函数执行完了就会返回执行完的结果，以后的任务执行完一个这里就会返回一个，可以理解为 <em>as_completed</em> 会等待任务执行，比如我们这里在遍历的时候只有一个执行完了，那就只会打印一个，如果有第二个执行完了，它就会打印第二个，而且这个也不会影响到主线程。</p>
 <h3 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h3><p>如果我们想计算一下整个项目执行的时间，但是线程池不会阻塞主线程，就无法实现。</p>
-<pre class="line-numbers language-none"><code class="language-none"># ... 其他代码
+<pre><code># ... 其他代码
 
 start = time.time()
 all_task = [executor.submit(get_html, (url)) for url in urls]
-print("all tasks have done,used {}s".format(time.time()-start))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+print("all tasks have done,used {}s".format(time.time()-start))
+</code></pre>
 <blockquote>
 <p>all tasks have done,used 0.0010027885437011719s<br>get page 2 success<br>get page 3 success<br>get page 4 success</p>
 </blockquote>
 <p>可以看到，任务开始以后主线程继续执行了，所以才会看到主线程的打印。</p>
 <p>不过 <em>concurrent.futures</em>  给我们提供了一个 <em>wait()</em> 方法，可以让我们等待一个任务执行完，否则一直阻塞在当前位置，当然他也可以传一个列表：</p>
-<pre class="line-numbers language-none"><code class="language-none">start = time.time()
+<pre><code>start = time.time()
 all_task = [executor.submit(get_html, (url)) for url in urls]
 wait(all_task)
-print("all tasks have done")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+print("all tasks have done")
+</code></pre>
 <blockquote>
 <p>get page 2 success<br>get page 3 success<br>get page 4 success<br>all tasks have done,used 6.002103328704834s</p>
 </blockquote>
@@ -543,7 +552,11 @@ print("all tasks have done")<span aria-hidden="true" class="line-numbers-rows"><
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                    <span class="chip bg-color">多线程</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -618,7 +631,7 @@ print("all tasks have done")<span aria-hidden="true" class="line-numbers-rows"><
                 <a href="/2019/12/21/shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="删除排序数组中的重复项">
+                        <img src="http://img.ginta.top/huoying1.jpg" class="responsive-img" alt="删除排序数组中的重复项">
                         
                         <span class="card-title">删除排序数组中的重复项</span>
                     </div>
@@ -658,7 +671,7 @@ print("all tasks have done")<span aria-hidden="true" class="line-numbers-rows"><
                 <a href="/2019/12/20/docker-zhi-ling-2/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Docker 指令2">
+                        <img src="http://img.ginta.top/fantasy1.jpg" class="responsive-img" alt="Docker 指令2">
                         
                         <span class="card-title">Docker 指令2</span>
                     </div>
@@ -779,7 +792,7 @@ print("all tasks have done")<span aria-hidden="true" class="line-numbers-rows"><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

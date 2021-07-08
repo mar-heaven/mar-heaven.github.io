@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/lc1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -408,16 +412,17 @@
 </li>
 </ul>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在任何地方执行 <code>pipenv install django</code> ，<em>pipenv</em> 会自动生成2个文件，分别是 <em>Pipfile</em> 和 <em>Pipfile.lock</em> ， <em>Pipfile.lock</em> 文件就会自动配置好 <em>django</em> 框架了：</p>
-<pre class="line-numbers language-none"><code class="language-none">"default": {
-    "django": {
-        "hashes": [
-            "sha256:4025317ca01f75fc79250ff7262a06d8ba97cd4f82e93394b2a0a6a4a925caeb",
-            "sha256:a8ca1033acac9f33995eb2209a6bf18a4681c3e5269a878e9a7e0b7384ed1ca3"
-        ],
-        "index": "pypi",
-        "version": "==2.2.6"
-    },
-  ....其他内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>  "default": {
+      "django": {
+          "hashes": [
+              "sha256:4025317ca01f75fc79250ff7262a06d8ba97cd4f82e93394b2a0a6a4a925caeb",
+              "sha256:a8ca1033acac9f33995eb2209a6bf18a4681c3e5269a878e9a7e0b7384ed1ca3"
+          ],
+          "index": "pypi",
+          "version": "==2.2.6"
+      },
+    ....其他内容
+</code></pre>
 <p>激活虚拟环境的命令是 <code>pipenv shell</code>，需要注意的是，如果激活后使用 <code>pip install flask</code> 则只会在虚拟环境中安装 <strong>Flask</strong> 框架，并不会写入到 <em>Pipfile.lock</em> 配置中，如果想写入配置则执行 <code>pipenv install flask</code> 命令，然后如果需要生成 <em>requirements.txt</em> 文件则执行 <code>pipenv lock -r &gt; requirements.txt</code> 命令，<strong>只会打包 Pipfile.lock文件中的package</strong>。</p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>一般来说在项目根目录下生成 <em>Pipfile</em> 和 <em>Pipfile.lock</em>  文件，方便后续操作，比如执行 <em>docker</em> 命令什么的都可以很简单安装好一个项目的依赖。</p>
 
@@ -483,7 +488,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -558,7 +567,7 @@
                 <a href="/2019/11/27/django-shi-yong-logging-mo-kuai-de-yi-ci-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Django 使用 logging 模块的一次记录">
+                        <img src="http://img.ginta.top/sky1.jpg" class="responsive-img" alt="Django 使用 logging 模块的一次记录">
                         
                         <span class="card-title">Django 使用 logging 模块的一次记录</span>
                     </div>
@@ -586,6 +595,18 @@
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -598,7 +619,7 @@
                 <a href="/2019/11/27/django-tu-pian-chu-cun-qi-niu-yun/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="django 图片储存七牛云">
+                        <img src="http://img.ginta.top/lc3.jpg" class="responsive-img" alt="django 图片储存七牛云">
                         
                         <span class="card-title">django 图片储存七牛云</span>
                     </div>
@@ -624,6 +645,18 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -719,7 +752,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

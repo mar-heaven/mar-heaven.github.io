@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/huoying2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%82%AE%E4%BB%B6/">
+                                <span class="chip bg-color">邮件</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,13 +408,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在博客的认证中使用到了 <code>django-allauth</code> 模块进行用户注册登录，但是在注册环节配置邮箱系统的时候出了问题，搞了好几个小时终于解决了<br>原来我的配置如下<br>首先是github配置：</p>
-<pre class="line-numbers language-none"><code class="language-none">Homepage URL:
+<pre><code>Homepage URL:
 http://ginta.top/
 Authorization callback URL:
-http://ginta.top/accounts/github/login/callback/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+http://ginta.top/accounts/github/login/callback/
+</code></pre>
 <p>这是<code>settings.py</code> <em>django-allauth</em> 配置</p>
-<pre class="line-numbers language-none"><code class="language-none"># django-allauth配置
+<pre><code># django-allauth配置
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # 强制注册邮箱验证(注册成功后，会发送一封验证邮件，用户必须验证邮箱后，才能登陆)
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"     # 登录方式(选择用户名或者邮箱都能登录)
 ACCOUNT_EMAIL_REQUIRED = True           # 设置用户注册的时候必须填写邮箱地址
@@ -423,10 +431,10 @@ EMAIL_HOST_PASSWORD = "******"
 # 发送人
 EMAIL_FROM = ".....@qq.com" #
 # 默认显示的发送人，（邮箱地址必须与发送人一致），不设置的话django默认使用的webmaster@localhost
-DEFAULT_FROM_EMAIL = ".....@qq.com"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+DEFAULT_FROM_EMAIL = ".....@qq.com"
+</code></pre>
 <p>线下测试的时候没有问题，邮件也能发送，但是发布到阿里云上就是不行，一直出现邮件超时，也就是 <em>nginx 504</em> 的情况，网上有说把 <em>nginx</em> 超时时间改一下，我没尝试，一方面是因为默认已经是一分钟了，用户哪能等那么久，另一个是看到有说 <strong>25端口</strong> 在阿里云默认是关闭的，总之要进行一系列操作什么的，好在还可以用465端口，<strong>但是只把25端口改成465端口还是出现超时状态！！</strong> ，后来有看到有加上一句 <code>EMAIL_USE_SSL = True</code>，于是试了一下，解决了。最后附上完整配置, <em>github</em> 配置不变，只改 <em>settings.py</em> 就好 ：</p>
-<pre class="line-numbers language-none"><code class="language-none"># django-allauth配置
+<pre><code># django-allauth配置
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # 强制注册邮箱验证(注册成功后，会发送一封验证邮件，用户必须验证邮箱后，才能登陆)
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"     # 登录方式(选择用户名或者邮箱都能登录)
 ACCOUNT_EMAIL_REQUIRED = True           # 设置用户注册的时候必须填写邮箱地址
@@ -444,7 +452,9 @@ EMAIL_HOST_PASSWORD = "****"
 # 发送人
 EMAIL_FROM = "***@qq.com" #
 # 默认显示的发送人，（邮箱地址必须与发送人一致），不设置的话django默认使用的webmaster@localhost
-DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+DEFAULT_FROM_EMAIL = "***@qq.com"
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -507,7 +517,15 @@ DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-ro
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%82%AE%E4%BB%B6/">
+                                    <span class="chip bg-color">邮件</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -582,7 +600,7 @@ DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-ro
                 <a href="/2019/12/03/win10-osg.js-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="win10 osg.js 使用">
+                        <img src="http://img.ginta.top/dragin1.jpg" class="responsive-img" alt="win10 osg.js 使用">
                         
                         <span class="card-title">win10 osg.js 使用</span>
                     </div>
@@ -622,7 +640,7 @@ DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-ro
                 <a href="/2019/11/27/ubuntu-bu-shu-django2.0-uwsgi-nginx/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="ubuntu 部署 django2.0 + uwsgi + nginx">
+                        <img src="http://img.ginta.top/fantasy2.jpg" class="responsive-img" alt="ubuntu 部署 django2.0 + uwsgi + nginx">
                         
                         <span class="card-title">ubuntu 部署 django2.0 + uwsgi + nginx</span>
                     </div>
@@ -648,6 +666,22 @@ DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-ro
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Django/">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">
+                        <span class="chip bg-color">自动化</span>
+                    </a>
+                    
+                    <a href="/tags/uwsgi/">
+                        <span class="chip bg-color">uwsgi</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -743,7 +777,7 @@ DEFAULT_FROM_EMAIL = "***@qq.com"<span aria-hidden="true" class="line-numbers-ro
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

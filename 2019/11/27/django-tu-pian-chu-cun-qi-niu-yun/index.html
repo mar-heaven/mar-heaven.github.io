@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/lc3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -369,7 +377,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    636
+                    661
                 </div>
                 
 
@@ -403,54 +411,48 @@
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>首先我们要新建一个七牛云的储存空间，具体操作如下。<br><img src="https://img-blog.csdnimg.cn/20191115112528531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>进入这里，点击 <strong>对象存储</strong><br><img src="https://img-blog.csdnimg.cn/20191115112615815.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>新建存储空间</strong> ，存储空间的名称随意就好，配置可以仿照这里图片这个样子，然后就OK了，对于新用户首先要实名认证，不过挺快的，我申请了2个小时不到就通过了。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>首先安装依赖包<br><code>pip install django-qiniu-storage</code></li>
-<li>然后 <strong>settings.py</strong> 配置新增如下<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 七牛云配置</span>
-
-QINIU_ACCESS_KEY <span class="token operator">=</span> <span class="token string">'ACCESS_KEY'</span>
-<span class="token comment"># 七牛给开发者分配的AccessKey</span>
-QINIU_SECRET_KEY <span class="token operator">=</span> <span class="token string">'SECRET_KEY'</span>
-<span class="token comment"># 七牛给开发者分配的Secret</span>
-QINIU_BUCKET_NAME <span class="token operator">=</span> <span class="token string">'myblog'</span>  <span class="token comment"># 就是刚才新建的存储空间名称</span>
-<span class="token comment"># 用来存放文件的七牛空间(bucket)的名字</span>
-QINIU_BUCKET_DOMAIN <span class="token operator">=</span> <span class="token string">'*****.bkt.clouddn.com/'</span>
-<span class="token comment"># 七牛空间(bucket)的域名，别遗漏了后面的/</span>
-DEFAULT_FILE_STORAGE <span class="token operator">=</span> <span class="token string">'qiniustorage.backends.QiniuStorage'</span>
-<span class="token comment"># 只用七牛托管动态生成的文件（例如用户上传的文件）</span>
-QINIU_SECURE_URL <span class="token operator">=</span> <span class="token boolean">False</span>
-<span class="token comment"># 使用http</span>
-
-PREFIX_URL <span class="token operator">=</span> <span class="token string">'http://'</span>
-<span class="token comment"># 文件系统更改</span>
-MEDIA_URL <span class="token operator">=</span> PREFIX_URL <span class="token operator">+</span> QINIU_BUCKET_DOMAIN
-MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'media/'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>然后 <strong>settings.py</strong> 配置新增如下<br>```python<h1 id="七牛云配置"><a href="#七牛云配置" class="headerlink" title="七牛云配置"></a>七牛云配置</h1></li>
 </ul>
-<p><strong>QINIU_BUCKET_DOMAIN</strong> 的位置如下<br><img src="https://img-blog.csdnimg.cn/20191115113248223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>我的轮播图 <em>model</em> 如下</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Banner</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    STATUS_NORMAL <span class="token operator">=</span> <span class="token number">1</span>
-    STATUS_DELETE <span class="token operator">=</span> <span class="token number">0</span>
-    STATUS_ITEMS <span class="token operator">=</span> <span class="token punctuation">(</span>
-        <span class="token punctuation">(</span>STATUS_NORMAL<span class="token punctuation">,</span> <span class="token string">'正常'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span>STATUS_DELETE<span class="token punctuation">,</span> <span class="token string">'删除'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token punctuation">)</span>
-    <span class="token triple-quoted-string string">"""
+<p>QINIU_ACCESS_KEY = ‘ACCESS_KEY’</p>
+<h1 id="七牛给开发者分配的AccessKey"><a href="#七牛给开发者分配的AccessKey" class="headerlink" title="七牛给开发者分配的AccessKey"></a>七牛给开发者分配的AccessKey</h1><p>QINIU_SECRET_KEY = ‘SECRET_KEY’</p>
+<h1 id="七牛给开发者分配的Secret"><a href="#七牛给开发者分配的Secret" class="headerlink" title="七牛给开发者分配的Secret"></a>七牛给开发者分配的Secret</h1><p>QINIU_BUCKET_NAME = ‘myblog’  # 就是刚才新建的存储空间名称</p>
+<h1 id="用来存放文件的七牛空间-bucket-的名字"><a href="#用来存放文件的七牛空间-bucket-的名字" class="headerlink" title="用来存放文件的七牛空间(bucket)的名字"></a>用来存放文件的七牛空间(bucket)的名字</h1><p>QINIU_BUCKET_DOMAIN = ‘*****.bkt.clouddn.com/‘</p>
+<h1 id="七牛空间-bucket-的域名，别遗漏了后面的"><a href="#七牛空间-bucket-的域名，别遗漏了后面的" class="headerlink" title="七牛空间(bucket)的域名，别遗漏了后面的/"></a>七牛空间(bucket)的域名，别遗漏了后面的/</h1><p>DEFAULT_FILE_STORAGE = ‘qiniustorage.backends.QiniuStorage’</p>
+<h1 id="只用七牛托管动态生成的文件（例如用户上传的文件）"><a href="#只用七牛托管动态生成的文件（例如用户上传的文件）" class="headerlink" title="只用七牛托管动态生成的文件（例如用户上传的文件）"></a>只用七牛托管动态生成的文件（例如用户上传的文件）</h1><p>QINIU_SECURE_URL = False</p>
+<h1 id="使用http"><a href="#使用http" class="headerlink" title="使用http"></a>使用http</h1><p>PREFIX_URL = ‘http://‘</p>
+<h1 id="文件系统更改"><a href="#文件系统更改" class="headerlink" title="文件系统更改"></a>文件系统更改</h1><p>MEDIA_URL = PREFIX_URL + QINIU_BUCKET_DOMAIN<br>MEDIA_ROOT = ‘media/‘</p>
+<pre><code>**QINIU_BUCKET_DOMAIN** 的位置如下
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191115113248223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70)
+
+我的轮播图 *model* 如下
+```python
+class Banner(BaseModel):
+    STATUS_NORMAL = 1
+    STATUS_DELETE = 0
+    STATUS_ITEMS = (
+        (STATUS_NORMAL, '正常'),
+        (STATUS_DELETE, '删除'),
+    )
+    """
     轮播图
-    """</span>
-    <span class="token comment"># upload_to 存储子目录，真实存放地址会使用配置中的MADIE_ROOT+upload_to</span>
-    image <span class="token operator">=</span> models<span class="token punctuation">.</span>ImageField<span class="token punctuation">(</span>upload_to<span class="token operator">=</span><span class="token string">'banner'</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'轮播图'</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
-                              blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> help_text<span class="token operator">=</span><span class="token string">"轮播图片的大小规格：1920x720，或者对应的比例的图片"</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">150</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'轮播图名称'</span><span class="token punctuation">)</span>
-    desc <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">250</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'描述信息'</span><span class="token punctuation">,</span> help_text<span class="token operator">=</span><span class="token string">"请填写描述信息"</span><span class="token punctuation">)</span>
-    status <span class="token operator">=</span> models<span class="token punctuation">.</span>PositiveIntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span>STATUS_NORMAL<span class="token punctuation">,</span>
-                                         choices<span class="token operator">=</span>STATUS_ITEMS<span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'状态'</span><span class="token punctuation">)</span>
-    link <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">150</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'轮播图广告地址'</span><span class="token punctuation">)</span>
+    """
+    # upload_to 存储子目录，真实存放地址会使用配置中的MADIE_ROOT+upload_to
+    image = models.ImageField(upload_to='banner', verbose_name='轮播图', null=True,
+                              blank=True, help_text="轮播图片的大小规格：1920x720，或者对应的比例的图片")
+    name = models.CharField(max_length=150, verbose_name='轮播图名称')
+    desc = models.CharField(max_length=250, verbose_name='描述信息', help_text="请填写描述信息")
+    status = models.PositiveIntegerField(default=STATUS_NORMAL,
+                                         choices=STATUS_ITEMS, verbose_name='状态')
+    link = models.CharField(max_length=150, verbose_name='轮播图广告地址')
 
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        db_table <span class="token operator">=</span> <span class="token string">'home_banner'</span>
-        verbose_name <span class="token operator">=</span> <span class="token string">'轮播图'</span>
-        verbose_name_plural <span class="token operator">=</span> verbose_name
+    class Meta:
+        db_table = 'home_banner'
+        verbose_name = '轮播图'
+        verbose_name_plural = verbose_name
 
-    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    def __str__(self):
+        return self.name
+</code></pre>
 <p>注意 <strong>image</strong> 这个字段，我设置了 <code>upload_to='banner'</code> ，他就会保存到  <strong>MADIE_ROOT+’banner’</strong> 这个路径下，而 <strong>MADIE_ROOT</strong> 在配置中是 <code>MEDIA_URL = PREFIX_URL + QINIU_BUCKET_DOMAIN</code> ,也就是 <code>'http://*****.bkt.clouddn.com/'</code><br>于是我们的轮播图图片就会保存到类似这样的url下：<br><code>http://*****.bkt.clouddn.com/banner/20160923084104779_jAQ76Kw.jpg</code></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基本操作就是这样了，因为网上有很多大佬已经踩过坑了，所以避免了不少麻烦。<strong>七牛云不止可以存储图片，也可以存储其他文件，CDN加速等等，以后有需要会补充上的。</strong></p>
 
@@ -516,7 +518,15 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -591,7 +601,7 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
                 <a href="/2019/11/27/pipenv-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="pipenv 使用">
+                        <img src="http://img.ginta.top/lc1.jpg" class="responsive-img" alt="pipenv 使用">
                         
                         <span class="card-title">pipenv 使用</span>
                     </div>
@@ -619,6 +629,14 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -631,7 +649,7 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
                 <a href="/2019/11/27/ubuntu-xi-tong-an-zhuang-redis/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Ubuntu系统安装redis">
+                        <img src="http://img.ginta.top/dm3.jpg" class="responsive-img" alt="Ubuntu系统安装redis">
                         
                         <span class="card-title">Ubuntu系统安装redis</span>
                     </div>
@@ -657,6 +675,14 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -752,7 +778,7 @@ MEDIA_ROOT <span class="token operator">=</span> <span class="token string">'med
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

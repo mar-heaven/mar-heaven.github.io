@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/fantasy2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -422,22 +422,28 @@
 <li>每次运行RUN都会生成新的image，所以尽量合并成一行</li>
 <li>WORKDIR /root # 设定工作目录</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">WORKDIR /test # 如果没有会自动创建test目录     
+<pre><code>WORKDIR /test # 如果没有会自动创建test目录     
 WORKDIR demo
-RUN pwd # 输出结果应该是/test/demo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+RUN pwd # 输出结果应该是/test/demo
+</code></pre>
 <ul>
 <li>用WORKDIR, 不要使用 RUN cd,尽量使用绝对目录</li>
 <li>ADD(COPY)</li>
 <li>ADD hello /</li>
-<li>ADD test.tar.gz / # 添加到根目录并解压<pre class="line-numbers language-none"><code class="language-none">WORKDIR /root
-ADD hello test/ # /root/test/hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">WORKDIR /root
-COPY hello test/ # /root/test/hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>ADD test.tar.gz / # 添加到根目录并解压<pre><code>WORKDIR /root
+ADD hello test/ # /root/test/hello
+</code></pre>
+<pre><code>WORKDIR /root
+COPY hello test/ # /root/test/hello
+</code></pre>
+</li>
 <li>大部分情况，COPY优于ADD，ADD除了COPY还有解压功能</li>
 <li>添加远程文件/目录请使用curl或者wget</li>
-<li>ENV MYSQL_VERSION 5.6 # 设置常量<pre class="line-numbers language-none"><code class="language-none">ENV MYSQL_VERSION 5.6 # 设置常量
+<li>ENV MYSQL_VERSION 5.6 # 设置常量<pre><code>ENV MYSQL_VERSION 5.6 # 设置常量
 RUN apt-get install -y mysql-server= "${MYSQL_VERSION}" \
-   &amp;&amp; rm -rf /var/lib/apt/lists/* 引用常量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+ &amp;&amp; rm -rf /var/lib/apt/lists/* 引用常量
+</code></pre>
+</li>
 <li>尽量使用ENV增加可维护性</li>
 </ul>
 
@@ -578,7 +584,7 @@ RUN apt-get install -y mysql-server= "${MYSQL_VERSION}" \
                 <a href="/2019/12/20/jing-xiang-fa-bu/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="镜像发布">
+                        <img src="http://img.ginta.top/dragin1.jpg" class="responsive-img" alt="镜像发布">
                         
                         <span class="card-title">镜像发布</span>
                     </div>
@@ -618,7 +624,7 @@ RUN apt-get install -y mysql-server= "${MYSQL_VERSION}" \
                 <a href="/2019/12/16/lai-dao-shen-zhen/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="来到深圳">
+                        <img src="http://img.ginta.top/qinshi1.jpg" class="responsive-img" alt="来到深圳">
                         
                         <span class="card-title">来到深圳</span>
                     </div>
@@ -739,7 +745,7 @@ RUN apt-get install -y mysql-server= "${MYSQL_VERSION}" \
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

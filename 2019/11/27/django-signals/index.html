@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/huoying2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -369,7 +373,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    715
+                    717
                 </div>
                 
 
@@ -437,59 +441,57 @@
 <ol>
 <li>新建并注册app，我这里app名字是 <em>signalapp</em></li>
 <li>在app下方新建signals.py文件<br><img src="https://img-blog.csdnimg.cn/20191114002302755.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MDY4OTMz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
-<li>修改 app下面的 apps.py<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 原来</span>
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>apps <span class="token keyword">import</span> AppConfig
-
-<span class="token keyword">class</span> <span class="token class-name">SignalappConfig</span><span class="token punctuation">(</span>AppConfig<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name <span class="token operator">=</span> <span class="token string">'signalapp'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>修改 app下面的 apps.py<br>```python<h1 id="原来"><a href="#原来" class="headerlink" title="原来"></a>原来</h1>from django.apps import AppConfig</li>
 </ol>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 现在</span>
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>apps <span class="token keyword">import</span> AppConfig
+<p>class SignalappConfig(AppConfig):<br>    name = ‘signalapp’</p>
+<pre><code>
+```python
+# 现在
+from django.apps import AppConfig
 
-<span class="token keyword">class</span> <span class="token class-name">SignalappConfig</span><span class="token punctuation">(</span>AppConfig<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    name <span class="token operator">=</span> <span class="token string">'signalapp'</span>
+class SignalappConfig(AppConfig):
+    name = 'signalapp'
 
-    <span class="token keyword">def</span> <span class="token function">ready</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># signals are imported, so that they are defined and can be used</span>
-        <span class="token keyword">import</span> signalapp<span class="token punctuation">.</span>signals<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    def ready(self):
+        # signals are imported, so that they are defined and can be used
+        import signalapp.signals
+</code></pre>
 <ol start="4">
-<li>编写 signals.py<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># signalapp/signals.py</span>
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>dispatch <span class="token keyword">import</span> receiver
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>db<span class="token punctuation">.</span>models<span class="token punctuation">.</span>signals <span class="token keyword">import</span> post_save
-<span class="token keyword">from</span> signalapp<span class="token punctuation">.</span>models <span class="token keyword">import</span> Post
-
-<span class="token keyword">def</span> <span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"发送邮件"</span><span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@receiver</span><span class="token punctuation">(</span>post_save<span class="token punctuation">,</span> sender<span class="token operator">=</span>Post<span class="token punctuation">,</span> dispatch_uid<span class="token operator">=</span><span class="token string">'Post_post_save'</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">send_email</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    send<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-然后重启服务，接下来在任意地方只要新建了 <strong>Post</strong> 实例并保存了，该函数都将在保存之后执行。与之相对应的是函数是 <strong>pre_save</strong>，显然，这是在保存前执行的。 <em>receiver</em> 装饰器有三个参数：</li>
-<li>第一个是要监听的信号，我这里是 post_save</li>
-<li>第二个是所要监听的模型，我这里是 Post 是文章模型，所以这个函数会在每次有文章保存（新建或者更新）的时候触发</li>
-<li>post_save 在某个Model保存之后调用, 对于每个唯一的dispatch_uid,接收器都只被信号调用一次</li>
+<li>编写 signals.py<br>```python<h1 id="signalapp-signals-py"><a href="#signalapp-signals-py" class="headerlink" title="signalapp/signals.py"></a>signalapp/signals.py</h1>from django.dispatch import receiver<br>from django.db.models.signals import post_save<br>from signalapp.models import Post</li>
 </ol>
-<p>这个信号的功能就是每次新建或者更改文章的时候发送一个邮件（邮件函数没写。。）</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>其他的可以参考文档，<em>django</em> 的文档写得确实很好，另外想说的就是 <em>sender</em> 不一定是模型，也可以是函数：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> datetime
-<span class="token keyword">import</span> os
-<span class="token keyword">import</span> django
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>dispatch <span class="token keyword">import</span> receiver<span class="token punctuation">,</span> Signal
-<span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
+<p>def send():<br>    print(“发送邮件”)</p>
+<p>@receiver(post_save, sender=Post, dispatch_uid=’Post_post_save’)<br>def send_email(instance, **kwargs):<br>    send()</p>
+<pre><code>然后重启服务，接下来在任意地方只要新建了 **Post** 实例并保存了，该函数都将在保存之后执行。与之相对应的是函数是 **pre_save**，显然，这是在保存前执行的。 *receiver* 装饰器有三个参数：
+1. 第一个是要监听的信号，我这里是 post_save
+2. 第二个是所要监听的模型，我这里是 Post 是文章模型，所以这个函数会在每次有文章保存（新建或者更新）的时候触发
+3. post_save 在某个Model保存之后调用, 对于每个唯一的dispatch_uid,接收器都只被信号调用一次
 
-<span class="token comment"># 发送信号</span>
-<span class="token keyword">def</span> <span class="token function">signal_sender</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    hostname <span class="token operator">=</span> request<span class="token punctuation">.</span>get_host<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    msg <span class="token operator">=</span> <span class="token string">'Django Signal Test'</span>
-    time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    signal_obj<span class="token punctuation">.</span>send<span class="token punctuation">(</span>sender<span class="token operator">=</span>signal_sender<span class="token punctuation">,</span> hostname<span class="token operator">=</span>hostname<span class="token punctuation">,</span> msg<span class="token operator">=</span>msg<span class="token punctuation">,</span> time<span class="token operator">=</span>time<span class="token punctuation">)</span>     <span class="token comment"># 关键一行</span>
-    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">'200 OK'</span><span class="token punctuation">)</span>
+这个信号的功能就是每次新建或者更改文章的时候发送一个邮件（邮件函数没写。。）
+
+## 补充
+其他的可以参考文档，*django* 的文档写得确实很好，另外想说的就是 *sender* 不一定是模型，也可以是函数：
+```python
+import datetime
+import os
+import django
+from django.dispatch import receiver, Signal
+from django.http import HttpResponse
+
+# 发送信号
+def signal_sender(request):
+    hostname = request.get_host()
+    msg = 'Django Signal Test'
+    time = datetime.date.today()
+    signal_obj.send(sender=signal_sender, hostname=hostname, msg=msg, time=time)     # 关键一行
+    return HttpResponse('200 OK')
 
 
-<span class="token comment"># 接收和处理信号</span>
-<span class="token decorator annotation punctuation">@receiver</span><span class="token punctuation">(</span>signal_obj<span class="token punctuation">,</span> sender<span class="token operator">=</span>signal_sender<span class="token punctuation">)</span>       <span class="token comment"># 装饰器把处理函数注册成接收器</span>
-<span class="token keyword">def</span> <span class="token function">signal_handler</span><span class="token punctuation">(</span>sender<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>　　　　　　   <span class="token comment"># 接收到信号后，在此处理。kwargs字典用来传递Signal信号参数</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'接收到信号内容：{hostname}|"{msg}"|{time}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>hostname<span class="token operator">=</span>kwargs<span class="token punctuation">[</span><span class="token string">'hostname'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> msg<span class="token operator">=</span>kwargs<span class="token punctuation">[</span><span class="token string">'msg'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> time<span class="token operator">=</span>kwargs<span class="token punctuation">[</span><span class="token string">'time'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+# 接收和处理信号
+@receiver(signal_obj, sender=signal_sender)       # 装饰器把处理函数注册成接收器
+def signal_handler(sender, **kwargs):　　　　　　   # 接收到信号后，在此处理。kwargs字典用来传递Signal信号参数
+    print('接收到信号内容：{hostname}|"{msg}"|{time}'.format(hostname=kwargs['hostname'], msg=kwargs['msg'], time=kwargs['time']))
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -552,7 +554,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -624,12 +630,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/27/ubuntu-bu-shu-django2.0-uwsgi-nginx/">
+                <a href="/2019/11/27/django2.0-chong-xie-yong-hu-mo-xing/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="ubuntu 部署 django2.0 + uwsgi + nginx">
+                        <img src="http://img.ginta.top/lc3.jpg" class="responsive-img" alt="Django2.0 重写用户模型">
                         
-                        <span class="card-title">ubuntu 部署 django2.0 + uwsgi + nginx</span>
+                        <span class="card-title">Django2.0 重写用户模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -667,7 +673,7 @@
                 <a href="/2019/11/27/ubuntu-python3.7-an-zhuang-uwsgi-chang-jian-cuo-wu/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="ubuntu python3.7 安装uwsgi 常见错误">
+                        <img src="http://img.ginta.top/fantasy2.jpg" class="responsive-img" alt="ubuntu python3.7 安装uwsgi 常见错误">
                         
                         <span class="card-title">ubuntu python3.7 安装uwsgi 常见错误</span>
                     </div>
@@ -693,6 +699,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -788,7 +802,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

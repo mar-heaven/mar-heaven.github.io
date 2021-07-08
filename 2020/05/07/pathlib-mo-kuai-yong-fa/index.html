@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/chaoshou1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -400,19 +404,20 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><em>Python</em> 中对于路径处理有一个 <strong>os.path</strong> 模块，基本上所有常见的需求都可以满足，不过也有一些弊端</p>
-<pre class="line-numbers language-none"><code class="language-none">import os.path
+<pre><code>import os.path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+</code></pre>
 <p>以上用法在 <strong>Django</strong> 项目中应该是十分常见的，阅读起来非常不方便。</p>
 <h2 id="福利"><a href="#福利" class="headerlink" title="福利"></a>福利</h2><p>在 <strong>python3.5</strong> 之后引入了一个新的内置包 <strong>pathlib</strong>。有了它很多操作都会变得简单明了，直接上代码：<br>上述的例子如果用 <strong>pathlib</strong> 可以写成如下样子：</p>
-<pre class="line-numbers language-none"><code class="language-none">from pathlib import Path
+<pre><code>from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = BASE_DIR.joinpath('templates')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+TEMPLATES_DIR = BASE_DIR.joinpath('templates')
+</code></pre>
 <p>其他用法：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 路径拼接
+<pre><code># 路径拼接
 Path('D:/test','pb','123.txt')
 # WindowsPath('D:/test/pb/123.txt')
 
@@ -426,8 +431,8 @@ p.parts
 p = Path('.')
 list(p.glob('*.py'))
 # [WindowsPath('day_close_not_equal_min.py'), WindowsPath('day_h5.py'), WindowsPath('local_run.py'), WindowsPath('min_h5.py'), WindowsPath('min_h5_1.py'), WindowsPath('prev_iopv2tick.py'), # # # 
-# WindowsPath('read_h5.py'), WindowsPath('repair_close.py'), WindowsPath('rep_nan.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+# WindowsPath('read_h5.py'), WindowsPath('repair_close.py'), WindowsPath('rep_nan.py
+</code></pre>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>基本上 <strong>os.path</strong> 中常用的方法在 <strong>pathlib</strong> 都可以找到，而且面向对象的思想更容易被理解，代码也会相对清晰一些。</p>
 
                 
@@ -492,7 +497,11 @@ list(p.glob('*.py'))
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -567,7 +576,7 @@ list(p.glob('*.py'))
                 <a href="/2020/05/09/git-geng-xin-fork-dai-ma-de-nei-rong/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Git 更新fork代码的内容">
+                        <img src="http://img.ginta.top/dragin1.jpg" class="responsive-img" alt="Git 更新fork代码的内容">
                         
                         <span class="card-title">Git 更新fork代码的内容</span>
                     </div>
@@ -607,7 +616,7 @@ list(p.glob('*.py'))
                 <a href="/2020/05/05/windows-zhong-duan-ming-ling-xing-xia-shi-yong-wang-luo-dai-li/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="windows终端命令行下使用网络代理">
+                        <img src="http://img.ginta.top/huoying1.jpg" class="responsive-img" alt="windows终端命令行下使用网络代理">
                         
                         <span class="card-title">windows终端命令行下使用网络代理</span>
                     </div>
@@ -728,7 +737,7 @@ list(p.glob('*.py'))
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

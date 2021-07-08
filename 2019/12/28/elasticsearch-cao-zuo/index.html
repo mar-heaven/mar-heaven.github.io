@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/chaoshou2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -399,7 +399,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-none"><code class="language-none"># es的文档，索引的 CRUD 操作
+                <pre><code># es的文档，索引的 CRUD 操作
 # 索引初始化操作
 # 指定分片和副本的数量
 # shards一旦设置不能修改（副本数量）
@@ -534,22 +534,22 @@ GET lagou/job2/_mget
   "ids": [1,2]
 }
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <h3 id="bulk批量操作"><a href="#bulk批量操作" class="headerlink" title="bulk批量操作"></a>bulk批量操作</h3><p>bulk操作不能分行，json必需一行写完</p>
-<pre class="line-numbers language-none"><code class="language-none">{"index": {"_index": "zhilian", "_type": "job", "_id": "1"}}
+<pre><code>{"index": {"_index": "zhilian", "_type": "job", "_id": "1"}}
 {"title": "python分布式爬虫开发","salary_min": 15000,"city": "北京","company": {"name": "百度","company_addr": "北京市软件园"},"publish_data": "2019-5-30","comments": 23}
 {"index": {"_index": "zhilian", "_type": "job", "_id": "2"}}
-{"title": "爬虫开发","salary_min": 1500,"city": "太原","company": {"name": "阿里","company_addr": "太原市软件园"},"publish_data": "2019-5-30","comments": 23}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="bulk其他操作"><a href="#bulk其他操作" class="headerlink" title="bulk其他操作"></a>bulk其他操作</h3><pre class="line-numbers language-none"><code class="language-none">{"index": {"_index": "test", "_type": "type1", "_id": "1"}}
+{"title": "爬虫开发","salary_min": 1500,"city": "太原","company": {"name": "阿里","company_addr": "太原市软件园"},"publish_data": "2019-5-30","comments": 23}
+</code></pre>
+<h3 id="bulk其他操作"><a href="#bulk其他操作" class="headerlink" title="bulk其他操作"></a>bulk其他操作</h3><pre><code>{"index": {"_index": "test", "_type": "type1", "_id": "1"}}
 {"field1" : "value1"}
 {"delete": {"_index": "test", "_type": "type1", "_id": "2"}}
 {"create": {"_index": "test", "_type": "type1", "_id": "3"}}
 {"field1" : "value3"}
 {"update": {"_index": "index1", "_type": "type1", "_id": "1"}}
-{"doc":{"field2": "value2"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="elasticsearch映射"><a href="#elasticsearch映射" class="headerlink" title="elasticsearch映射"></a>elasticsearch映射</h3><pre class="line-numbers language-none"><code class="language-none"># 创建索引
+{"doc":{"field2": "value2"}
+</code></pre>
+<h3 id="elasticsearch映射"><a href="#elasticsearch映射" class="headerlink" title="elasticsearch映射"></a>elasticsearch映射</h3><pre><code># 创建索引
 PUT lagou
 {
   "mappings": {
@@ -605,7 +605,9 @@ PUT lagou/job/3
 }
 
 GET lagou/_mapping/job
-GET _all/_mapping/job<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+GET _all/_mapping/job
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -743,7 +745,7 @@ GET _all/_mapping/job<span aria-hidden="true" class="line-numbers-rows"><span></
                 <a href="/2019/12/28/elasticsearch-ji-ben-cha-xun/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Elasticsearch基本查询">
+                        <img src="http://img.ginta.top/qinshi2.jpg" class="responsive-img" alt="Elasticsearch基本查询">
                         
                         <span class="card-title">Elasticsearch基本查询</span>
                     </div>
@@ -783,7 +785,7 @@ GET _all/_mapping/job<span aria-hidden="true" class="line-numbers-rows"><span></
                 <a href="/2019/12/28/elasticsearch-pei-zhi/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Elasticsearch配置">
+                        <img src="http://img.ginta.top/fantasy2.jpg" class="responsive-img" alt="Elasticsearch配置">
                         
                         <span class="card-title">Elasticsearch配置</span>
                     </div>
@@ -904,7 +906,7 @@ GET _all/_mapping/job<span aria-hidden="true" class="line-numbers-rows"><span></
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/dragin1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -401,7 +401,7 @@
             <div id="articleContent">
                 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于没有多余的屏幕以及鼠标和键盘等外设（就是有也没空间放），所以树莓派只能通过 <strong>xshell</strong> 连接，先前我是可以连接上的，但是由于 <em>ip</em> 发生了变化所以又要重新连上屏幕查看 <em>ip</em>，但是以后难免还会发生这样的事情。一劳永逸的方法是设置一个固定 <em>ip</em> 这样下次登录就不会发生之前的问题了。</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>操作也很简单<br>树莓派中有个文件可以实现固定 <em>ip</em> 的设置，执行  <code>vim /etc/dhcpcd.conf</code>，修改配置文件</p>
-<pre class="line-numbers language-none"><code class="language-none"># 在最后加入下面几行
+<pre><code># 在最后加入下面几行
 # 指定接口 wlan0
 interface wlan0
 # 指定静态IP，/24表示子网掩码为 255.255.255.0
@@ -409,7 +409,8 @@ static ip_address=192.168.124.18/24
 # 路由器/网关IP地址
 static routers=192.168.124.1
 # 手动自定义DNS服务器
-static domain_name_servers=114.114.114.114<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+static domain_name_servers=114.114.114.114
+</code></pre>
 <p>然后执行 <code>sudo reboot</code> 即可，之后便可以通过 <em>xshell</em> 等工具进行连接<br>这里有两点需要注意</p>
 <ol>
 <li>我的路由器 <em>ip</em> 是 <em>192.168.124.1</em> ，但是常见的一般是 <em>192.168.1.1</em> 和 <em>192.168.0.1</em></li>
@@ -554,7 +555,7 @@ static domain_name_servers=114.114.114.114<span aria-hidden="true" class="line-n
                 <a href="/2020/05/31/shu-mei-pai-frp-nei-wang-chuan-tou/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="树莓派frp内网穿透">
+                        <img src="http://img.ginta.top/huoying1.jpg" class="responsive-img" alt="树莓派frp内网穿透">
                         
                         <span class="card-title">树莓派frp内网穿透</span>
                     </div>
@@ -594,7 +595,7 @@ static domain_name_servers=114.114.114.114<span aria-hidden="true" class="line-n
                 <a href="/2020/05/09/git-geng-xin-fork-dai-ma-de-nei-rong/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Git 更新fork代码的内容">
+                        <img src="http://img.ginta.top/dragin1.jpg" class="responsive-img" alt="Git 更新fork代码的内容">
                         
                         <span class="card-title">Git 更新fork代码的内容</span>
                     </div>
@@ -715,7 +716,7 @@ static domain_name_servers=114.114.114.114<span aria-hidden="true" class="line-n
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

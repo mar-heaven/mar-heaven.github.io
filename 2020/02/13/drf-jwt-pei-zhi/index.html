@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/lc2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -337,9 +337,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Django/">
+                                <span class="chip bg-color">Django</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -401,20 +405,20 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原本 <em>github</em> 上有一个和 <em>drf</em> 版本对应的开源项目，最近在做项目的时候由于用的是新版本 <em>drf</em> ，特地到网上仓库看了一下之前使用的 <a target="_blank" rel="noopener" href="https://github.com/jpadilla/django-rest-framework-jwt">django-rest-framework-jwt</a> 已经停止维护了，幸运的是在该仓库的 <em>issues</em> 里发现了另一个持续维护的项目，<a target="_blank" rel="noopener" href="https://github.com/davesque/django-rest-framework-simplejwt">django-rest-framework-simplejwt</a>，目前已经支持 <em>django3.0</em>了。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>首先使用pip进行安装:</p>
-<pre class="line-numbers language-none"><code class="language-none">pip install djangorestframework-simplejwt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<pre><code>pip install djangorestframework-simplejwt
+</code></pre>
 <p>然后在 DRF 配置加入以下内容</p>
-<pre class="line-numbers language-none"><code class="language-none">REST_FRAMEWORK = {
+<pre><code>REST_FRAMEWORK = {
     ...
     'DEFAULT_AUTHENTICATION_CLASSES': (
         ...
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
     ...
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+}
+</code></pre>
 <p>那么我们如何获取 <em>token</em> 呢？这时候需要配置一个路由来获取 <em>token</em>，直接配置到项目根目录下的 <em>urls.py</em> 里就好</p>
-<pre class="line-numbers language-none"><code class="language-none"># urls.py
+<pre><code># urls.py
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -425,14 +429,14 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     ...
-]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+]
+</code></pre>
 <p>然后就可以使用 <em>postman</em> 来测试获取token了</p>
 <p><img src="http://img.ginta.top/markdownx/2019/12/02/dc885b29-d663-49cb-9d68-3b9906e3e319.png"></p>
 <p>之后发送请求的时候使用上面的 <strong>access</strong>就好，不用每次请求都输入用户名密码</p>
 <p><img src="http://img.ginta.top/markdownx/2019/12/02/0a7bb631-0a12-4cbb-8bbc-2e58c06b4251.png"></p>
 <p>请求的方式没有太多变化，就是在请求头中多了一个 <em>Authorization</em> ，对应的值格式是 Bearer+一个空格+access。<br><strong>Bearer</strong> 也可以改为其他的名字，这个是官方配置的值，比如我习惯用 <strong>jwt</strong> 开头，在项目的 <em>settings.py</em> 文件中加入如下配置</p>
-<pre class="line-numbers language-none"><code class="language-none"># settings.py
+<pre><code># settings.py
 # simple_jwt config
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
@@ -458,18 +462,20 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+</code></pre>
 <p>其他的参数看官方文档，这里举一个例子 <em>AUTH_HEADER_TYPES</em> 这里值为 <em>Bearer</em> 就是刚才提到 <em>Authorization</em> 开头要加的字符串，可以根据自己喜好设置。</p>
 <h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>如果想让所有的路由都需要 jwt 认证，那么可以在 <em>drf</em> 配置中增加全局配置：</p>
-<pre class="line-numbers language-none"><code class="language-none"># DRF config
+<pre><code># DRF config
 REST_FRAMEWORK = {
-    # 其他内容			
+    # 其他内容            
     "DEFAULT_PERMISSION_CLASSES":[
         'rest_framework.permissions.IsAuthenticated'
     ]
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}
+</code></pre>
 <p>如果有的路由，比如用户注册的时候并没有办法获取 <em>token</em> ，那么该函数就跳过登陆验证，就是说该请求并不需要在 <em>header</em> 中添加 <em>Authorization</em>，那么我们可以这样：</p>
-<pre class="line-numbers language-none"><code class="language-none">from rest_framework import mixins
+<pre><code>from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 from django.contrib.auth import get_user_model
 from .serializers import UserSerializer
@@ -483,7 +489,7 @@ class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
     permission_classes = []
     queryset = User.objects.all()
     serializer_class = UserSerializer
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p>把 <em>permission_classes</em> 赋值为空列表即可。</p>
 
                 
@@ -548,7 +554,11 @@ class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Django/">
+                                    <span class="chip bg-color">Django</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -623,7 +633,7 @@ class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
                 <a href="/2020/02/18/linux-wen-jian-shu-xing/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="Linux文件属性">
+                        <img src="http://img.ginta.top/dm3.jpg" class="responsive-img" alt="Linux文件属性">
                         
                         <span class="card-title">Linux文件属性</span>
                     </div>
@@ -663,7 +673,7 @@ class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
                 <a href="/2020/02/12/drf-yi-ci-cuo-wu-pai-cha/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="drf 一次错误排查">
+                        <img src="http://img.ginta.top/chaoshou2.jpg" class="responsive-img" alt="drf 一次错误排查">
                         
                         <span class="card-title">drf 一次错误排查</span>
                     </div>
@@ -784,7 +794,7 @@ class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             

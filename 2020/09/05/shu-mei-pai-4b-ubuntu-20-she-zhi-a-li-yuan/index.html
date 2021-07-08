@@ -312,7 +312,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/images/mingfei.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://img.ginta.top/chaoshou2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -400,14 +400,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>设置国内源其实很简单，但是由于我是下载的 64位 操作系统，并且树莓派是arm架构，所以有一点不同<br>执行 <code>lsb_release -a</code> 查看发行版本</p>
-<pre class="line-numbers language-none"><code class="language-none">ubuntu@ubuntu:/etc/netplan$ lsb_release -a
+<pre><code>ubuntu@ubuntu:/etc/netplan$ lsb_release -a
 No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 20.04.1 LTS
-Release:	20.04
-Codename:	focal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Distributor ID:    Ubuntu
+Description:    Ubuntu 20.04.1 LTS
+Release:    20.04
+Codename:    focal
+</code></pre>
 <p>所以修改配置文件 <code>sudo vim /etc/apt/sources.list</code>:</p>
-<pre class="line-numbers language-none"><code class="language-none">## Note, this file is written by cloud-init on first boot of an instance
+<pre><code>## Note, this file is written by cloud-init on first boot of an instance
 ## modifications made here will not survive a re-bundle.
 ## if you wish to make changes you can:
 ## a.) add 'apt_preserve_sources_list: true' to /etc/cloud/cloud.cfg
@@ -463,8 +464,8 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security main restricted
 deb http://mirrors.aliyun.com/ubuntu-ports focal-security universe
 # deb-src http://mirrors.aliyun.com/ubuntu-ports focal-security universe
 deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
-# deb-src http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+# deb-src http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
+</code></pre>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>由于是 <strong>arm架构，一定要改成  <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu-ports">http://mirrors.aliyun.com/ubuntu-ports</a> 而不是  <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu%EF%BC%8C%E5%90%A6%E5%88%99%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%9B%B4%E6%96%B0%E4%B8%8B%E8%BD%BD%EF%BC%81%EF%BC%81%EF%BC%81">http://mirrors.aliyun.com/ubuntu，否则无法正常更新下载！！！</a></strong>。</p>
 
                 
@@ -601,30 +602,30 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/07/07/first/">
+                <a href="/2020/09/26/borg-zhuang-tai-gong-xiang/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="路明非">
+                        <img src="http://img.ginta.top/qinshi2.jpg" class="responsive-img" alt="Borg状态共享">
                         
-                        <span class="card-title">路明非</span>
+                        <span class="card-title">Borg状态共享</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一个衰小孩
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -634,12 +635,8 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -656,7 +653,7 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
                 <a href="/2020/09/05/shu-mei-pai-ubuntu-20-wang-luo-she-zhi/">
                     <div class="card-image">
                         
-                        <img src="/medias/images/mingfei.jpg" class="responsive-img" alt="树莓派ubuntu 20 网络设置">
+                        <img src="http://img.ginta.top/dm2.jpg" class="responsive-img" alt="树莓派ubuntu 20 网络设置">
                         
                         <span class="card-title">树莓派ubuntu 20 网络设置</span>
                     </div>
@@ -682,6 +679,14 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">
+                        <span class="chip bg-color">树莓派</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -777,7 +782,7 @@ deb http://mirrors.aliyun.com/ubuntu-ports focal-security multiverse
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">20k</span>
             
             
             
