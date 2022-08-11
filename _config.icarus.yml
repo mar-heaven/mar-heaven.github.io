@@ -110,7 +110,7 @@ navbar:
         分类: /categories
         标签: /tags
         关于: /about
-        游戏: /game
+        周报: /weekly
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:
