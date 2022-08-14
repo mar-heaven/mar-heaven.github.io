@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Ginta&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Ginta&#039;s blog"><meta name="msapplication-TileImage" content="/img/avatar.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ginta&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Ginta&#039;s blog"><meta property="og:url" content="https://ginta.top/"><meta property="og:site_name" content="Ginta&#039;s blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://ginta.top/img/og_image.png"><meta property="article:author" content="Ginta"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://ginta.top/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ginta.top"},"headline":"Ginta's blog","image":["https://ginta.top/img/og_image.png"],"author":{"@type":"Person","name":"Ginta"},"publisher":{"@type":"Organization","name":"Ginta's blog","logo":{"@type":"ImageObject","url":"https://ginta.top/img/avatar.jpg"}},"description":""}</script><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Ginta's blog" type="application/atom+xml">
+</head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.jpg" alt="Ginta&#039;s blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a><a class="navbar-item" href="/weekly">周报</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/mar-heaven"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-02-13T03:14:48.000Z" title="2/13/2020, 11:14:48 AM">2020-02-13</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.124Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/Django/">Django</a></span><span class="level-item">5 分钟读完 (大约704个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/02/13/DRF%20JWT%20%E9%85%8D%E7%BD%AE/">DRF JWT 配置</a></h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原本 <em>github</em> 上有一个和 <em>drf</em> 版本对应的开源项目，最近在做项目的时候由于用的是新版本 <em>drf</em> ，特地到网上仓库看了一下之前使用的 <a target="_blank" rel="noopener" href="https://github.com/jpadilla/django-rest-framework-jwt">django-rest-framework-jwt</a> 已经停止维护了，幸运的是在该仓库的 <em>issues</em> 里发现了另一个持续维护的项目，<a target="_blank" rel="noopener" href="https://github.com/davesque/django-rest-framework-simplejwt">django-rest-framework-simplejwt</a>，目前已经支持 <em>django3.0</em>了。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>首先使用pip进行安装:</p>
+<pre><code>pip install djangorestframework-simplejwt
+</code></pre>
+<p>然后在 DRF 配置加入以下内容</p>
+<pre><code>REST_FRAMEWORK = &#123;
+    ...
+    &#39;DEFAULT_AUTHENTICATION_CLASSES&#39;: (
+        ...
+        &#39;rest_framework_simplejwt.authentication.JWTAuthentication&#39;,
+    )
+    ...
+&#125;
+</code></pre>
+<p>那么我们如何获取 <em>token</em> 呢？这时候需要配置一个路由来获取 <em>token</em>，直接配置到项目根目录下的 <em>urls.py</em> 里就好</p>
+<pre><code># urls.py
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+urlpatterns = [
+    ...
+    path(&#39;api/token/&#39;, TokenObtainPairView.as_view(), name=&#39;token_obtain_pair&#39;),
+    path(&#39;api/token/refresh/&#39;, TokenRefreshView.as_view(), name=&#39;token_refresh&#39;),
+    ...
+]
+</code></pre>
+<p>然后就可以使用 <em>postman</em> 来测试获取token了</p>
+<p><img src="http://img.ginta.top/markdownx/2019/12/02/dc885b29-d663-49cb-9d68-3b9906e3e319.png"></p>
+<p>之后发送请求的时候使用上面的 <strong>access</strong>就好，不用每次请求都输入用户名密码</p>
+<p><img src="http://img.ginta.top/markdownx/2019/12/02/0a7bb631-0a12-4cbb-8bbc-2e58c06b4251.png"></p>
+<p>请求的方式没有太多变化，就是在请求头中多了一个 <em>Authorization</em> ，对应的值格式是 Bearer+一个空格+access。<br><strong>Bearer</strong> 也可以改为其他的名字，这个是官方配置的值，比如我习惯用 <strong>jwt</strong> 开头，在项目的 <em>settings.py</em> 文件中加入如下配置</p>
+<pre><code># settings.py
+# simple_jwt config
+SIMPLE_JWT = &#123;
+    &#39;ACCESS_TOKEN_LIFETIME&#39;: timedelta(minutes=5),
+    &#39;REFRESH_TOKEN_LIFETIME&#39;: timedelta(days=1),
+    &#39;ROTATE_REFRESH_TOKENS&#39;: False,
+    &#39;BLACKLIST_AFTER_ROTATION&#39;: True,
+
+    &#39;ALGORITHM&#39;: &#39;HS256&#39;,
+    &#39;SIGNING_KEY&#39;: SECRET_KEY,
+    &#39;VERIFYING_KEY&#39;: None,
+    &#39;AUDIENCE&#39;: None,
+    &#39;ISSUER&#39;: None,
+
+    &#39;AUTH_HEADER_TYPES&#39;: (&#39;Bearer&#39;,),
+    &#39;USER_ID_FIELD&#39;: &#39;id&#39;,
+    &#39;USER_ID_CLAIM&#39;: &#39;user_id&#39;,
+
+    &#39;AUTH_TOKEN_CLASSES&#39;: (&#39;rest_framework_simplejwt.tokens.AccessToken&#39;,),
+    &#39;TOKEN_TYPE_CLAIM&#39;: &#39;token_type&#39;,
+
+    &#39;JTI_CLAIM&#39;: &#39;jti&#39;,
+
+    &#39;SLIDING_TOKEN_REFRESH_EXP_CLAIM&#39;: &#39;refresh_exp&#39;,
+    &#39;SLIDING_TOKEN_LIFETIME&#39;: timedelta(minutes=5),
+    &#39;SLIDING_TOKEN_REFRESH_LIFETIME&#39;: timedelta(days=1),
+&#125;
+</code></pre>
+<p>其他的参数看官方文档，这里举一个例子 <em>AUTH_HEADER_TYPES</em> 这里值为 <em>Bearer</em> 就是刚才提到 <em>Authorization</em> 开头要加的字符串，可以根据自己喜好设置。</p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>如果想让所有的路由都需要 jwt 认证，那么可以在 <em>drf</em> 配置中增加全局配置：</p>
+<pre><code># DRF config
+REST_FRAMEWORK = &#123;
+    # 其他内容			
+    &quot;DEFAULT_PERMISSION_CLASSES&quot;:[
+        &#39;rest_framework.permissions.IsAuthenticated&#39;
+    ]
+&#125;
+</code></pre>
+<p>如果有的路由，比如用户注册的时候并没有办法获取 <em>token</em> ，那么该函数就跳过登陆验证，就是说该请求并不需要在 <em>header</em> 中添加 <em>Authorization</em>，那么我们可以这样：</p>
+<pre><code>from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
+from django.contrib.auth import get_user_model
+from .serializers import UserSerializer
+
+User = get_user_model()
+
+class CreateUserView(GenericViewSet, mixins.CreateModelMixin):
+    &quot;&quot;&quot;
+    用户注册
+    &quot;&quot;&quot;
+    permission_classes = []
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+</code></pre>
+<p>把 <em>permission_classes</em> 赋值为空列表即可。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-02-12T08:53:52.000Z" title="2/12/2020, 4:53:52 PM">2020-02-12</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.132Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/Django/">Django</a></span><span class="level-item">2 分钟读完 (大约238个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/02/12/drf%20%E4%B8%80%E6%AC%A1%E9%94%99%E8%AF%AF%E6%8E%92%E6%9F%A5/">drf 一次错误排查</a></h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用最新版本的 <em>DRF</em> 框架时，注册路由阶段报了一个错</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>“django.core.exceptions.ImproperlyConfigured: The included URLconf ‘bingo.urls’ does not appear to have any patterns in it. If you see valid patterns in the file then the issue is probably caused by a circular import.” </p>
+</blockquote>
+</blockquote>
+<p>找了半天错误，期间反复查看官方文档都没有什么问题，最后使用删减排除了错误,原本用户的路由是这个</p>
+<pre><code>user_router.register(&quot;user&quot;, UserViewSet, base_name=&quot;user&quot;)
+</code></pre>
+<p>结果报错了，我改成以下代码：</p>
+<pre><code>user_router.register(&quot;user&quot;, UserViewSet)
+</code></pre>
+<p>问题得到了解决，然而还是睡不着，这个参数在使用中还是很方便的，就这么删掉了肯定不好，于是上 <em>github</em> 查看了该项目的 <em>issues</em>，最后发现新版本的 <em>base_name</em> 已经被替换了：</p>
+<p><img src="http://img.ginta.top/markdownx/2019/12/02/05741e40-c072-41e6-8d32-802e5e201f9b.png"><br>于是把 <em>base_name</em> 改成了 <em>basename</em>，问题解决！</p>
+</div></article></div><div class="card"><div class="card-image"><a class="image is-7by3" href="/2019/12/28/2019%E5%92%8C2020/"><img class="fill" src="http://img.ginta.top/dragin1.jpg" alt="2019和2020"></a></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-28T07:10:47.000Z" title="12/28/2019, 3:10:47 PM">2019-12-28</time>发表</span><span class="level-item"><time dateTime="2022-08-11T16:25:09.822Z" title="8/12/2022, 12:25:09 AM">2022-08-12</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></span><span class="level-item">5 分钟读完 (大约786个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/28/2019%E5%92%8C2020/">2019和2020</a></h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2019年总体来说还是有所收获的，除了技术上成长了许多，还开发了自己的博客；另外还参与了 <em>Pycon China2019 成都</em> 的志愿者活动，有机会和各位大佬近距离接触</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8491383-c1bf578e98d8d121.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="志愿者和讲师合影">，阿里老哥、日本小姐姐以及 <em>Flask</em> 项目大神维护者的讲解让小生受益匪浅。</p>
+<ul>
+<li><p>读书的话貌似杂志更多吧，受老爸影响没事的时候就会看看《特别关注》、还有初中以来一直看的《读者》、《意林》。小说的话也看了《嫌疑人x的献身》（开始以为是推理小说，最后还是爱情结尾……以前看《白夜行》感觉亮司也是个“好人”）、《巨人的陨落1》、《巨人的陨落2》目前看了一半吧。</p>
+</li>
+<li><p>工作方面之前一直在成都工作，最终也是内心斗争了好久还是决定来深圳了，2年前就一直想来了，毕业后又工作了几个月（从成都到北上广深的也许可以体会这需要多大的勇气~），来到深圳开始找新的工作吧，目前有一个offer不过岗位路线和自己的计划略微偏移，最终决定放弃这个offer。</p>
+</li>
+<li><p>旅行，去年把《港澳通行证》办了，打算的是今年来一趟香港之旅，不过成都距离还是太远了，现在来深圳方便多了，明年的话这个计划基本没问题。</p>
+</li>
+</ul>
+<h2 id="对于2020年"><a href="#对于2020年" class="headerlink" title="对于2020年"></a>对于2020年</h2><ul>
+<li><p>学习，微服务无论是前景还是技术角度个人还是很看好的，然后之前抽空也大概看了看 <strong>docker</strong>，不过还没有项目部署经验，年前这段时间再巩固一下，年后打算把博客改成 <strong>docker</strong> 部署。由于用到了 <strong>elasticsearch</strong> 进行全文检索 和  <strong>supervisor</strong> 来进程管理，免不了再来一大波操作了~。</p>
+</li>
+<li><p>社交，感觉自己的运气还是蛮好的，来深圳之前帮助一个老哥解决了一些技术问题，来深圳以后老哥也帮了我不少。未来希望结交一些新朋友吧，不过这个随缘就好。</p>
+</li>
+<li><p>兴趣，周日的话想培养个兴趣，目前是想弹弹吉他，工作稳定后换个房子，养条狗，还是要有些仪式感的。</p>
+</li>
+<li><p>读书，《巨人的陨落》还有一本半没读完，《平凡的世界》，《基督山伯爵》（英文版）。</p>
+</li>
+<li><p>待补充……</p>
+</li>
+</ul>
+<p>最后想给自己来一句</p>
+<blockquote>
+<p>愿你在被打击时，记起你的珍贵，抵抗恶意；愿你在迷茫时，坚信你的珍贵。爱你所爱，行你所行，听从你心，无问西东。</p>
+</blockquote>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-28T06:26:45.000Z" title="12/28/2019, 2:26:45 PM">2019-12-28</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.129Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span><span class="level-item">2 分钟读完 (大约360个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/28/Elasticsearch%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/">Elasticsearch组合查询</a></h1><div class="content"><h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre><code>POST lagou/testjob/_bulk
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:1&#125;&#125;
+&#123;&quot;salary&quot;:10, &quot;title&quot;: &quot;Python&quot;&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:2&#125;&#125;
+&#123;&quot;salary&quot;:20, &quot;title&quot;: &quot;Scrapy&quot;&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:3&#125;&#125;
+&#123;&quot;salary&quot;:30, &quot;title&quot;: &quot;Django&quot;&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:4&#125;&#125;
+&#123;&quot;salary&quot;:40, &quot;title&quot;: &quot;Elasticsearch&quot;&#125;
+</code></pre>
+<h2 id="组合查询"><a href="#组合查询" class="headerlink" title="组合查询"></a>组合查询</h2><h3 id="bool查询"><a href="#bool查询" class="headerlink" title="bool查询"></a>bool查询</h3><blockquote>
+<p>用 bool 包括 must should must_not filter 来完成，<br>格式如下</p>
+</blockquote>
+<ul>
+<li>filter 过渡字段</li>
+<li>must 所有都要有</li>
+<li>should 满足一个或多个</li>
+<li>must_not 一个都不能满足</li>
+</ul>
+<pre><code>bool: &#123;
+    &quot;filter&quot;: [],
+    &quot;must&quot;: [],
+    &quot;should&quot;: [],
+    &quot;must_not&quot;
+&#125;
+</code></pre>
+<ol>
+<li>filter查询</li>
+</ol>
+<pre><code>
+select * from testjob where salary=20
+薪资为20k的工作
+GET lagou/testjob/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;must&quot;: &#123;
+        &quot;match_all&quot;:&#123;&#125;
+      &#125;,
+      &quot;filter&quot;: &#123;
+        &quot;term&quot;: &#123;
+          &quot;salary&quot;: &quot;20&quot;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+# 多个
+GET lagou/testjob/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;filter&quot;: &#123;
+        &quot;terms&quot;: &#123;
+          &quot;salary&quot;: [&quot;10&quot;, &quot;20&quot;]
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+
+# select * from testjob where title=&quot;Python&quot;
+# text字段会先分词，再全部转为小写入库
+# term不会预处理，直接大写查询，但是倒排索引已经全部小写了
+# 所以查不到，要不就用小写，要不就用match
+GET lagou/testjob/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;filter&quot;: &#123;
+        &quot;term&quot;: &#123;
+          &quot;title&quot;:&quot;Python&quot;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h3 id="bool组合过滤查询"><a href="#bool组合过滤查询" class="headerlink" title="bool组合过滤查询"></a>bool组合过滤查询</h3><pre><code># 查询薪资等于20k或者工作为Python的工作，排除价格为30k的
+# select * from testjob where (salary=20 OR title=&quot;Python&quot;) AND (salary !=30)
+GET lagou/testjob/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;should&quot;:[ 
+        &#123;&quot;term&quot;: &#123;&quot;salary&quot;:20&#125;&#125;,
+        &#123;&quot;term&quot;:&#123;&quot;title&quot;:&quot;python&quot;&#125;&#125;
+      ],
+      &quot;must_not&quot;: [
+        &#123;&quot;term&quot;:&#123;&quot;salary&quot;:30&#125;&#125;,
+        &#123;&quot;term&quot;:&#123;&quot;salary&quot;:10&#125;&#125;
+      ]
+    &#125;
+  &#125;
+&#125;
+
+# 嵌套查询
+# select * from testjob where title=&quot;python&quot; or (title=&quot;django&quot; AND salary=40)
+GET lagou/testjob/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;should&quot;:[ 
+        &#123;&quot;term&quot;: &#123;&quot;title&quot;:&quot;python&quot;&#125;&#125;,
+        &#123;&quot;bool&quot;:&#123;
+          &quot;must&quot;: [
+            &#123;&quot;term&quot;: &#123;&quot;title&quot;:&quot;elasticsearch&quot;&#125;&#125;,
+            &#123;&quot;term&quot;: &#123;&quot;salary&quot;: 40&#125;&#125;
+          ]&#125;
+        &#125;
+      ]
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<h3 id="过滤空和非空"><a href="#过滤空和非空" class="headerlink" title="过滤空和非空"></a>过滤空和非空</h3><pre><code>
+# 建立测试数据
+POST lagou/testjob2/_bulk
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;
+&#123;&quot;tags&quot;:[&quot;search&quot;]&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;
+&#123;&quot;tags&quot;:[&quot;search&quot;, &quot;python&quot;]&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;3&quot;&#125;&#125;
+&#123;&quot;orther_field&quot;:[&quot;some data&quot;]&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;4&quot;&#125;&#125;
+&#123;&quot;tags&quot;:null&#125;
+&#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;5&quot;&#125;&#125;
+&#123;&quot;tags&quot;:[&quot;search&quot;, null]&#125;
+</code></pre>
+<pre><code># 处理非空值的方法
+# select tags from testjob2 where tags is not NULL
+GET lagou/testjob2/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;bool&quot;: &#123;
+      &quot;filter&quot;: &#123;
+        &quot;exists&quot;: &#123;
+          &quot;field&quot;: &quot;tags&quot;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-28T06:26:20.000Z" title="12/28/2019, 2:26:20 PM">2019-12-28</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.141Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span><span class="level-item">3 分钟读完 (大约474个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/28/Elasticsearch%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2/">Elasticsearch基本查询</a></h1><div class="content"><h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre><code># 添加映射  
+PUT lagou
+&#123;
+  &quot;mappings&quot;: &#123;
+    &quot;job&quot;:&#123;
+      &quot;properties&quot;: &#123;
+        &quot;title&quot;:&#123;
+          &quot;store&quot;: true,
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;analyzer&quot;: &quot;ik_max_word&quot;
+        &#125;,
+        &quot;company_name&quot;:&#123;
+          &quot;store&quot;: true,
+          &quot;type&quot;: &quot;keyword&quot;
+        &#125;,
+        &quot;desc&quot;:&#123;
+          &quot;type&quot;: &quot;text&quot;
+        &#125;,
+        &quot;comments&quot;:&#123;
+          &quot;type&quot;: &quot;integer&quot;
+        &#125;,
+        &quot;add_time&quot;:&#123;
+          &quot;type&quot;: &quot;date&quot;,
+          &quot;format&quot;: &quot;yyyy-MM-dd&quot;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+POST lagou/job/
+&#123;
+    &quot;title&quot;:&quot;python django 开发工程师&quot;,
+    &quot;company_name&quot;:&quot;美团科技有限公司&quot;,
+    &quot;desc&quot;:&quot;对django的概念熟悉，熟悉python基础知识&quot;,
+    &quot;comments&quot;:20,
+    &quot;add_time&quot;:&quot;2019-5-30&quot;
+&#125;
+
+POST lagou/job/
+&#123;
+    &quot;title&quot;:&quot;python scrapy redis分布式爬虫基本&quot;,
+    &quot;company_name&quot;:&quot;百度科技有限公司&quot;,
+    &quot;desc&quot;:&quot;scrapy的概念熟悉，熟悉redis基础知识&quot;,
+    &quot;comments&quot;:5,
+    &quot;add_time&quot;:&quot;2019-5-1&quot;
+&#125;
+
+POST lagou/job/
+&#123;
+    &quot;title&quot;:&quot;elasticsearch打造搜索引擎&quot;,
+    &quot;company_name&quot;:&quot;阿里巴巴科技有限公司&quot;,
+    &quot;desc&quot;:&quot;熟悉数据结构算法，熟悉python基础开发&quot;,
+    &quot;comments&quot;:60,
+    &quot;add_time&quot;:&quot;2019-4-15&quot;
+&#125;
+
+POST lagou/job/
+&#123;
+    &quot;title&quot;:&quot;python打造推荐引擎系统&quot;,
+    &quot;company_name&quot;:&quot;阿里巴巴科技有限公司&quot;,
+    &quot;desc&quot;:&quot;熟悉推荐引擎的原理以及算法，掌握C语言&quot;,
+    &quot;comments&quot;:60,
+    &quot;add_time&quot;:&quot;2019-1-22&quot;
+&#125;
+</code></pre>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="基本查询"><a href="#基本查询" class="headerlink" title="基本查询"></a>基本查询</h3><ol>
+<li>match(会对输入进行分词)</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;title&quot;: &quot;爬取&quot;
+    &#125;
+  &#125;
+&#125;
+
+GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;title&quot;: &quot;爬取&quot;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="2">
+<li>term(不会分词)</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;term&quot;: &#123;
+      &quot;title&quot;: &quot;python爬虫&quot;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="3">
+<li>terms(满足任何一个)</li>
+</ol>
+<pre><code># terms查询
+GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;terms&quot;: &#123;
+      &quot;title&quot;: [&quot;工程师&quot;, &quot;django&quot;, &quot;系统&quot;]
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="4">
+<li>query查询(控制查询的返回数量)</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;title&quot;: &quot;python&quot;
+    &#125;
+  &#125;,
+  &quot;from&quot;:1,
+  &quot;size&quot;:2
+&#125;
+</code></pre>
+<ol start="5">
+<li>match_all查询</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match_all&quot;: &#123;&#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="6">
+<li>multi_match查询</li>
+</ol>
+<pre><code># 比如可以指定多个字段
+# 比如查询title和desc这两个字段里面包含python的关键词文档
+# 可以设置权重
+GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;multi_match&quot;: &#123;
+      &quot;query&quot;: &quot;python&quot;,
+      &quot;fields&quot;: [&quot;title^3&quot;, &quot;desc&quot;]
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="7">
+<li>stored_fields指定返回的字段(mappings设置了store的)</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;stored_fields&quot;: [&quot;title&quot;],
+  &quot;query&quot;: &#123;
+    &quot;match&quot;: &#123;
+      &quot;title&quot;: &quot;python&quot;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="8">
+<li>sort(排序返回 asc,desc)</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match_all&quot;: &#123;&#125;
+  &#125;,
+  &quot;sort&quot;: [
+    &#123;
+      &quot;comments&quot;: &#123;
+        &quot;order&quot;: &quot;desc&quot;
+      &#125;
+    &#125;
+  ]
+&#125;
+</code></pre>
+<ol start="9">
+<li>range(范围查询)<br>boost: 权重</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;range&quot;: &#123;
+      &quot;comments&quot;: &#123;
+        &quot;gte&quot;: 10,
+        &quot;lte&quot;: 20,
+        &quot;boost&quot;: 2.0
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;range&quot;: &#123;
+      &quot;add_time&quot;: &#123;
+        &quot;gt&quot;: &quot;2019-4-1&quot;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<ol start="10">
+<li>match_phrase(短语查询，自动分词，满足所有则返回)<br>slop: 两个词之前的距离</li>
+</ol>
+<pre><code>GET lagou/_search
+&#123;
+  &quot;query&quot;: &#123;
+    &quot;match_phrase&quot;: &#123;
+      &quot;title&quot;: &#123;
+        &quot;query&quot;: &quot;python系统&quot;,
+        &quot;slop&quot;: 6
+      &#125;
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-28T06:25:47.000Z" title="12/28/2019, 2:25:47 PM">2019-12-28</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.128Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span><span class="level-item">3 分钟读完 (大约466个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/28/Elasticsearch%E6%93%8D%E4%BD%9C/">Elasticsearch操作</a></h1><div class="content"><pre><code># es的文档，索引的 CRUD 操作
+# 索引初始化操作
+# 指定分片和副本的数量
+# shards一旦设置不能修改（副本数量）
+
+# 设置索引  
+PUT lagou
+&#123;
+  &quot;settings&quot;: &#123;
+    &quot;index&quot;:&#123;
+      &quot;number_of_shards&quot;: 5,
+      &quot;number_of_replicas&quot;: 2
+    &#125;
+  &#125;  
+&#125;
+
+GET lagou/_settings
+GET _all/_settings
+GET .kibana,lagou/_settings
+GET lagou/job/1/_source
+
+# 修改settings
+PUT lagou/_settings
+&#123;
+  &quot;number_of_shards&quot;: 2
+&#125;
+
+# 保存文档  
+PUT lagou/job/2
+&#123;
+    &quot;title&quot;: &quot;python分布式爬虫开发&quot;,
+    &quot;salary_min&quot;: 15000,
+    &quot;city&quot;: &quot;北京&quot;,
+    &quot;company&quot;: &#123;
+        &quot;name&quot;: &quot;百度&quot;,
+        &quot;company_addr&quot;: &quot;北京市软件园&quot;
+    &#125;,
+    &quot;publish_data&quot;: &quot;2019-5-30&quot;,
+    &quot;comments&quot;: 15
+&#125;
+
+POST lagou/job/1
+&#123;
+    &quot;title&quot;: &quot;python django 开发工程师&quot;,
+    &quot;salary_min&quot;: 3000,
+    &quot;city&quot;: &quot;天猫&quot;,
+    &quot;company&quot;: &#123;
+        &quot;name&quot;: &quot;美团科技&quot;,
+        &quot;company_addr&quot;: &quot;北京市软件园A区&quot;
+    &#125;,
+    &quot;publish_data&quot;: &quot;2019-5-30&quot;,
+    &quot;comments&quot;: 2
+&#125;
+
+
+GET lagou/job/2?_source=city,company.name
+
+# 修改文章
+PUT lagou/job/2
+&#123;
+    &quot;title&quot;: &quot;python分布式爬虫开发&quot;,
+    &quot;salary_min&quot;: 15000,
+    &quot;city&quot;: &quot;北京&quot;,
+    &quot;company&quot;: &#123;
+        &quot;name&quot;: &quot;百度&quot;,
+        &quot;company_addr&quot;: &quot;北京市软件园&quot;
+    &#125;,
+    &quot;publish_data&quot;: &quot;2019-5-30&quot;,
+    &quot;comments&quot;: 23
+&#125;
+
+# 修改文章2
+POST lagou/job/2/_update
+&#123;
+  &quot;doc&quot;:&#123;
+    &quot;comments&quot;: 21
+  &#125;
+&#125;
+
+
+DELETE lagou/job/1
+DELETE lagou
+
+# 批量获取
+GET _mget
+&#123;
+  &quot;docs&quot;:[
+    &#123; 
+      &quot;_index&quot;:&quot;lagou&quot;,
+      &quot;_type&quot;: &quot;job2&quot;,
+      &quot;_id&quot;: 2
+    &#125;,
+    &#123; 
+      &quot;_index&quot;:&quot;lagou&quot;,
+      &quot;_type&quot;: &quot;job&quot;,
+      &quot;_id&quot;: 1
+    &#125;
+  ]
+&#125;
+
+# index一样
+GET lagou/_mget
+&#123;
+  &quot;docs&quot;:[
+    &#123; 
+      &quot;_type&quot;: &quot;job2&quot;,
+      &quot;_id&quot;: 2
+    &#125;,
+    &#123; 
+      &quot;_type&quot;: &quot;job&quot;,
+      &quot;_id&quot;: 1
+    &#125;
+  ]
+&#125;
+
+
+# index,type一样
+
+GET lagou/job2/_mget
+&#123;
+  &quot;docs&quot;:[
+    &#123; 
+      &quot;_id&quot;: 2
+    &#125;,
+    &#123; 
+      &quot;_id&quot;: 1
+    &#125;
+  ]
+&#125;
+
+GET lagou/job2/_mget
+&#123;
+  &quot;ids&quot;: [1,2]
+&#125;
+
+</code></pre>
+<h3 id="bulk批量操作"><a href="#bulk批量操作" class="headerlink" title="bulk批量操作"></a>bulk批量操作</h3><p>bulk操作不能分行，json必需一行写完</p>
+<pre><code>&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;zhilian&quot;, &quot;_type&quot;: &quot;job&quot;, &quot;_id&quot;: &quot;1&quot;&#125;&#125;
+&#123;&quot;title&quot;: &quot;python分布式爬虫开发&quot;,&quot;salary_min&quot;: 15000,&quot;city&quot;: &quot;北京&quot;,&quot;company&quot;: &#123;&quot;name&quot;: &quot;百度&quot;,&quot;company_addr&quot;: &quot;北京市软件园&quot;&#125;,&quot;publish_data&quot;: &quot;2019-5-30&quot;,&quot;comments&quot;: 23&#125;
+&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;zhilian&quot;, &quot;_type&quot;: &quot;job&quot;, &quot;_id&quot;: &quot;2&quot;&#125;&#125;
+&#123;&quot;title&quot;: &quot;爬虫开发&quot;,&quot;salary_min&quot;: 1500,&quot;city&quot;: &quot;太原&quot;,&quot;company&quot;: &#123;&quot;name&quot;: &quot;阿里&quot;,&quot;company_addr&quot;: &quot;太原市软件园&quot;&#125;,&quot;publish_data&quot;: &quot;2019-5-30&quot;,&quot;comments&quot;: 23&#125;
+</code></pre>
+<h3 id="bulk其他操作"><a href="#bulk其他操作" class="headerlink" title="bulk其他操作"></a>bulk其他操作</h3><pre><code>&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;test&quot;, &quot;_type&quot;: &quot;type1&quot;, &quot;_id&quot;: &quot;1&quot;&#125;&#125;
+&#123;&quot;field1&quot; : &quot;value1&quot;&#125;
+&#123;&quot;delete&quot;: &#123;&quot;_index&quot;: &quot;test&quot;, &quot;_type&quot;: &quot;type1&quot;, &quot;_id&quot;: &quot;2&quot;&#125;&#125;
+&#123;&quot;create&quot;: &#123;&quot;_index&quot;: &quot;test&quot;, &quot;_type&quot;: &quot;type1&quot;, &quot;_id&quot;: &quot;3&quot;&#125;&#125;
+&#123;&quot;field1&quot; : &quot;value3&quot;&#125;
+&#123;&quot;update&quot;: &#123;&quot;_index&quot;: &quot;index1&quot;, &quot;_type&quot;: &quot;type1&quot;, &quot;_id&quot;: &quot;1&quot;&#125;&#125;
+&#123;&quot;doc&quot;:&#123;&quot;field2&quot;: &quot;value2&quot;&#125;
+</code></pre>
+<h3 id="elasticsearch映射"><a href="#elasticsearch映射" class="headerlink" title="elasticsearch映射"></a>elasticsearch映射</h3><pre><code># 创建索引
+PUT lagou
+&#123;
+  &quot;mappings&quot;: &#123;
+    &quot;job&quot;:&#123;
+      &quot;properties&quot;: &#123;
+        &quot;title&quot;:&#123;
+          &quot;type&quot;: &quot;text&quot;
+        &#125;,
+        &quot;salary_min&quot;:&#123;
+          &quot;type&quot;: &quot;integer&quot;
+        &#125;,
+        &quot;city&quot;:&#123;
+          &quot;type&quot;:&quot;keyword&quot;
+        &#125;,
+        &quot;company&quot;:&#123;
+          &quot;properties&quot;: &#123;
+            &quot;name&quot;:&#123;
+              &quot;type&quot;:&quot;text&quot;
+            &#125;,
+            &quot;company_addr&quot;:&#123;
+              &quot;type&quot;:&quot;text&quot;
+            &#125;,
+            &quot;employee_count&quot;:&#123;
+              &quot;type&quot;:&quot;integer&quot;
+            &#125;
+          &#125;
+        &#125;,
+        &quot;publish_date&quot;:&#123;
+          &quot;type&quot;: &quot;date&quot;,
+          &quot;format&quot;: &quot;yyyy-MM-dd&quot;
+        &#125;,
+        &quot;comments&quot;:&#123;
+          &quot;type&quot;: &quot;integer&quot;
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+
+PUT lagou/job/3
+&#123;
+    &quot;title&quot;: &quot;python分布式爬虫开发&quot;,
+    &quot;salary_min&quot;: &quot;abc&quot;,
+    &quot;city&quot;: &quot;北京&quot;,
+    &quot;company&quot;: &#123;
+        &quot;name&quot;: &quot;百度&quot;,
+        &quot;company_addr&quot;: &quot;北京市软件园&quot;,
+        &quot;employee_count&quot;:50
+    &#125;,
+    &quot;publish_data&quot;: &quot;2019-5-30&quot;,
+    &quot;comments&quot;: 15
+&#125;
+
+GET lagou/_mapping/job
+GET _all/_mapping/job
+</code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-28T06:24:42.000Z" title="12/28/2019, 2:24:42 PM">2019-12-28</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.142Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span><span class="level-item">几秒读完 (大约106个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/28/Elasticsearch%E9%85%8D%E7%BD%AE/">Elasticsearch配置</a></h1><div class="content"><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>Java环境</li>
+<li>Git 下载 elasticsearch-rtf  压缩包，解压 进入bin 运行 elasticsearch.bat</li>
+<li>Git clone elasticsearch-head 进入，npm install,npm run start</li>
+<li>配置elasticsearch.yml</li>
+</ol>
+<pre><code>http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+http.cors.allow-methods: OPTIONS, HEAD, GET, PUT, DELETE
+http.cors.allow-headers: &quot;X-Requested_With, Content-Type, Content_Length, X-User&quot;
+</code></pre>
+<ol start="5">
+<li>安装 kibana ,版本与 elasticsearch相对应</li>
+</ol>
+<h3 id="elasticsearch概念"><a href="#elasticsearch概念" class="headerlink" title="elasticsearch概念"></a>elasticsearch概念</h3><ol>
+<li>集群</li>
+<li>节点</li>
+<li>分片</li>
+<li>副本</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Elasticsearch</th>
+<th>Mysql</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>数据库</td>
+</tr>
+<tr>
+<td>type</td>
+<td>表</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>行(一条数据)</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>列</td>
+</tr>
+</tbody></table>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-21T01:06:53.000Z" title="12/21/2019, 9:06:53 AM">2019-12-21</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.131Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="level-item">2 分钟读完 (大约261个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/21/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">删除排序数组中的重复项</a></h1><div class="content"><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<blockquote>
+<p>给定数组 nums &#x3D; [1,1,2],<br>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。<br>你不需要考虑数组中超出新长度后面的元素。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用双游标方法 <em>flag</em> 来记录当前数组不重复的位置，而变量 <em>j</em> 控制整个数组的遍历；当 <em>flag</em> 位置的数据和 <em>j</em> 位置的数据不同时则说明有新的，也就是有效变量进入，此时 <em>flag</em> 加 1，同时也要把 <em>j</em> 位置的值给 <em>flag</em> 位置。</p>
+<pre><code>class Solution:
+    def removeDuplicates(self, nums: List[int]) -&gt; int:
+        flag = 0
+        for j in range(1, len(nums)):
+            if nums[j] != nums[flag]:
+                flag += 1
+                nums[flag] = nums[j]
+        return flag+1
+</code></pre>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-19T20:31:05.000Z" title="12/20/2019, 4:31:05 AM">2019-12-20</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.124Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a></span><span class="level-item">8 分钟读完 (大约1164个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/20/Python%20%E7%BA%BF%E7%A8%8B%E6%B1%A0%20ThreadPoolExecutor/">Python 线程池 ThreadPoolExecutor</a></h1><div class="content"><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>以前我们定义多线程任务的时候都是通过循环来控制线程数量，很不优雅：</p>
+<pre><code>import threading
+
+
+class MyThread(threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+
+    def run(self):
+        print(self.name)
+
+if __name__ == &quot;__main__&quot;:
+
+    t_list = []
+    for i in range(4):
+        name = &quot;线程-&quot; + str(i)
+        t = MyThread(i, name, i)
+        t.start()
+        t_list.append(t)
+    for t in t_list:
+        t.join()
+</code></pre>
+<p>这样做当然也是可以的，不过一方面是代码有些难看，虽然逻辑上是清晰的，另外一方面是我们无法知道哪个线程完成了，而且控制并发的方式也仅限于给循环的变量不同，说白了还是看起来不舒服。</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>我们要寻求一种方式既可以实现多线程的效果，让代码看起来优雅一点。而且程序还可以知道哪些任务完成了</p>
+<h3 id="线程池-1"><a href="#线程池-1" class="headerlink" title="线程池"></a>线程池</h3><p><em>Python3</em> 的线程池是在 <strong>concurrent</strong> 包下的 <strong>ThreadPoolExecutor</strong> 来实现的<br>现在我们写一个简单的线程池例子</p>
+<pre><code>from concurrent.futures import ThreadPoolExecutor,
+def get_html(times):
+    time.sleep(times)
+    print(&quot;get page &#123;&#125; success&quot;.format(times))
+    return times
+    
+executor = ThreadPoolExecutor(max_workers=32)
+task1 = executor.submit(get_html, (3))
+task2 = executor.submit(get_html, (2))
+task3 = executor.submit(get_html, (3))
+</code></pre>
+<p>如果我们想知道哪个任务执行完没有，可以用到 <em>done()</em> 方法</p>
+<blockquote>
+<p>task1.done()</p>
+</blockquote>
+<p>返回是 <em>True</em> 说明执行完了， <em>False</em> 说明没有执行完 </p>
+<p>在任务 <strong>还未开始</strong> 的时候我们可以使用 <em>cancel</em> 方法取消，如：<code>task2.cancel()</code></p>
+<p>通过 <em>submit()</em> 函数提交执行的函数到线程池中, 是立即返回，也就是说主线程还是在向下进行的。<em>max_workers</em> 参数是控制同时执行的最大任务数，这里我们有三个任务，但是最大任务数为 2。<em>submit</em> 有两个参数，一个就是所要执行的函数，<strong>一定不能加括号</strong>，另一个就是函数参数，<strong>这里哪怕只有一个参数也要像我这样括起来，不然会出问题！</strong>。由于<em>max_workers</em>  是2，一开始有两个在执行，如果有一个先执行完毕了，第三个任务才会开始执行。比起之前的 <em>for</em>  循环要好看不少。</p>
+<p>如果有N个任务我们肯定不能一个个定义，用列表生成式就可以：</p>
+<pre><code># ... 其他代码
+def get_html(url):
+    time.sleep(times)
+    print(&quot;get page &#123;&#125; success&quot;.format(times))
+    return times
+executor = ThreadPoolExecutor(max_workers=2)
+urls = [3,2,4]
+all_task = [executor.submit(get_html, (url) ) for url in urls]
+</code></pre>
+<h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><p>我们想看看有多少个任务完成了，可以用 <em>concurrent.futures</em> 里的 <em>as_completed(task)</em> 方法，有一个参数可以是单独的 <em>task</em> 或者一个列表：</p>
+<pre><code># ... 其他代码
+all_task = [executor.submit(get_html, (url) ) for url in urls]
+
+for future in as_completed(all_task):
+    data = future.result()
+    print(&quot;get &#123;&#125; page&quot;.format(data))
+</code></pre>
+<p>我们的 <em>task</em> 返回值在 <em>future.result()</em> 中 <em>as_completed</em> 在遍历的时候如果有函数执行完了就会返回执行完的结果，以后的任务执行完一个这里就会返回一个，可以理解为 <em>as_completed</em> 会等待任务执行，比如我们这里在遍历的时候只有一个执行完了，那就只会打印一个，如果有第二个执行完了，它就会打印第二个，而且这个也不会影响到主线程。</p>
+<h3 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h3><p>如果我们想计算一下整个项目执行的时间，但是线程池不会阻塞主线程，就无法实现。</p>
+<pre><code># ... 其他代码
+
+start = time.time()
+all_task = [executor.submit(get_html, (url)) for url in urls]
+print(&quot;all tasks have done,used &#123;&#125;s&quot;.format(time.time()-start))
+</code></pre>
+<blockquote>
+<p>all tasks have done,used 0.0010027885437011719s<br>get page 2 success<br>get page 3 success<br>get page 4 success</p>
+</blockquote>
+<p>可以看到，任务开始以后主线程继续执行了，所以才会看到主线程的打印。</p>
+<p>不过 <em>concurrent.futures</em>  给我们提供了一个 <em>wait()</em> 方法，可以让我们等待一个任务执行完，否则一直阻塞在当前位置，当然他也可以传一个列表：</p>
+<pre><code>start = time.time()
+all_task = [executor.submit(get_html, (url)) for url in urls]
+wait(all_task)
+print(&quot;all tasks have done&quot;)
+</code></pre>
+<blockquote>
+<p>get page 2 success<br>get page 3 success<br>get page 4 success<br>all tasks have done,used 6.002103328704834s</p>
+</blockquote>
+<p>可以看到，这里就会等待所有任务执行完主线程才会继续，至于为什么打印的是 <em>6s</em> 而不是最长线程所用的 <em>4s</em>，是因为我们前面设置了 <code>executor = ThreadPoolExecutor(max_workers=2)</code>，限制了它最大的并发数，也就是说 <em>2s</em> 后才会执行第三个任务所以用时就是 <em>2s + 4s &#x3D; 6s</em>。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-12-19T20:26:42.000Z" title="12/20/2019, 4:26:42 AM">2019-12-20</time>发表</span><span class="level-item"><time dateTime="2022-08-11T12:49:48.128Z" title="8/11/2022, 8:49:48 PM">2022-08-11</time>更新</span><span class="level-item"> Ginta </span><span class="level-item"><a class="link-muted" href="/categories/docker/">docker</a></span><span class="level-item">几秒读完 (大约79个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/12/20/Docker%20%E6%8C%87%E4%BB%A42/">Docker 指令2</a></h1><div class="content"><ul>
+<li>RUN 执行命令并创建新的Image layer</li>
+<li>CMD 设置容器启动后默认执行的命令和参数</li>
+<li>ENTRYPOINT 设置容器启动时执行的命令</li>
+</ul>
+<ul>
+<li>shell 格式</li>
+</ul>
+<pre><code>RUN apt-get install -y vim 
+CMD echo &quot;hello docker&quot;
+ENTRYPOINT echo &quot;hello docker&quot;
+</code></pre>
+<ul>
+<li>Exec格式</li>
+</ul>
+<pre><code>RUN [&quot;apt-get&quot;, &quot;install&quot;, &quot;-y&quot;, &quot;vim&quot;]
+CMD [&quot;/bin/echo&quot;, &quot;hello docker&quot;]
+ENTRYPOINT [&quot;/bin/echo&quot;, &quot;hello docker&quot;]
+</code></pre>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/3/">上一页</a></div><div class="pagination-next"><a href="/page/5/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><a class="pagination-link is-current" href="/page/4/">4</a></li><li><a class="pagination-link" href="/page/5/">5</a></li><li><a class="pagination-link" href="/page/6/">6</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.jpg" alt="Ginta"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ginta</p><p class="is-size-6 is-block">say</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shenzhen, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">57</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/mar-heaven"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/Ginta80759168"><i class="fab fa-twitter"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Django/"><span class="level-start"><span class="level-item">Django</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/Git-Github/"><span class="level-start"><span class="level-item">Git/Github</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/Markdown/"><span class="level-start"><span class="level-item">Markdown</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/docker/"><span class="level-start"><span class="level-item">docker</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%85%85%E7%94%B5/"><span class="level-start"><span class="level-item">充电</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%85%B6%E4%BB%96/"><span class="level-start"><span class="level-item">其他</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="level-start"><span class="level-item">数据库</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="level-start"><span class="level-item">树莓派</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">生活</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%98%85%E8%AF%BB/"><span class="level-start"><span class="level-item">阅读</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-08T00:09:20.000Z">2022-05-08</time></p><p class="title"><a href="/2022/05/08/2022%E5%B7%B2%E8%BF%87%E4%B8%89%E5%88%86%E4%B9%8B%E4%B8%80/">2022已过三分之一</a></p><p class="categories"><a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-01T04:35:47.000Z">2022-01-01</time></p><p class="title"><a href="/2022/01/01/2022/">2021年总结</a></p><p class="categories"><a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-10-05T08:22:20.000Z">2021-10-05</time></p><p class="title"><a href="/2021/10/05/do%20things%20matters/">do things matters</a></p><p class="categories"><a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-08T14:50:21.000Z">2021-07-08</time></p><p class="title"><a href="/2021/07/08/%E5%9B%B4%E6%A3%8B%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%83%9C%E5%B1%80/">围棋第一次胜局</a></p><p class="categories"><a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-07T16:46:47.000Z">2021-07-08</time></p><p class="title"><a href="/2021/07/08/%E5%86%99%E4%BA%86%E4%B8%AA%E8%84%9A%E6%9C%AC%E6%8A%8A%E4%BB%A5%E5%89%8D%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BB%8Esqlite%E8%BD%AC%E6%88%90md/">写了个脚本把以前的博客从sqlite转成md</a></p><p class="categories"><a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/05/"><span class="level-start"><span class="level-item">五月 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/11/"><span class="level-start"><span class="level-item">十一月 2019</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Django/"><span class="tag">Django</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/FastAPI/"><span class="tag">FastAPI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Typora/"><span class="tag">Typora</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue/"><span class="tag">Vue</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WSL2/"><span class="tag">WSL2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/django3/"><span class="tag">django3</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k8s/"><span class="tag">k8s</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redis/"><span class="tag">redis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/uwsgi/"><span class="tag">uwsgi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/windows/"><span class="tag">windows</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8E%86%E5%8F%B2%E7%9B%B8%E5%85%B3/"><span class="tag">历史相关</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><span class="tag">多线程</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="tag">树莓派</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%9F%E6%B4%BB/"><span class="tag">生活</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"><span class="tag">自动化</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%82%AE%E4%BB%B6/"><span class="tag">邮件</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://anguswg.github.io/AngusWG/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">AngusWG</span></span><span class="level-right"><span class="level-item tag">anguswg.github.io</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.jpg" alt="Ginta&#039;s blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 Ginta</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
