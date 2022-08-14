@@ -3,7 +3,7 @@ version: 5.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/avatar.jpg
+logo: /img/chess.jpeg
 # Page metadata configurations
 head:
     # URL or path to the website's icon
@@ -29,7 +29,7 @@ head:
         icons:
             -
                 # The path to the image file
-                src: /img/avatar.jpg
+                src: /img/chess.jpeg
                 # A string containing space-separated image dimensions
                 sizes: ''
                 # A hint as to the media type of the image
@@ -220,7 +220,7 @@ widgets:
         # Author name
         author: Ginta
         # Author title
-        author_title: say
+        author_title: JackPot!!!
         # Author's current location
         location: Shenzhen, China
         # URL or path to the avatar image
