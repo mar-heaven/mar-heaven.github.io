@@ -257,6 +257,14 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
+            DIYgod: https://diygod.me/
+            新一: https://a-wing.top/
+            Reimu: https://blog.k8s.li/
+            漩涡的博客: https://xuanwo.io/
+            LirianSu: https://liriansu.com/
+            小金鱼儿: https://haoyu.love/
+            SICHENG: https://sichengingermay.com/
+            PPD: https://ppd0705.github.io/
             AngusWG: https://anguswg.github.io/AngusWG/
     # Categories widget configurations
     -
