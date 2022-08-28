@@ -1,4 +1,5 @@
 Weekly report
+[202208-W4](/weekly/202208W4.html)
 [202208-W3](/weekly/202208W3.html)
 [202208-W2](/weekly/202208W2.html)
 [202208-W1](/weekly/202208W1.html)
