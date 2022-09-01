@@ -14,6 +14,7 @@
 ### 一些清单
 - [阅读清单](https://atlantic-gull-726.notion.site/658a3e55b3bd4ca3b212beb7438a5c5e)
 - [音乐清单](https://music.163.com/playlist?id=7502042039&userid=1419114645)
+- [观影清单](https://atlantic-gull-726.notion.site/e9cd9af522c64c54848bb6a5f0c1a91a)
 
 
 ### F
