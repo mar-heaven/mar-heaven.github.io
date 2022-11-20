@@ -5,6 +5,7 @@
 | ----------- | ----------- |
 | 所在      | 深圳       |
 |如何联系|775650117@qq.com|
+|媒体平台|[twitter](https://twitter.com/Ginta80759168)、[Instagram](https://www.instagram.com/ginta_xx/)|
 | 户外   | 爬山，滑雪        |
 | 乐器   | 一把偶尔响一下的吉他       |
 | 常用语言      | Go,Python,Solidity       |

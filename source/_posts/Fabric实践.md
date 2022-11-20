@@ -4,7 +4,8 @@ date: 2022-11-15 10:44:48
 tags:
     - Hyperledger
     - Fabric
-categories: 区块链
+categories: 
+    - [区块链, Fabric]
 author: Ginta
 ---
 

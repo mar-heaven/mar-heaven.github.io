@@ -1,4 +1,5 @@
 Weekly report
+[202211-W3 好像没那么能吃辣了](/weekly/202211W2.html)
 [202211-W2 逝去的生命](/weekly/202211W2.html)
 [202211-W1](/weekly/202211W1.html)
 [202210-W4](/weekly/202210W4.html)
