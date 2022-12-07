@@ -1,4 +1,5 @@
 Weekly report
+[202212-W1 万能的ChatGPT](/weekly/202212W1.html)
 [202211-W4 开始听跑步电台](/weekly/202211W4.html)
 [202211-W3 好像没那么能吃辣了](/weekly/202211W3.html)
 [202211-W2 逝去的生命](/weekly/202211W2.html)
