@@ -18,6 +18,10 @@
 - [音乐清单](https://music.163.com/playlist?id=7502042039&userid=1419114645)
 - [观影清单](https://atlantic-gull-726.notion.site/e9cd9af522c64c54848bb6a5f0c1a91a)
 
+### 乱七八糟
+平时用的工具什么的会 {% post_link 个人工具 记录在这里  %}
+
+
 
 ### F
 {% blockquote Ricardo M. Lu, 《龙族》 %}
