@@ -123,6 +123,52 @@ func main() {
 }
 ```
 
+### grpcurl
+**grpcurl** 工具可以查询 *grpc* 服务的 *API*, 用来调试 *grpc* 服务很方便
+安装：`go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest`。
+要使用 **grpcurl* 我们要在代码里先启动 *reflection* 反射服务
+```
+package main
+import (
+	...
+	""google.golang.org/grpc/reflection""
+)
+
+func main() {
+	...
+	server := grpc.NewServer()
+
+	// register service
+	pb.RegisterHelloServiceServer(server, &Server{})
+
+	// register reflection
+	reflection.Register(server)
+	....
+}
+```
+然后就可以使用 *grpcurl* 来调试了，先看看服务有哪些接口, `grpcurl  localhost:9000 list`，报了一个异常 **Failed to dial target host "localhost:9000": tls: first record does not look like a TLS handshake**，*grpc* 是用的 *http2* 协议, 虽然不强求但是一般传输也都是要加密的，这里提示我们少了 *TLS* 加密，我们可以先使用明文。`grpcurl -plaintext localhost:9000 list`。
+可以看到已经返回了我们服务的列表：
+```
+grpc.HelloService
+grpc.reflection.v1alpha.ServerReflection
+```
+,第二个是我们开启的反射服务，可以用 *grpcurl -plaintext localhost:9000 list grpc.HelloService* 命令看看 *grpc.HelloService* 服务有哪些方法名，或者用`grpcurl -plaintext localhost:9000 describe grpc.HelloService`会返回更多的信息，包括方法的出入请求。
+```
+grpc.HelloService is a service:
+service HelloService {
+  rpc SayHello ( .grpc.SayHelloRequest ) returns ( .grpc.SayHelloResponse );
+}
+```
+我们来请求一下这个 **SayHello** 方法，`grpcurl -plaintext -d '{"Name": "Ginta"}' localhost:9000 grpc.HelloService/SayHello`:
+```
+{
+  "Message": "hello Ginta"
+}
+```
+
+
+
+
 ### 补充
 #### grpc通信加密
 #### 服务发现
