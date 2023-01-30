@@ -126,7 +126,7 @@ func main() {
 ### grpcurl
 **grpcurl** 工具可以查询 *grpc* 服务的 *API*, 用来调试 *grpc* 服务很方便
 安装：`go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest`。
-要使用 **grpcurl* 我们要在代码里先启动 *reflection* 反射服务
+要使用 *grpcurl* 我们要在代码里先启动 *reflection* 反射服务
 ```
 package main
 import (
