@@ -1,8 +1,8 @@
 ---
-title: grpc
+title: gRPC
 date: 2023-01-26 18:17:48
 tags:
-    - grpc
+    - gRPC
     - go
 categories: 协议
 ---
