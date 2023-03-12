@@ -102,7 +102,7 @@ model:
 
 # Extensions
 plugins:
-  hexo-generator-feed
+- hexo-generator-feed
 
 # RSS
 feed:
