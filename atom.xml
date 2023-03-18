@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-03-12T10:22:16.274Z</updated>
+  <updated>2023-03-18T03:03:56.580Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202303W3 GPT-4 and an interesting meeting</title>
+    <link href="https://ginta.top/2023/03/18/202303W3/"/>
+    <id>https://ginta.top/2023/03/18/202303W3/</id>
+    <published>2023-03-18T10:06:09.000Z</published>
+    <updated>2023-03-18T03:03:56.580Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;In the past week,GPT-4 has gone viral on the internet, and every one around me is disscussing topics related to it.As an old movie “The Matrix” shows, AI will become increasingly powerful,i believe it will eventually take over all aspects of our lives.&lt;/p&gt;
+&lt;p&gt;I took part in  an interesting meeting on Friday night,and it was my first time participating in a meeting in English.Although my English level is average,my forign friend could still understand what i was trying to say.&lt;/p&gt;
+&lt;p&gt;When it comes to speaking English, most people worry that they can’s express themselves correctly due to their poor English.However,the foreigners can still understand what they say means even if they speak poorly. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>202303W2 ski and tennis</title>
@@ -394,26 +415,6 @@
     
     
     <summary type="html">&lt;h3 id=&quot;生活&quot;&gt;&lt;a href=&quot;#生活&quot; class=&quot;headerlink&quot; title=&quot;生活&quot;&gt;&lt;/a&gt;生活&lt;/h3&gt;&lt;p&gt;上周没写周报，是因为也没什么可以写的，本周的话没有大事发现，参加了第七届开源年会，这次是第一次采用元宇宙的形式给大家做分享，有幸作为志愿者组长和区块链会场的主持人参与其中，组长需要培训志愿者，任务虽然简单但是大家时间都不统一，所以有一部分是元宇宙内部培训的，也有一部分是看我的录屏学习，每天晚上基本都是11点以后才回答完所有的问题。会议开始前一天晚上才把主持稿写完，有一位讲师的视频超过时长了，下了剪辑软件剪了10分钟的内容，最后导出发现音频和视频不同步…….主持当天麦克风声音还很小。&lt;/p&gt;
-&lt;h3 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>202210W2</title>
-    <link href="https://ginta.top/2022/10/11/202210W2/"/>
-    <id>https://ginta.top/2022/10/11/202210W2/</id>
-    <published>2022-10-11T14:12:38.000Z</published>
-    <updated>2023-02-06T07:07:17.655Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;国庆结束&quot;&gt;&lt;a href=&quot;#国庆结束&quot; class=&quot;headerlink&quot; title=&quot;国庆结束&quot;&gt;&lt;/a&gt;国庆结束&lt;/h3&gt;&lt;p&gt;说短不短的假期没什么感觉就过去了，看了一个国庆的动物世界，并非所有的动物都畏惧人类，像虎鲸这样的海洋霸主偶尔也会挑逗一下两足生物。上班第二天开始跑步，小半个月没跑第一天就把膝盖摔伤了。S12开始了，lpl的几只队伍表现都不错，小明的辅助硬是打出了C位的感觉，看到有弹幕笑称“4保1辅助”，反而是TES的战绩在lpl中垫底，不管怎么说轻敌也要反思一下。回到深圳和朋友吃了顿饭，离职几个月感觉精神状态好多了，而且还能保持一定的hard刷题量倒是挺意外的。&lt;/p&gt;
 &lt;h3 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h3&gt;</summary>
     
     
