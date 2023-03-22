@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-03-22T15:27:10.202Z</updated>
+  <updated>2023-03-22T15:54:53.498Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-03-22T15:27:10.202Z</updated>
+    <updated>2023-03-22T15:54:53.498Z</updated>
     
     
-    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;我们都知道 &lt;strong&gt;Golang&lt;/strong&gt; 的并发性能很高，利益于它优秀的 &lt;strong&gt;GMP&lt;/strong&gt; 模型设计，那么 &lt;strong&gt;GMP&lt;/strong&gt; 模型到底巧妙在哪了，这就是本文所要讨论的。&lt;br&gt;本篇文章的精华取自于&lt;a href=&quot;https://www.bilibili.com/video/BV19r4y1w7Nx?p=18&amp;spm_id_from=pageDriver&amp;vd_source=dfeba0e84225bbb1159a33a311780697&quot;&gt;Golang深入理解GPM模型&lt;/a&gt;。&lt;/p&gt;
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;我们都知道 &lt;strong&gt;Golang&lt;/strong&gt; 的并发性能很高，得益于它优秀的 &lt;strong&gt;GMP&lt;/strong&gt; 模型设计，那么 &lt;strong&gt;GMP&lt;/strong&gt; 模型到底巧妙在哪了，这就是本文所要讨论的。&lt;br&gt;本篇文章的精华取自于&lt;a href=&quot;https://www.bilibili.com/video/BV19r4y1w7Nx?p=18&amp;spm_id_from=pageDriver&amp;vd_source=dfeba0e84225bbb1159a33a311780697&quot;&gt;Golang深入理解GPM模型&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h3&gt;</summary>
     
     
@@ -41,7 +41,7 @@
     <link href="https://ginta.top/2023/03/18/202303W3/"/>
     <id>https://ginta.top/2023/03/18/202303W3/</id>
     <published>2023-03-18T10:06:09.000Z</published>
-    <updated>2023-03-22T15:27:10.202Z</updated>
+    <updated>2023-03-22T15:54:53.498Z</updated>
     
     
     <summary type="html">&lt;p&gt;In the past week,GPT-4 has gone viral on the internet, and every one around me is disscussing topics related to it.As an old movie “The Matrix” shows, AI will become increasingly powerful,i believe it will eventually take over all aspects of our lives.&lt;/p&gt;
@@ -327,7 +327,7 @@
     <link href="https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/"/>
     <id>https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/</id>
     <published>2022-11-20T22:16:36.000Z</published>
-    <updated>2023-03-22T15:27:10.206Z</updated>
+    <updated>2023-03-22T15:54:53.502Z</updated>
     
     
     <summary type="html">&lt;p&gt;这周把 &lt;em&gt;Goland&lt;/em&gt; 和 &lt;em&gt;Pycharm&lt;/em&gt; 都换成正版的了，结束了多年破解版的使用历程。虽说正版的功能也没有完全用到，不过以往用破解版的时候总是有很不顺的感觉，一方面是因为破解版往往落后好几个版本，另一方面是不稳定，要不时去更新一下。&lt;/p&gt;
