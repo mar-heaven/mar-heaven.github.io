@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-03-19T12:03:38.718Z</updated>
+  <updated>2023-03-22T15:27:10.202Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GMP</title>
+    <link href="https://ginta.top/2023/03/22/GMP/"/>
+    <id>https://ginta.top/2023/03/22/GMP/</id>
+    <published>2023-03-22T22:15:43.000Z</published>
+    <updated>2023-03-22T15:27:10.202Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;我们都知道 &lt;strong&gt;Golang&lt;/strong&gt; 的并发性能很高，利益于它优秀的 &lt;strong&gt;GMP&lt;/strong&gt; 模型设计，那么 &lt;strong&gt;GMP&lt;/strong&gt; 模型到底巧妙在哪了，这就是本文所要讨论的。&lt;br&gt;本篇文章的精华取自于&lt;a href=&quot;https://www.bilibili.com/video/BV19r4y1w7Nx?p=18&amp;spm_id_from=pageDriver&amp;vd_source=dfeba0e84225bbb1159a33a311780697&quot;&gt;Golang深入理解GPM模型&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Golang" scheme="https://ginta.top/categories/Golang/"/>
+    
+    
+    <category term="goroutine" scheme="https://ginta.top/tags/goroutine/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202303W3 GPT-4 and an interesting meeting</title>
     <link href="https://ginta.top/2023/03/18/202303W3/"/>
     <id>https://ginta.top/2023/03/18/202303W3/</id>
     <published>2023-03-18T10:06:09.000Z</published>
-    <updated>2023-03-19T12:03:38.718Z</updated>
+    <updated>2023-03-22T15:27:10.202Z</updated>
     
     
     <summary type="html">&lt;p&gt;In the past week,GPT-4 has gone viral on the internet, and every one around me is disscussing topics related to it.As an old movie “The Matrix” shows, AI will become increasingly powerful,i believe it will eventually take over all aspects of our lives.&lt;/p&gt;
@@ -307,7 +327,7 @@
     <link href="https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/"/>
     <id>https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/</id>
     <published>2022-11-20T22:16:36.000Z</published>
-    <updated>2023-03-19T12:03:38.722Z</updated>
+    <updated>2023-03-22T15:27:10.206Z</updated>
     
     
     <summary type="html">&lt;p&gt;这周把 &lt;em&gt;Goland&lt;/em&gt; 和 &lt;em&gt;Pycharm&lt;/em&gt; 都换成正版的了，结束了多年破解版的使用历程。虽说正版的功能也没有完全用到，不过以往用破解版的时候总是有很不顺的感觉，一方面是因为破解版往往落后好几个版本，另一方面是不稳定，要不时去更新一下。&lt;/p&gt;
@@ -395,26 +415,6 @@
     
     
     <summary type="html">&lt;h3 id=&quot;生活&quot;&gt;&lt;a href=&quot;#生活&quot; class=&quot;headerlink&quot; title=&quot;生活&quot;&gt;&lt;/a&gt;生活&lt;/h3&gt;&lt;p&gt;计划周六去梅林穿越的，天气不稳定小伙伴们最终一致“下次一定”。周日晚上和朋友出去吃饭，说起来有段时间没见他了，在家快乐当宝爸了吧。Pycon China下个月就要还是老地方举办，收到少飞的突然联系还是挺有意思的，今年还是去折腾直播设备吧，去年真的调试了好久。&lt;/p&gt;
-&lt;h3 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>202210W4</title>
-    <link href="https://ginta.top/2022/10/31/202210W4/"/>
-    <id>https://ginta.top/2022/10/31/202210W4/</id>
-    <published>2022-10-31T04:43:29.000Z</published>
-    <updated>2023-02-06T07:07:17.671Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;生活&quot;&gt;&lt;a href=&quot;#生活&quot; class=&quot;headerlink&quot; title=&quot;生活&quot;&gt;&lt;/a&gt;生活&lt;/h3&gt;&lt;p&gt;上周没写周报，是因为也没什么可以写的，本周的话没有大事发现，参加了第七届开源年会，这次是第一次采用元宇宙的形式给大家做分享，有幸作为志愿者组长和区块链会场的主持人参与其中，组长需要培训志愿者，任务虽然简单但是大家时间都不统一，所以有一部分是元宇宙内部培训的，也有一部分是看我的录屏学习，每天晚上基本都是11点以后才回答完所有的问题。会议开始前一天晚上才把主持稿写完，有一位讲师的视频超过时长了，下了剪辑软件剪了10分钟的内容，最后导出发现音频和视频不同步…….主持当天麦克风声音还很小。&lt;/p&gt;
 &lt;h3 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h3&gt;</summary>
     
     
