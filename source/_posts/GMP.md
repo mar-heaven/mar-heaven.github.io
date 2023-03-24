@@ -3,6 +3,7 @@ title: GMP
 date: 2023-03-22 22:15:43
 tags: goroutine
 categories: Golang
+toc: true
 ---
 
 ### 前言
