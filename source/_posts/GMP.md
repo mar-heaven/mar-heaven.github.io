@@ -6,47 +6,49 @@ categories: Golang
 toc: true
 ---
 
-### 前言
-我们都知道 **Golang** 的并发性能很高，得益于它优秀的 **GMP** 模型设计，那么 **GMP** 模型到底巧妙在哪了，这就是本文所要讨论的。
+### Introduction
+We all know that **Golang** has high concurrency performance, thanks to its excellent **GMP** model design. This article discusses the cleverness of the **GMP** model.
 
-### 历史
-#### 单进程
-在操作系统早期，系统只有单核，计算机执行任务是完全按编排的顺序执行，A任务执行完执行B任务，B任务执行完执行C任务；那么当B任务（其实也就是一个进程）阻塞了就只能一直等着。
-#### 多进程
-想象一下我们现在要写一个网络爬虫，爬取100个页面，每个页面服务器响应1s，整个过程下来100多s（处理数据，写到数据库等也需要时间）就没了，后来就出现了多进程/多线程技术，当一个任务在IO阻塞时，CPU会切换到其他任务执行，等到其他任务执行完再回来执行这个任务。相比于最开始性能提升了很多，CPU也不再空闲了，实现了所谓的“并发”，注意不是并行。
-#### 多核多进程
-随着硬件技术的发展，计算机进入了多核时代，多个CPU可以同时工作，此时才可以说是并行。问题又出现了，进程非常占用资源，进程之前的切换代价也很高，
-1. 保存上下文：CPU寄存器，程序计数器，进程状态等
-2. 加载新的上下文：把新的上下文加载到CPU寄存器，程序计数器的对应位置
-3. 切换内存空间：进程之间的内存空间是独立的，因此切换进程的时候操作系统还需要切换进程的内存空间
-4. 切换硬件上下文：如IO缓存、中断向量等
-比较常规的做法是使用多线程技术，由于同一个进程里的所有线程都共享一个进程的内存空间、文件描述符、以及进程的全局变量等。线程切换时也只需要切换线程自己的上下文信息，不需要切换内存空间和其他进程的相关资源。
-但是多线程同样带来了新的问题：由于在同一个进程内，共享了进程的全局变量和内存，为了保证数据安全多个线程竞争时要加锁，这种互斥行为带来的开销是非常大的。
-#### 协程
-由于线程和进程的调度都是由操作系统来调度的比较占用资源，后来工程师们发现一个线程其实是分为内核态和用户态的，并把这种用户态的线程起了个新的名字：协程，意思是轻量级的线程。再遇到IO阻塞的时候我们直接在用户态自己实现调度处理就好了，不需要麻烦低层操作系统去切换线程去调度。这样性能上升了一大截，因为一个进程占用的虚拟内存大约要4个G（32位操作系统），一个线程也需要4MB左右，而开一个协程就小的多了，Go中只需要几kb。
+### History
+#### Single process
+In the early days of operating systems, there was only one core, and computers executed tasks in the order they were arranged, with task A executed before task B, and task B executed before task C. When task B (actually a process) was blocked, it had to wait indefinitely.
+#### Multiple processes
+Imagine that we now need to write a web crawler to retrieve 100 pages, and each page takes 1 second to respond. The entire process takes more than 100 seconds (processing data, writing to a database, etc.), so multi-process/multi-threading technology was introduced. When a task is blocked by I/O, the CPU switches to execute other tasks, and then returns to execute the original task when the other tasks are completed. Compared to the initial performance, this approach greatly improves performance, and the CPU is no longer idle, achieving so-called "concurrency," but not "parallelism."
+#### Multiple processes on multiple cores
+With the development of hardware technology, computers have entered the era of multiple cores, and multiple CPUs can work simultaneously. At this point, we can say that it is parallelism. However, processes consume a lot of resources, and the cost of switching processes is high:
+1. Save context: CPU registers, program counters, process status, etc.
+2. Load new context: Load new context into CPU registers and program counters.
+3. Switch memory space: The memory space between processes is independent, so when switching processes, the operating system needs to switch the memory space of the process.
+4. Switch hardware context: such as IO cache, interrupt vectors, etc.
 
-### 绑定关系
+The most common approach is to use multi-threading technology. Since all threads in the same process share the same memory space, file descriptors, and global variables of the process, when switching threads, only the context information of the thread itself needs to be switched, and the memory space and other resources of other processes do not need to be switched.
+However, multi-threading also brings new problems: in order to ensure data safety when multiple threads compete, mutexes and other synchronization mechanisms need to be introduced, which significantly increases the cost of mutual exclusion behavior.
+#### Goroutine
+Since thread and process scheduling are relatively resource-intensive, engineers later discovered that a thread is actually divided into kernel mode and user mode, and named this user mode thread a "goroutine," meaning a lightweight thread. When encountering I/O blocking, we can implement scheduling processing in user mode ourselves, without having to trouble the lower-level operating system to switch threads to schedule. This significantly improves performance because a process occupies approximately 4 GB of virtual memory (32-bit operating system), and a thread also requires approximately 4 MB. However, a goroutine is much smaller, requiring only a few kilobytes in Go.
+
+### Binding relationship
 #### N:1
-N个协程绑定一个线程，没有了线程切换的烦恼，只不过也无法利用多核来处理程序了。
+N goroutines are bound to one thread, avoiding the hassle of thread switching, but multiple cores cannot be used to process programs.
 #### 1:1
-1个协程绑定一个线程，又回到了内核去切换线程
+One goroutine is bound to one thread, returning to the kernel to switch threads.
 #### M:N
-M个协程绑定N个线程，好处就是可以充分利用多核来高效处理程序，难点在于需要在用户态去实现协程和线程的绑定调度，Go语言用的就是这种策略。
+M goroutines are bound to N threads, which can fully utilize multiple cores to efficiently process programs, but the difficulty is to implement the binding and scheduling of goroutines and threads in user mode. Go language uses this strategy.
 
 ### GMP模型
 ![20230323212056](https://raw.githubusercontent.com/mar-heaven/image-repo/main/blogs/pictures/20230323212056.png)
-G：代表goroutine
-M：系统线程
-P：调度器
+G：Represents goroutine
+M：System thread
+P: Scheduler
 
-每个P都有一个自己的队列来放所要执行的goroutine，另外还有一个全局的队列。自P自己的队列中没有goroutine要执行的时候会首先从其他队列里steal一些来执行，如果其他队列也没有了就会从全局P中取goroutine，从其他P中取是一次取一半。正是这样的机制，从全局队列取G（代指goroutine）一次不会取很多，不然其他P取不到就会来这里拿，增加不必要的开销。
+Each P has its own queue for storing goroutines to be executed, and there is also a global queue. When there are no goroutines to be executed in P's own queue, it first steals some from other queues using the method mentioned above. If other queues are also empty, it will take goroutines from the global P queue. When taking G (referring to goroutine) from the global queue, it will not take many at once, otherwise, other P will come here to take them, increasing unnecessary overhead.
 
-GMP调度方式是这样的：
-1. 一个（系统）线程（M）想要执行一个G，就要先和P绑定，
-2. M从P中拿到了G执行，执行完了就会取下一个G，按照上边说的方法取
-3. 如果M执行G的时候发生了系统调用（如文件读写），P会和M解绑，不过M会记住这个P的。等G和M退出系统调用的时候去找刚才绑定这个M的P，如果找不到会去找其他的P，再找不到就会把这个G标记成可运行状态，放入全局队列。
+The GMP scheduling method is as follows:
+1. A system thread (M) that wants to execute a goroutine must first bind to P
+2. M takes G from P to execute it, and then takes the next G according to the aforementioned method
+3. If M encounters a system call (such as file read and write) while executing G, P will unbind from M, but M will remember which P it was bound to. When G and M exit the system call, they will find the P that was just bound to this M. If it cannot be found, they will find other P. If it cannot be found, the G will be marked as runnable and placed in the global queue.
 
-其中：
-1. 如果一个运行中的G1创建了新的G2，那么G2优先会绑定到G1原来所在的队列P1.
-2. 规定：在创建G2的时候，运行中的G1会唤醒其他的P和M（假设P2和M2）去执行系统里的任务
-3. 如果P2的队列中没有G，会按照前面提到的方式从其他地方想办法steal点G，如果其他地方也没有G它就会一直找，我们称这种状态为“自旋状态”，虽然看起来比较笨，但是比起创建新的M所带来的开销，这点代价还是可以接受的。这种策略就是“线程复用”，避免了重复地创建，销毁线程。
+In addition：
+1. If a running G1 creates a new G2, G2 will be bound to P1, where G1 was originally located.
+2. Rule: When creating G2, running G1 will wake up other P and M (assuming P2 and M2) to execute tasks in the system.
+3. If there are no Gs in the queue of P2, it will try to steal some from other places using the aforementioned method. If it still cannot find any, it will keep searching. We call this state a "spin state." Although it seems a bit silly, it is still acceptable compared to the overhead of creating and destroying threads.
+In summary, the GMP model uses lightweight goroutines to reduce resource consumption and increase concurrency, and uses a clever scheduling strategy to avoid the high overhead of thread and process switching.
