@@ -1,2 +1,2 @@
 new:
-	python generate_latest.py
+	sh generate_latest.sh
