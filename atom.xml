@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-03-24T15:15:26.874Z</updated>
+  <updated>2023-04-02T15:14:11.487Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202303W4 go hiking</title>
+    <link href="https://ginta.top/2023/04/02/1026/"/>
+    <id>https://ginta.top/2023/04/02/1026/</id>
+    <published>2023-04-02T21:47:16.000Z</published>
+    <updated>2023-04-02T15:14:11.487Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;It has passed a month since I go hiking last time. I took 6 hours across the “dong xi chong” and then back to the beginning place with</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>Kubernetes 源码阅读</title>
@@ -46,7 +71,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-03-27T10:20:06.913Z</updated>
+    <updated>2023-04-02T15:14:11.491Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
@@ -408,26 +433,6 @@
     <category term="Hyperledger" scheme="https://ginta.top/tags/Hyperledger/"/>
     
     <category term="Fabric" scheme="https://ginta.top/tags/Fabric/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>逝去的生命</title>
-    <link href="https://ginta.top/2022/11/14/202211W2/"/>
-    <id>https://ginta.top/2022/11/14/202211W2/</id>
-    <published>2022-11-14T17:23:08.000Z</published>
-    <updated>2023-02-19T07:36:00.141Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;整理书架的时候发现没有空间放置新书了，有一层是放满了读者，还有几杯比较厚的 &lt;em&gt;python&lt;/em&gt; 技术书，有的是还没毕业买的，有的是刚毕业那会买的，一起处理了。&lt;/p&gt;
-&lt;h3 id=&quot;逝去的生命&quot;&gt;&lt;a href=&quot;#逝去的生命&quot; class=&quot;headerlink&quot; title=&quot;逝去的生命&quot;&gt;&lt;/a&gt;逝去的生命&lt;/h3&gt;&lt;p&gt;网上看到一位币圈的大佬自杀了，他曾炒币收入500万，后来进行一些投资，最近市场不景气差不多归零了，然后就是和女友分手，留下了一段视频之后选择告别人世。惊讶，可惜，惊讶是因为年纪轻轻家里情况又比较特殊的情况下也曾有过那样的折腾。可惜22岁大有重新来过的可能却终结了生命。有时也会把一些场景类比到自己身上，思考在同样的情景中自己的意志是否能平静处理，答案往往是不能。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
