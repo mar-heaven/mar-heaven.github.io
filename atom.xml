@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-04-05T14:23:46.910Z</updated>
+  <updated>2023-04-27T16:46:37.590Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>202304W4 playing and playing</title>
+    <link href="https://ginta.top/2023/04/28/1027/"/>
+    <id>https://ginta.top/2023/04/28/1027/</id>
+    <published>2023-04-28T00:23:26.000Z</published>
+    <updated>2023-04-27T16:46:37.590Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;I have taken a guitar lesson for 2 weeks, from half a month ago, I started playing guitar as before. There are some interesting friends</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202303W4 go hiking</title>
     <link href="https://ginta.top/2023/04/02/1026/"/>
     <id>https://ginta.top/2023/04/02/1026/</id>
     <published>2023-04-02T21:47:16.000Z</published>
-    <updated>2023-04-05T14:23:46.910Z</updated>
+    <updated>2023-04-27T16:46:37.590Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://ginta.top/2023/03/24/1025/"/>
     <id>https://ginta.top/2023/03/24/1025/</id>
     <published>2023-03-24T22:38:16.000Z</published>
-    <updated>2023-04-05T14:23:46.910Z</updated>
+    <updated>2023-04-27T16:46:37.590Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
@@ -66,7 +91,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-04-05T14:23:46.914Z</updated>
+    <updated>2023-04-27T16:46:37.594Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
@@ -404,30 +429,6 @@
     
     
     <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Fabric实践</title>
-    <link href="https://ginta.top/2022/11/15/Fabric%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://ginta.top/2022/11/15/Fabric%E5%AE%9E%E8%B7%B5/</id>
-    <published>2022-11-15T02:44:48.000Z</published>
-    <updated>2022-11-18T05:17:18.790Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;参考&lt;a href=&quot;https://hyperledger-fabric.readthedocs.io/en/latest/install.html&quot;&gt;Install Fabric and Fabric Samples&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Fabric-Samples&quot;&gt;&lt;a href=&quot;#Fabric-Samples&quot; class=&quot;headerlink&quot; title=&quot;Fabric Samples&quot;&gt;&lt;/a&gt;Fabric Samples&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="区块链" scheme="https://ginta.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    <category term="Fabric" scheme="https://ginta.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/Fabric/"/>
-    
-    
-    <category term="Hyperledger" scheme="https://ginta.top/tags/Hyperledger/"/>
-    
-    <category term="Fabric" scheme="https://ginta.top/tags/Fabric/"/>
     
   </entry>
   
