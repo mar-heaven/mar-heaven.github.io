@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-04-27T16:46:37.590Z</updated>
+  <updated>2023-05-23T14:32:18.736Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>202305W3 offline for a week</title>
+    <link href="https://ginta.top/2023/05/23/1028/"/>
+    <id>https://ginta.top/2023/05/23/1028/</id>
+    <published>2023-05-23T22:11:52.000Z</published>
+    <updated>2023-05-23T14:32:18.736Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;It has been three weeks since the last time I wrote a weekly report. Recently, I’ve been wanting to go back to the northern region to</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202304W4 playing and playing</title>
     <link href="https://ginta.top/2023/04/28/1027/"/>
     <id>https://ginta.top/2023/04/28/1027/</id>
     <published>2023-04-28T00:23:26.000Z</published>
-    <updated>2023-04-27T16:46:37.590Z</updated>
+    <updated>2023-05-23T14:32:18.736Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://ginta.top/2023/04/02/1026/"/>
     <id>https://ginta.top/2023/04/02/1026/</id>
     <published>2023-04-02T21:47:16.000Z</published>
-    <updated>2023-04-27T16:46:37.590Z</updated>
+    <updated>2023-05-23T14:32:18.736Z</updated>
     
     
       
@@ -71,7 +96,7 @@
     <link href="https://ginta.top/2023/03/24/1025/"/>
     <id>https://ginta.top/2023/03/24/1025/</id>
     <published>2023-03-24T22:38:16.000Z</published>
-    <updated>2023-04-27T16:46:37.590Z</updated>
+    <updated>2023-05-23T14:32:18.736Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
@@ -91,7 +116,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-04-27T16:46:37.594Z</updated>
+    <updated>2023-05-23T14:32:18.736Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
@@ -409,26 +434,6 @@
     
     
     <category term="随笔" scheme="https://ginta.top/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好像没那么能吃辣了</title>
-    <link href="https://ginta.top/2022/11/20/202211W3/"/>
-    <id>https://ginta.top/2022/11/20/202211W3/</id>
-    <published>2022-11-20T13:20:31.000Z</published>
-    <updated>2023-02-19T07:36:00.141Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;下次不点辣了&quot;&gt;&lt;a href=&quot;#下次不点辣了&quot; class=&quot;headerlink&quot; title=&quot;下次不点辣了&quot;&gt;&lt;/a&gt;下次不点辣了&lt;/h3&gt;&lt;p&gt;周六和同学吃了个火锅，锅底选的鸳鸯，微辣。突然发现我们都下意识地把菜加到了番茄的那边。&lt;br&gt;”如今感觉微辣都受不了了“，我感慨道，同学点头表示同意。当初刚从成都来到深圳的时候是不会考虑&lt;br&gt;鸳鸯锅的，至少中辣起步，也算是入乡随俗了。&lt;/p&gt;
-&lt;h3 id=&quot;新人？老人？&quot;&gt;&lt;a href=&quot;#新人？老人？&quot; class=&quot;headerlink&quot; title=&quot;新人？老人？&quot;&gt;&lt;/a&gt;新人？老人？&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
