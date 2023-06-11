@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-05-23T14:32:18.736Z</updated>
+  <updated>2023-06-11T11:58:46.755Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>202306W1</title>
+    <link href="https://ginta.top/2023/06/11/1029/"/>
+    <id>https://ginta.top/2023/06/11/1029/</id>
+    <published>2023-06-11T19:40:08.000Z</published>
+    <updated>2023-06-11T11:58:46.755Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;I got infected with the novel coronavirus at the beginning of this month. Last month, I informed my friends in the northern region that</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202305W3 offline for a week</title>
     <link href="https://ginta.top/2023/05/23/1028/"/>
     <id>https://ginta.top/2023/05/23/1028/</id>
     <published>2023-05-23T22:11:52.000Z</published>
-    <updated>2023-05-23T14:32:18.736Z</updated>
+    <updated>2023-06-11T11:58:46.755Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="https://ginta.top/2023/04/28/1027/"/>
     <id>https://ginta.top/2023/04/28/1027/</id>
     <published>2023-04-28T00:23:26.000Z</published>
-    <updated>2023-05-23T14:32:18.736Z</updated>
+    <updated>2023-06-11T11:58:46.755Z</updated>
     
     
       
@@ -71,7 +96,7 @@
     <link href="https://ginta.top/2023/04/02/1026/"/>
     <id>https://ginta.top/2023/04/02/1026/</id>
     <published>2023-04-02T21:47:16.000Z</published>
-    <updated>2023-05-23T14:32:18.736Z</updated>
+    <updated>2023-06-11T11:58:46.755Z</updated>
     
     
       
@@ -96,7 +121,7 @@
     <link href="https://ginta.top/2023/03/24/1025/"/>
     <id>https://ginta.top/2023/03/24/1025/</id>
     <published>2023-03-24T22:38:16.000Z</published>
-    <updated>2023-05-23T14:32:18.736Z</updated>
+    <updated>2023-06-11T11:58:46.755Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
@@ -116,7 +141,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-05-23T14:32:18.736Z</updated>
+    <updated>2023-06-11T11:58:46.755Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
@@ -414,26 +439,6 @@
     
     
     <category term="科技双眼啤" scheme="https://ginta.top/tags/%E7%A7%91%E6%8A%80%E5%8F%8C%E7%9C%BC%E5%95%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正版软件</title>
-    <link href="https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/"/>
-    <id>https://ginta.top/2022/11/20/%E6%AD%A3%E7%89%88%E8%BD%AF%E4%BB%B6/</id>
-    <published>2022-11-20T14:16:36.000Z</published>
-    <updated>2023-03-19T11:52:13.449Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这周把 &lt;em&gt;Goland&lt;/em&gt; 和 &lt;em&gt;Pycharm&lt;/em&gt; 都换成正版的了，结束了多年破解版的使用历程。虽说正版的功能也没有完全用到，不过以往用破解版的时候总是有很不顺的感觉，一方面是因为破解版往往落后好几个版本，另一方面是不稳定，要不时去更新一下。&lt;/p&gt;
-&lt;h3&gt;&lt;span id=&quot;关于盗版&quot;&gt;关于盗版&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;学生时代用的大部分软件都是盗版的，那时的自己根本不懂什么版权意识，无论是办公工具还是游戏一律用破解版，还沾沾自喜觉得找资源有一手。第一次支持正版是2019年出的《全战三国》，处于对三国的狂热，毫不犹豫300多买了价位不算便宜的新版大作。自那以后就慢慢开始支持正版了。&lt;br&gt;作为开发者也会参与一些开源项目，偶尔也会其他参与开源的朋友聊天，大部分的作者仅靠开源是不足以支持自己生活开销，如果使用者都能尽自己的所能去支持这些作品，开发者就有更大的动力去把这件事做下去。&lt;br&gt;比较好的一个现象是有一些大公司已经这么做了，但充其量也只是很小的一部分开发者得以纯靠开源的收入来生活。&lt;br&gt;个人来说，希望能尽自己的力去让更多的开源作者获得一些收入，即使是帮忙宣传一些优秀的项目，也挺好的。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="随笔" scheme="https://ginta.top/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
