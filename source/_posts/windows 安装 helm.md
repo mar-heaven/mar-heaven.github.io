@@ -15,6 +15,7 @@ tags:
   - windows
   - k8s
 categories: 其他
+published: false
 ---
 ## 安装
 到 [helm的Github仓库](https://github.com/helm/helm/releases) 找到
