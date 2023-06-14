@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-06-11T11:58:46.755Z</updated>
+  <updated>2023-06-14T09:52:54.174Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>202306W1</title>
+    <title>202306W1 Healthy</title>
     <link href="https://ginta.top/2023/06/11/1029/"/>
     <id>https://ginta.top/2023/06/11/1029/</id>
     <published>2023-06-11T19:40:08.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
       
@@ -46,7 +46,7 @@
     <link href="https://ginta.top/2023/05/23/1028/"/>
     <id>https://ginta.top/2023/05/23/1028/</id>
     <published>2023-05-23T22:11:52.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
       
@@ -71,7 +71,7 @@
     <link href="https://ginta.top/2023/04/28/1027/"/>
     <id>https://ginta.top/2023/04/28/1027/</id>
     <published>2023-04-28T00:23:26.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
       
@@ -96,7 +96,7 @@
     <link href="https://ginta.top/2023/04/02/1026/"/>
     <id>https://ginta.top/2023/04/02/1026/</id>
     <published>2023-04-02T21:47:16.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
       
@@ -117,11 +117,11 @@
   </entry>
   
   <entry>
-    <title>Kubernetes 源码阅读</title>
+    <title>Kubernetes 架构</title>
     <link href="https://ginta.top/2023/03/24/1025/"/>
     <id>https://ginta.top/2023/03/24/1025/</id>
     <published>2023-03-24T22:38:16.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
@@ -132,7 +132,7 @@
     <category term="kubernetes" scheme="https://ginta.top/categories/kubernetes/"/>
     
     
-    <category term="源码阅读" scheme="https://ginta.top/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    <category term="云原生" scheme="https://ginta.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
     
   </entry>
   
@@ -141,7 +141,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-06-11T11:58:46.755Z</updated>
+    <updated>2023-06-14T09:52:54.174Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
