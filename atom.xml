@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-08-06T15:41:27.572Z</updated>
+  <updated>2023-08-07T03:11:19.062Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test istio https requests local(macos)</title>
+    <link href="https://ginta.top/2023/08/07/1034/"/>
+    <id>https://ginta.top/2023/08/07/1034/</id>
+    <published>2023-08-07T02:57:14.000Z</published>
+    <updated>2023-08-07T03:11:19.062Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;generate-certificate&quot;&gt;&lt;a href=&quot;#generate-certificate&quot; class=&quot;headerlink&quot; title=&quot;generate certificate&quot;&gt;&lt;/a&gt;generate certificate&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install mkcert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;brew install nss&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/.cert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkcert -key-file ~/.cert/key.pem -cert-file ~/.cert/cert.pem &amp;quot;api.ginta.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Enable-the-system-to-trust-the-generated-certificate&quot;&gt;&lt;a href=&quot;#Enable-the-system-to-trust-the-generated-certificate&quot; class=&quot;headerlink&quot; title=&quot;Enable the system to trust the generated certificate&quot;&gt;&lt;/a&gt;Enable the system to trust the generated certificate&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="istio" scheme="https://ginta.top/categories/istio/"/>
+    
+    
+    <category term="云原生" scheme="https://ginta.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202308W1 BRUSH UP LIFE and Kubernetes</title>
     <link href="https://ginta.top/2023/08/06/1033/"/>
     <id>https://ginta.top/2023/08/06/1033/</id>
-    <published>2023-08-06T23:17:58.000Z</published>
-    <updated>2023-08-06T15:41:27.572Z</updated>
+    <published>2023-08-06T15:17:58.000Z</published>
+    <updated>2023-08-06T15:41:06.239Z</updated>
     
     
       
@@ -413,26 +433,6 @@
     
     <summary type="html">&lt;p&gt;最近发烧的人好多，周四喉咙有点疼，不过当时也没有抗原，也不知道是不是中招了，打了声招呼远程办公。周日一起合租的同学烧到40度+，原本打算元旦前的一周也远程算了，鉴于在家这几天少了固定的运动量精神似乎变差了很多，想想还是去公司吧。周一早上看了一下镜子里的人，不到一周的熬夜和荒废了两周的跑步从黑眼圈和憔悴的面容就可以看出来有多糟糕了。&lt;/p&gt;
 &lt;h3 id=&quot;Pycon-2022&quot;&gt;&lt;a href=&quot;#Pycon-2022&quot; class=&quot;headerlink&quot; title=&quot;Pycon 2022&quot;&gt;&lt;/a&gt;Pycon 2022&lt;/h3&gt;&lt;p&gt;和听听卡一起主办了今年的 &lt;em&gt;PyCon China&lt;/em&gt; 深圳场，有了往年的惨痛教训流程上顺利了很多，没有因为切屏器再搞到晚上十一点，会前还调侃说今年这个疫情到时候来听的人只有一两个会不会很尴尬，最终还是到场了几十个，似乎比去年还多一点。晚上一起吃饭的时候发现有不少讲师其实也是从听众过来的。第一年是听众，第二年是志愿者，第三年就上台分享。虽然工作上一直在 &lt;em&gt;GO&lt;/em&gt; 了，不过在社区的项目还是优先开发效率比较高的 &lt;em&gt;Python&lt;/em&gt;。如果明年的 &lt;em&gt;Pycon&lt;/em&gt; 自己还在深圳的话，那上去分享一下吧。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>万能的ChatGPT</title>
-    <link href="https://ginta.top/2022/12/07/202212W1/"/>
-    <id>https://ginta.top/2022/12/07/202212W1/</id>
-    <published>2022-12-07T15:28:17.000Z</published>
-    <updated>2023-02-19T07:36:00.141Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这周听的播客依然以开源为主，几位嘉宾讲述了各自参与到开源的经历，以及一些想法。不得不说每次听到有谁说自己高中啊甚至初中就接触到编程还是有点佩服的，对比自己，初中的时候电脑基本都是用来看剧，或者玩反恐精英，高中就更纯粹了，单调英雄联盟。&lt;/p&gt;
-&lt;h3 id=&quot;深度参与社区&quot;&gt;&lt;a href=&quot;#深度参与社区&quot; class=&quot;headerlink&quot; title=&quot;深度参与社区&quot;&gt;&lt;/a&gt;深度参与社区&lt;/h3&gt;&lt;p&gt;其中有一个观点还是很有感触的，就是尝试去深度参与社区。刚毕业的那会自己只负责拍照，还老担心拍的不好（事实上确实很业余），后来借鉴了其他人的照片，现在至少角度不会显得突兀。&lt;/p&gt;</summary>
     
     
     
