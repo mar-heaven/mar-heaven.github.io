@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-08-07T03:11:19.062Z</updated>
+  <updated>2023-08-14T15:14:29.341Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202307W4 Concerts and Podcasts</title>
+    <link href="https://ginta.top/2023/08/14/1032/"/>
+    <id>https://ginta.top/2023/08/14/1032/</id>
+    <published>2023-08-14T15:14:29.341Z</published>
+    <updated>2023-08-14T15:14:29.341Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
+&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
+&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>202308W2 go hiking and Devops</title>
+    <link href="https://ginta.top/2023/08/14/1035/"/>
+    <id>https://ginta.top/2023/08/14/1035/</id>
+    <published>2023-08-14T15:14:29.341Z</published>
+    <updated>2023-08-14T15:14:29.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;This week, I focused on learning the networking part of Docker, an area I had limited knowledge of before. I also took some time to set</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>test istio https requests local(macos)</title>
@@ -40,8 +82,8 @@
     <title>202308W1 BRUSH UP LIFE and Kubernetes</title>
     <link href="https://ginta.top/2023/08/06/1033/"/>
     <id>https://ginta.top/2023/08/06/1033/</id>
-    <published>2023-08-06T15:17:58.000Z</published>
-    <updated>2023-08-06T15:41:06.239Z</updated>
+    <published>2023-08-06T23:17:58.000Z</published>
+    <updated>2023-08-14T15:14:29.341Z</updated>
     
     
       
@@ -51,23 +93,6 @@
     <summary type="html">&lt;p&gt;This week, I took a day off and used the time to renew my Hong Kong and Macau travel permit. It’s been five years since I first obtained</summary>
         
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>202307W4 Concerts and Podcasts</title>
-    <link href="https://ginta.top/2023/07/30/1032/"/>
-    <id>https://ginta.top/2023/07/30/1032/</id>
-    <published>2023-07-30T00:40:46.000Z</published>
-    <updated>2023-07-30T01:54:20.615Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
-&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
-&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
     
     
     
@@ -420,26 +445,6 @@
     
     
     <category term="年终总结" scheme="https://ginta.top/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>颓废的两周</title>
-    <link href="https://ginta.top/2022/12/26/202212W4/"/>
-    <id>https://ginta.top/2022/12/26/202212W4/</id>
-    <published>2022-12-26T04:30:31.000Z</published>
-    <updated>2023-02-19T07:36:00.141Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近发烧的人好多，周四喉咙有点疼，不过当时也没有抗原，也不知道是不是中招了，打了声招呼远程办公。周日一起合租的同学烧到40度+，原本打算元旦前的一周也远程算了，鉴于在家这几天少了固定的运动量精神似乎变差了很多，想想还是去公司吧。周一早上看了一下镜子里的人，不到一周的熬夜和荒废了两周的跑步从黑眼圈和憔悴的面容就可以看出来有多糟糕了。&lt;/p&gt;
-&lt;h3 id=&quot;Pycon-2022&quot;&gt;&lt;a href=&quot;#Pycon-2022&quot; class=&quot;headerlink&quot; title=&quot;Pycon 2022&quot;&gt;&lt;/a&gt;Pycon 2022&lt;/h3&gt;&lt;p&gt;和听听卡一起主办了今年的 &lt;em&gt;PyCon China&lt;/em&gt; 深圳场，有了往年的惨痛教训流程上顺利了很多，没有因为切屏器再搞到晚上十一点，会前还调侃说今年这个疫情到时候来听的人只有一两个会不会很尴尬，最终还是到场了几十个，似乎比去年还多一点。晚上一起吃饭的时候发现有不少讲师其实也是从听众过来的。第一年是听众，第二年是志愿者，第三年就上台分享。虽然工作上一直在 &lt;em&gt;GO&lt;/em&gt; 了，不过在社区的项目还是优先开发效率比较高的 &lt;em&gt;Python&lt;/em&gt;。如果明年的 &lt;em&gt;Pycon&lt;/em&gt; 自己还在深圳的话，那上去分享一下吧。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
