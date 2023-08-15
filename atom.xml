@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-08-14T15:14:29.341Z</updated>
+  <updated>2023-08-15T14:45:30.926Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iptables</title>
+    <link href="https://ginta.top/2023/08/15/1036/"/>
+    <id>https://ginta.top/2023/08/15/1036/</id>
+    <published>2023-08-15T22:41:38.000Z</published>
+    <updated>2023-08-15T14:45:30.926Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;iptables&quot;&gt;&lt;a href=&quot;#iptables&quot; class=&quot;headerlink&quot; title=&quot;iptables&quot;&gt;&lt;/a&gt;iptables&lt;/h2&gt;&lt;h3 id=&quot;三张表&quot;&gt;&lt;a href=&quot;#三张表&quot; class=&quot;headerlink&quot; title=&quot;三张表&quot;&gt;&lt;/a&gt;三张表&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;filter: 负责过滤数据包，包括的规则链有：input，output和forward&lt;/li&gt;
+&lt;li&gt;nat: 用于网络地址转换（IP、端口），包括的规则链有：prerouting，postrouting 和 output&lt;/li&gt;
+&lt;li&gt;mangle: 主要应用在修改数据包、流量整形、给数据包打标识，默认的规则链有：INPUT，OUTPUT、 forward，POSTROUTING，PREROUTING&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://ginta.top/categories/linux/"/>
+    
+    <category term="network" scheme="https://ginta.top/categories/linux/network/"/>
+    
+    
+    <category term="network" scheme="https://ginta.top/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
     <title>202307W4 Concerts and Podcasts</title>
-    <link href="https://ginta.top/2023/08/14/1032/"/>
-    <id>https://ginta.top/2023/08/14/1032/</id>
-    <published>2023-08-14T15:14:29.341Z</published>
-    <updated>2023-08-14T15:14:29.341Z</updated>
+    <link href="https://ginta.top/2023/08/15/1032/"/>
+    <id>https://ginta.top/2023/08/15/1032/</id>
+    <published>2023-08-15T14:45:30.926Z</published>
+    <updated>2023-08-15T14:45:30.926Z</updated>
     
     
     <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
@@ -37,10 +62,10 @@
   
   <entry>
     <title>202308W2 go hiking and Devops</title>
-    <link href="https://ginta.top/2023/08/14/1035/"/>
-    <id>https://ginta.top/2023/08/14/1035/</id>
-    <published>2023-08-14T15:14:29.341Z</published>
-    <updated>2023-08-14T15:14:29.341Z</updated>
+    <link href="https://ginta.top/2023/08/15/1035/"/>
+    <id>https://ginta.top/2023/08/15/1035/</id>
+    <published>2023-08-15T14:45:30.926Z</published>
+    <updated>2023-08-15T14:45:30.926Z</updated>
     
     
       
@@ -83,7 +108,7 @@
     <link href="https://ginta.top/2023/08/06/1033/"/>
     <id>https://ginta.top/2023/08/06/1033/</id>
     <published>2023-08-06T23:17:58.000Z</published>
-    <updated>2023-08-14T15:14:29.341Z</updated>
+    <updated>2023-08-15T14:45:30.926Z</updated>
     
     
       
@@ -426,25 +451,6 @@
     
     
     <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022年总结</title>
-    <link href="https://ginta.top/2023/01/03/2022%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
-    <id>https://ginta.top/2023/01/03/2022%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
-    <published>2023-01-03T00:41:19.000Z</published>
-    <updated>2023-01-12T04:01:03.872Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;元旦和室友去惠州玩了两天，爬山有点过头了到上班这一天腿还是很酸，请假再家多休息一天，也抽出时间把年终总结搞定。&lt;/p&gt;
-&lt;p&gt;在写这篇之前回顾了去年的年终总结，顺便看了看其他博主的年终总结。&lt;/p&gt;
-&lt;p&gt;即使想用天花乱坠的描述去点缀这一年的经历，想来想去还是找不出可以炫耀的支点。期望的年终总结应该是充满奇异，实际上2022年什么大事也没发生，或许可以罪恶地把一切都推给疫情，亦或是承认这一年的平淡无奇。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="年终总结" scheme="https://ginta.top/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
