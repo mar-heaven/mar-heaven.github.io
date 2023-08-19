@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-08-19T10:27:35.345Z</updated>
+  <updated>2023-08-19T23:15:56.273Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ginta.top/2023/08/19/1037/"/>
     <id>https://ginta.top/2023/08/19/1037/</id>
     <published>2023-08-19T07:27:44.000Z</published>
-    <updated>2023-08-19T10:27:35.345Z</updated>
+    <updated>2023-08-19T23:15:56.273Z</updated>
     
     
       
@@ -43,8 +43,8 @@
     <title>iptables</title>
     <link href="https://ginta.top/2023/08/15/1036/"/>
     <id>https://ginta.top/2023/08/15/1036/</id>
-    <published>2023-08-15T22:41:38.000Z</published>
-    <updated>2023-08-19T10:29:13.127Z</updated>
+    <published>2023-08-15T14:41:38.000Z</published>
+    <updated>2023-08-19T10:28:06.130Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;iptables&quot;&gt;&lt;a href=&quot;#iptables&quot; class=&quot;headerlink&quot; title=&quot;iptables&quot;&gt;&lt;/a&gt;iptables&lt;/h2&gt;&lt;h3 id=&quot;三张表&quot;&gt;&lt;a href=&quot;#三张表&quot; class=&quot;headerlink&quot; title=&quot;三张表&quot;&gt;&lt;/a&gt;三张表&lt;/h3&gt;&lt;ul&gt;
@@ -92,7 +92,7 @@
     <link href="https://ginta.top/2023/08/07/1034/"/>
     <id>https://ginta.top/2023/08/07/1034/</id>
     <published>2023-08-07T02:57:14.000Z</published>
-    <updated>2023-08-19T10:27:19.786Z</updated>
+    <updated>2023-08-19T23:17:40.057Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;generate-certificate&quot;&gt;&lt;a href=&quot;#generate-certificate&quot; class=&quot;headerlink&quot; title=&quot;generate certificate&quot;&gt;&lt;/a&gt;generate certificate&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install mkcert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;brew install nss&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/.cert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkcert -key-file ~/.cert/key.pem -cert-file ~/.cert/cert.pem &amp;quot;api.ginta.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
