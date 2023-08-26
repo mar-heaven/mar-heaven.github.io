@@ -110,7 +110,7 @@ navbar:
         分类: /categories
         标签: /tags
         关于: /about
-        周报: /weekly
+        英语: /english
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:
