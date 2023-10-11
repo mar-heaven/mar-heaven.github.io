@@ -34,13 +34,143 @@ One goroutine is bound to one thread, returning to the kernel to switch threads.
 #### M:N
 M goroutines are bound to N threads, which can fully utilize multiple cores to efficiently process programs, but the difficulty is to implement the binding and scheduling of goroutines and threads in user mode. Go language uses this strategy.
 
-### GMP模型
+### GMP Model
 ![20230323212056](https://raw.githubusercontent.com/mar-heaven/image-repo/main/blogs/pictures/20230323212056.png)
 G：Represents goroutine
 M：System thread
 P: Scheduler
 
-Each P has its own queue for storing goroutines to be executed, and there is also a global queue. When there are no goroutines to be executed in P's own queue, it first steals some from other queues using the method mentioned above. If other queues are also empty, it will take goroutines from the global P queue. When taking G (referring to goroutine) from the global queue, it will not take many at once, otherwise, other P will come here to take them, increasing unnecessary overhead.
+**source code runtime/proc.go**
+```Golang
+func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
+	mp := getg().m
+
+	// The conditions here and in handoffp must agree: if
+	// findrunnable would return a G to run, handoffp must start
+	// an M.
+
+top:
+	pp := mp.p.ptr()
+	if sched.gcwaiting.Load() {
+		gcstopm()
+		goto top
+	}
+	if pp.runSafePointFn != 0 {
+		runSafePointFn()
+	}
+
+	// now and pollUntil are saved for work stealing later,
+	// which may steal timers. It's important that between now
+	// and then, nothing blocks, so these numbers remain mostly
+	// relevant.
+	now, pollUntil, _ := checkTimers(pp, 0)
+
+	// Try to schedule the trace reader.
+	if traceEnabled() || traceShuttingDown() {
+		gp := traceReader()
+		if gp != nil {
+			casgstatus(gp, _Gwaiting, _Grunnable)
+			traceGoUnpark(gp, 0)
+			return gp, false, true
+		}
+	}
+
+	// Try to schedule a GC worker.
+	if gcBlackenEnabled != 0 {
+		gp, tnow := gcController.findRunnableGCWorker(pp, now)
+		if gp != nil {
+			return gp, false, true
+		}
+		now = tnow
+	}
+
+	// Check the global runnable queue once in a while to ensure fairness.
+	// Otherwise two goroutines can completely occupy the local runqueue
+	// by constantly respawning each other.
+	if pp.schedtick%61 == 0 && sched.runqsize > 0 {
+		lock(&sched.lock)
+		gp := globrunqget(pp, 1)
+		unlock(&sched.lock)
+		if gp != nil {
+			return gp, false, false
+		}
+	}
+
+	// Wake up the finalizer G.
+	if fingStatus.Load()&(fingWait|fingWake) == fingWait|fingWake {
+		if gp := wakefing(); gp != nil {
+			ready(gp, 0, true)
+		}
+	}
+	if *cgo_yield != nil {
+		asmcgocall(*cgo_yield, nil)
+	}
+
+	// local runq
+	if gp, inheritTime := runqget(pp); gp != nil {
+		return gp, inheritTime, false
+	}
+
+	// global runq
+	if sched.runqsize != 0 {
+		lock(&sched.lock)
+		gp := globrunqget(pp, 0)
+		unlock(&sched.lock)
+		if gp != nil {
+			return gp, false, false
+		}
+	}
+
+	// Poll network.
+	// This netpoll is only an optimization before we resort to stealing.
+	// We can safely skip it if there are no waiters or a thread is blocked
+	// in netpoll already. If there is any kind of logical race with that
+	// blocked thread (e.g. it has already returned from netpoll, but does
+	// not set lastpoll yet), this thread will do blocking netpoll below
+	// anyway.
+	if netpollinited() && netpollWaiters.Load() > 0 && sched.lastpoll.Load() != 0 {
+		if list := netpoll(0); !list.empty() { // non-blocking
+			gp := list.pop()
+			injectglist(&list)
+			casgstatus(gp, _Gwaiting, _Grunnable)
+			if traceEnabled() {
+				traceGoUnpark(gp, 0)
+			}
+			return gp, false, false
+		}
+	}
+
+	// Spinning Ms: steal work from other Ps.
+	//
+	// Limit the number of spinning Ms to half the number of busy Ps.
+	// This is necessary to prevent excessive CPU consumption when
+	// GOMAXPROCS>>1 but the program parallelism is low.
+	if mp.spinning || 2*sched.nmspinning.Load() < gomaxprocs-sched.npidle.Load() {
+		if !mp.spinning {
+			mp.becomeSpinning()
+		}
+
+		gp, inheritTime, tnow, w, newWork := stealWork(now)
+		if gp != nil {
+			// Successfully stole.
+			return gp, inheritTime, false
+		}
+		if newWork {
+			// There may be new timer or GC work; restart to
+			// discover.
+			goto top
+		}
+
+		now = tnow
+		if w != 0 && (pollUntil == 0 || w < pollUntil) {
+			// Earlier timer to wait for.
+			pollUntil = w
+		}
+	}
+    ...
+}
+```
+Each P has its own queue for storing goroutines to be executed, and there is also a global queue. When there are no goroutines to be executed in P's own queue, it first steals some from global P queue. If global P queue is also empty, it will take goroutines from the other queues using the method mentioned above. When taking G (referring to goroutine) from the global queue, it will not take many at once, otherwise, other P will come here to take them, increasing unnecessary overhead.
 
 The GMP scheduling method is as follows:
 1. A system thread (M) that wants to execute a goroutine must first bind to P
