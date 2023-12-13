@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-10-11T14:29:31.674Z</updated>
+  <updated>2023-12-13T07:17:21.846Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ginta.top/2023/10/11/1038/"/>
     <id>https://ginta.top/2023/10/11/1038/</id>
     <published>2023-10-11T22:12:03.000Z</published>
-    <updated>2023-10-11T14:29:31.674Z</updated>
+    <updated>2023-12-13T07:17:21.846Z</updated>
     
     
       
@@ -322,7 +322,7 @@
     <link href="https://ginta.top/2023/03/22/GMP/"/>
     <id>https://ginta.top/2023/03/22/GMP/</id>
     <published>2023-03-22T22:15:43.000Z</published>
-    <updated>2023-10-11T14:29:31.674Z</updated>
+    <updated>2023-12-13T07:17:21.850Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;We all know that &lt;strong&gt;Golang&lt;/strong&gt; has high concurrency performance, thanks to its excellent &lt;strong&gt;GMP&lt;/strong&gt; model design. This article discusses the cleverness of the &lt;strong&gt;GMP&lt;/strong&gt; model.&lt;/p&gt;
