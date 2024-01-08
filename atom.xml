@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2023-12-13T07:17:21.846Z</updated>
+  <updated>2024-01-08T23:30:59.577Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2023年总结</title>
+    <link href="https://ginta.top/2024/01/09/1039/"/>
+    <id>https://ginta.top/2024/01/09/1039/</id>
+    <published>2024-01-09T06:24:35.000Z</published>
+    <updated>2024-01-08T23:30:59.577Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;对比以往，今年的年终总结晚了一周，是因为周末都在户外，所以就拖更一点点。按照习惯写之前会看一下去年立的 &lt;em&gt;flag&lt;/em&gt;， 结果大部分 &lt;em&gt;flag&lt;/em&gt; 依旧是flag～&lt;/p&gt;
+&lt;p&gt;2023年的春节是在深圳过的，现在是每两个春节回家一次，当然不回家过年的时候一般五一国庆也都是会回去的。虽然是一个人在深圳过年，有趣的是过年当天都有朋友邀请一起吃饭，前司测试组组长一家人也都在深圳过年，说如果过年那天没什么安排可以一起吃个饭，于是就厚着脸皮去蹭了一顿饭，虽然有一道菜略咸，总体还是很好吃的。&lt;br&gt;接下来的几天基本就是在图书馆泡着，听听播客，印象比较深的是一个小姑娘突然走过来说了句“哥哥你好帅啊！”，没反应过来，顿了几秒回复了个”谢谢“。&lt;/p&gt;
+&lt;p&gt;三月份去广州滑雪，时隔一年多第二次滑雪水平自然是不会突发猛进，最大的变化是敢在中级道上把速度拉高，初级道基本可以控速不撞人；期间结识了几位新朋友，有北京的，广州的，还有成都的老外，尝试了人生中第一次英文会议，收获就是敢在老外面前说英语了，不管是不是有错的词，还是有病句，老外都是能听懂的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="年终总结" scheme="https://ginta.top/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>202310W1 National Day and Family</title>
@@ -436,28 +457,6 @@
     
     
     <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gRPC</title>
-    <link href="https://ginta.top/2023/01/26/grpc/"/>
-    <id>https://ginta.top/2023/01/26/grpc/</id>
-    <published>2023-01-26T10:17:48.000Z</published>
-    <updated>2023-01-31T15:49:57.148Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h3&gt;&lt;p&gt;随着应用的日益复杂，单一服务已经不能很好地承载日益庞大的用户请求，当唯一一个服务由于各种原因不能正常运行（数据库满载，机房故障）导致系统整体挂掉显然是不能接受的。解决上述问题思路就是风险均摊，比如机房故障我们可以把服务部署在多个地区，然后把服务从大的服务拆分成若干个小的服务，这样当一个服务出现问题的时候也可以保证其他服务正常运行，至少不是所有服务全部炸掉，比如直播的时候弹幕服务不可用，但是用户依然可以正常观看直播，只是不能和主播实时互动而已。&lt;br&gt;以上粗略描述了微服务的基本思想和要解决的痛点。&lt;/p&gt;
-&lt;h3 id=&quot;gRPC？&quot;&gt;&lt;a href=&quot;#gRPC？&quot; class=&quot;headerlink&quot; title=&quot;gRPC？&quot;&gt;&lt;/a&gt;gRPC？&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="协议" scheme="https://ginta.top/categories/%E5%8D%8F%E8%AE%AE/"/>
-    
-    
-    <category term="go" scheme="https://ginta.top/tags/go/"/>
-    
-    <category term="gRPC" scheme="https://ginta.top/tags/gRPC/"/>
     
   </entry>
   
