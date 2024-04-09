@@ -1,2 +1,0 @@
-- in the long time: 长远来看
-    - In the long time, that was the best.

@@ -1,5 +1,0 @@
-- arbitrary: adj 随意的，任意的
-- dainty: adj 优雅，考究
-- agitation: n 焦虑
-- extinct: adj 灭绝的
-- cosset: v 宠爱

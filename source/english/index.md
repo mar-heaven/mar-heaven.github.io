@@ -1,2 +1,0 @@
-- [sentence](/english/sentences.html)
-- [word](/english/word.html)
