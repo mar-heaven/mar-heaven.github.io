@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-01-23T03:54:13.033Z</updated>
+  <updated>2024-04-09T04:05:02.168Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>202404W1 LOL，成都</title>
+    <link href="https://ginta.top/2024/04/09/1041/"/>
+    <id>https://ginta.top/2024/04/09/1041/</id>
+    <published>2024-04-09T10:44:08.000Z</published>
+    <updated>2024-04-09T04:05:02.168Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;很久没有写周报了，可能是因为感觉没什么可以记录的，想了一下还是可以写点最近几个月的活动。&lt;br&gt;之后的周报打算写中英式的，英式单独放在一个目录。&lt;/p&gt;
+&lt;h3 id=&quot;英雄联盟&quot;&gt;&lt;a href=&quot;#英雄联盟&quot; class=&quot;headerlink&quot; title=&quot;英雄联盟&quot;&gt;&lt;/a&gt;英雄联盟&lt;/h3&gt;&lt;p&gt;3月 &lt;em&gt;Steve&lt;/em&gt; 从广州来深圳玩，考虑到 &lt;em&gt;PPD&lt;/em&gt; 也是一个圈子的，刚好大家都有空就三个人约了一波，&lt;em&gt;Steve&lt;/em&gt; 中午到深圳和朋友吃饭，中间的时间就和 &lt;em&gt;PPD&lt;/em&gt; 去爬南山，两个小时足够刷完。&lt;em&gt;Steve&lt;/em&gt; 和我们在一家咖啡馆面基的，虽然和 &lt;em&gt;Steve&lt;/em&gt; 认识有一年多，见面确是头一次。聊了一下行业相关新闻和八卦之后我提议去网吧，就这样三个老年玩家兜兜转转去了附近一家环境不错的网吧，《英雄联盟》三连坐，一下午只输了一局。玩完已经是8，9点了，在附近吃的烧烤。晚上 &lt;em&gt;Steve&lt;/em&gt; 就住在我们小区不远的一家宾馆，第二天 &lt;em&gt;Steve&lt;/em&gt; 坐顺风车回了广州。偶尔和朋友聊聊是挺有意思的，&lt;em&gt;Steve&lt;/em&gt; 的个人故事略显曲折，早期在日企待过，后来为了妹妹回国，又要去日本。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Set Git proxy</title>
     <link href="https://ginta.top/2024/01/23/1040/"/>
     <id>https://ginta.top/2024/01/23/1040/</id>
-    <published>2024-01-23T11:42:03.000Z</published>
-    <updated>2024-01-23T03:54:13.033Z</updated>
+    <published>2024-01-23T03:42:03.000Z</published>
+    <updated>2024-01-23T03:53:35.595Z</updated>
     
     
     <summary type="html">&lt;p&gt;I was using ssh to clone a repo from Github on wsl, and http proxy not work.&lt;/p&gt;
@@ -85,7 +105,7 @@
     <link href="https://ginta.top/2023/08/19/1037/"/>
     <id>https://ginta.top/2023/08/19/1037/</id>
     <published>2023-08-19T07:27:44.000Z</published>
-    <updated>2023-08-19T23:15:56.273Z</updated>
+    <updated>2024-04-09T02:41:51.896Z</updated>
     
     
       
@@ -428,26 +448,6 @@
     
     <summary type="html">&lt;p&gt;From this report, i just start writing in English as much as possible.&lt;br&gt;I had a short but insightful conversation with a fellow open-source enthusiast over the phone. As mentioned in my year-end review, I felt that my involvement in open-source projects had decreased in 2022 compared to 2021 (partly due to maintaining my company’s open-source projects). This year, I plan to sacrifice some of my social time to invest my energy in more active open-source projects, and try to shift discussions about PRs and issues from WeChat to email for better asynchronicity.&lt;/p&gt;
 &lt;h3 id=&quot;6km&quot;&gt;&lt;a href=&quot;#6km&quot; class=&quot;headerlink&quot; title=&quot;6km&quot;&gt;&lt;/a&gt;6km&lt;/h3&gt;&lt;p&gt;On Wednesday, I listened to an episode of GGTalk podcast and decided to run 2km more than my usual 4km, but stopped because I had to work the next day. I hope to achieve the goal of running a half-marathon distance at one time this year.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>202301W3 头文字D</title>
-    <link href="https://ginta.top/2023/02/19/202302W3/"/>
-    <id>https://ginta.top/2023/02/19/202302W3/</id>
-    <published>2023-02-19T13:21:31.000Z</published>
-    <updated>2023-02-25T13:46:29.043Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;小区楼下有几个小朋友在下象棋，仿佛看到了20年前的自己，那时候小区也是有几位一起玩的朋友，如今也都各奔东西了，只有一个还保持联系。&lt;br&gt;好久没有和表哥联系了，周末抽了一个多小时闲聊，他说北京疫情比起几个月前好多了，说我一个人在深圳没什么意思，要不要在北京工作，或者天津，可能是过年那几天家里有和他提了一下。我说政治中心太过严肃了，闲散惯了融入不了那边的生活，天津还相对靠谱点，不过还是惦记着成都。&lt;/p&gt;
-&lt;h3 id=&quot;换了一台电脑&quot;&gt;&lt;a href=&quot;#换了一台电脑&quot; class=&quot;headerlink&quot; title=&quot;换了一台电脑&quot;&gt;&lt;/a&gt;换了一台电脑&lt;/h3&gt;&lt;p&gt;终于忍受不了编译一个小工程也要半分钟了，找老妈朋友买了台 &lt;em&gt;M1 PRO&lt;/em&gt; 的，本来是选的 &lt;em&gt;M2&lt;/em&gt; ，阿姨说刚好她店里下架了一台14寸的，配置比我选的会好不少，如果不介意电池损耗可以一试。考虑到电脑大部分时间通电，所以电池容量下降一点没关系，但是性能的提升还是能降低不少血压的，事实也是如此，内存和芯片的提升节省了一半以上的编译时间。&lt;/p&gt;</summary>
     
     
     
