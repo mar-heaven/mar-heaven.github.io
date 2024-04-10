@@ -8,4 +8,5 @@ new_count=$(expr $count + 1)
 
 # Write the new count back to the file
 echo "$new_count" > latest_id
-hexo new $new_count
+hexo new ${new_count}
+hexo new ${new_count}_en
