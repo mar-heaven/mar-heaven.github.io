@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-04-09T04:05:50.618Z</updated>
+  <updated>2024-04-16T07:16:12.931Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>202404W2 拳皇97，面基Rain</title>
+    <link href="https://ginta.top/2024/04/16/1042/"/>
+    <id>https://ginta.top/2024/04/16/1042/</id>
+    <published>2024-04-16T14:17:54.000Z</published>
+    <updated>2024-04-16T07:16:12.931Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;“新朋友”-Rain&quot;&gt;&lt;a href=&quot;#“新朋友”-Rain&quot; class=&quot;headerlink&quot; title=&quot;“新朋友” Rain&quot;&gt;&lt;/a&gt;“新朋友” Rain&lt;/h3&gt;&lt;p&gt;和 &lt;em&gt;Steve&lt;/em&gt; 一样，和 &lt;em&gt;Rain&lt;/em&gt; 也是因为项目合作结识的，最近他参加香港的web3会议刚好顺道来深圳看看我，惯例叫上了同方向的 &lt;em&gt;PPD&lt;/em&gt;。&lt;br&gt;起初是约在经常和朋友聚餐的一家海底捞见面，奈何周五生意太火了，等不急的我们最终妥协了旁边一家湘菜馆，或许对他们来说还不算是妥协。期间聊了一些web3的新闻，&lt;em&gt;Rain&lt;/em&gt; 说前一阵在新加坡旅游，我问为什么不顺便去迪拜看看，那边web3也蛮火的，他说有机会可以一去。还聊了关于消息机器人的内容，刚好最近我也在做就互相交换信息。&lt;em&gt;Rain&lt;/em&gt; 第二天还有面试所以吃完我们就回家了。&lt;/p&gt;
+&lt;h3 id=&quot;拳皇&quot;&gt;&lt;a href=&quot;#拳皇&quot; class=&quot;headerlink&quot; title=&quot;拳皇&quot;&gt;&lt;/a&gt;拳皇&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>202404W1 LOL，成都</title>
@@ -428,26 +448,6 @@
     <summary type="html">&lt;p&gt;I went skiing with friend on Saturday, now i can control the speed easily.The last time we went skiing in Guangzhou was in 2021.&lt;br&gt;After skiing, we had barbecue. After a night’s rest, we went to play tennis with friends the next day.&lt;/p&gt;
 &lt;p&gt;This week i spent some time learning about Golang’s concurrency features.By the way, I learned about the nft implementation of blockchain.&lt;/p&gt;
 &lt;p&gt;Reading book 《坏蛋是怎样炼成的》，it has pass 15 years since i read it first time.Once i feel be lack of power, i will reread this novel.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>202301W4 Hello eBPF</title>
-    <link href="https://ginta.top/2023/02/25/202302W4/"/>
-    <id>https://ginta.top/2023/02/25/202302W4/</id>
-    <published>2023-02-25T13:44:46.000Z</published>
-    <updated>2023-02-26T12:56:48.338Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;From this report, i just start writing in English as much as possible.&lt;br&gt;I had a short but insightful conversation with a fellow open-source enthusiast over the phone. As mentioned in my year-end review, I felt that my involvement in open-source projects had decreased in 2022 compared to 2021 (partly due to maintaining my company’s open-source projects). This year, I plan to sacrifice some of my social time to invest my energy in more active open-source projects, and try to shift discussions about PRs and issues from WeChat to email for better asynchronicity.&lt;/p&gt;
-&lt;h3 id=&quot;6km&quot;&gt;&lt;a href=&quot;#6km&quot; class=&quot;headerlink&quot; title=&quot;6km&quot;&gt;&lt;/a&gt;6km&lt;/h3&gt;&lt;p&gt;On Wednesday, I listened to an episode of GGTalk podcast and decided to run 2km more than my usual 4km, but stopped because I had to work the next day. I hope to achieve the goal of running a half-marathon distance at one time this year.&lt;/p&gt;</summary>
     
     
     
