@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-07-02T01:23:26.061Z</updated>
+  <updated>2024-07-02T01:26:12.630Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,27 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Programming Without Looking at the Screen?</title>
-    <link href="https://ginta.top/2024/07/02/1043-en/"/>
-    <id>https://ginta.top/2024/07/02/1043-en/</id>
-    <published>2024-07-02T08:28:21.000Z</published>
-    <updated>2024-07-02T01:23:26.061Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;Stress-Free-Socializing&quot;&gt;&lt;a href=&quot;#Stress-Free-Socializing&quot; class=&quot;headerlink&quot; title=&quot;Stress-Free Socializing&quot;&gt;&lt;/a&gt;Stress-Free Socializing&lt;/h3&gt;&lt;p&gt;Over the weekend, &lt;strong&gt;PPD&lt;/strong&gt; invited me to attend an offline event for Li Yi’s new book. I had never participated in such an event before. The book is titled “Stress-Free Socializing.” Given my mild social anxiety, I decided to check it out. The atmosphere of the entire meeting was quite pleasant, and it was a full house. &lt;strong&gt;PPD&lt;/strong&gt; reserved a seat for me in the front row. Most people had arrived early, and I got there just as it was starting. Walking to the front row in front of everyone felt a bit conspicuous, so I found a low-profile spot to stand and listen. The key takeaway was to go out and communicate with others more. Even if you say something wrong, people don’t really pay that much attention.&lt;/p&gt;
-&lt;h3 id=&quot;Programming-Without-Looking-at-the-Screen&quot;&gt;&lt;a href=&quot;#Programming-Without-Looking-at-the-Screen&quot; class=&quot;headerlink&quot; title=&quot;Programming Without Looking at the Screen?&quot;&gt;&lt;/a&gt;Programming Without Looking at the Screen?&lt;/h3&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>202406W4 可以不看屏幕编程？</title>
     <link href="https://ginta.top/2024/07/02/1043/"/>
     <id>https://ginta.top/2024/07/02/1043/</id>
     <published>2024-07-02T08:28:21.000Z</published>
-    <updated>2024-07-02T01:23:26.061Z</updated>
+    <updated>2024-07-02T01:26:12.630Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;零压力社交&quot;&gt;&lt;a href=&quot;#零压力社交&quot; class=&quot;headerlink&quot; title=&quot;零压力社交&quot;&gt;&lt;/a&gt;零压力社交&lt;/h3&gt;&lt;p&gt;周末 &lt;strong&gt;PPD&lt;/strong&gt; 邀请参加 &lt;strong&gt;李奕&lt;/strong&gt; 的新书线下见面活动，在此之前从来没有参与过类似活动。书名叫《零压力社交》，鉴于有一定程度的社恐就去看看，整个见面会氛围还是挺好的，座无虚席。&lt;strong&gt;PPD&lt;/strong&gt; 在第一排帮我占了个座位，大部分人提前就到场了，我去的时候刚好开始，当着那么多人面走到第一排显得有些突出，于是找了个低调的位置站着听。重点还是要多出去与人沟通，即使说错了其实别人也不会那么关注。&lt;/p&gt;
@@ -57,7 +41,7 @@
     <link href="https://ginta.top/2024/04/16/1042/"/>
     <id>https://ginta.top/2024/04/16/1042/</id>
     <published>2024-04-16T14:17:54.000Z</published>
-    <updated>2024-07-02T01:23:26.061Z</updated>
+    <updated>2024-07-02T01:26:12.630Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;“新朋友”-Rain&quot;&gt;&lt;a href=&quot;#“新朋友”-Rain&quot; class=&quot;headerlink&quot; title=&quot;“新朋友” Rain&quot;&gt;&lt;/a&gt;“新朋友” Rain&lt;/h3&gt;&lt;p&gt;和 &lt;em&gt;Steve&lt;/em&gt; 一样，和 &lt;em&gt;Rain&lt;/em&gt; 也是因为项目合作结识的，最近他参加香港的web3会议刚好顺道来深圳看看我，惯例叫上了同方向的 &lt;em&gt;PPD&lt;/em&gt;。&lt;br&gt;起初是约在经常和朋友聚餐的一家海底捞见面，奈何周五生意太火了，等不急的我们最终妥协了旁边一家湘菜馆，或许对他们来说还不算是妥协。期间聊了一些web3的新闻，&lt;em&gt;Rain&lt;/em&gt; 说前一阵在新加坡旅游，我问为什么不顺便去迪拜看看，那边web3也蛮火的，他说有机会可以一去。还聊了关于消息机器人的内容，刚好最近我也在做就互相交换信息。&lt;em&gt;Rain&lt;/em&gt; 第二天还有面试所以吃完我们就回家了。&lt;/p&gt;
@@ -449,6 +433,27 @@
     
     
     <category term="goroutine" scheme="https://ginta.top/tags/goroutine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>202303W3 GPT-4 and an interesting meeting</title>
+    <link href="https://ginta.top/2023/03/18/202303W3/"/>
+    <id>https://ginta.top/2023/03/18/202303W3/</id>
+    <published>2023-03-18T02:06:09.000Z</published>
+    <updated>2023-03-19T12:01:09.064Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;In the past week,GPT-4 has gone viral on the internet, and every one around me is disscussing topics related to it.As an old movie “The Matrix” shows, AI will become increasingly powerful,i believe it will eventually take over all aspects of our lives.&lt;/p&gt;
+&lt;p&gt;I took part in  an interesting meeting on Friday night,and it was my first time participating in a meeting in English.Although my English level is average,my forign friend could still understand what i was trying to say.&lt;/p&gt;
+&lt;p&gt;When it comes to speaking English, most people worry that they can’s express themselves correctly due to their poor English.However,the foreigners can still understand what they say means even if they speak poorly. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
