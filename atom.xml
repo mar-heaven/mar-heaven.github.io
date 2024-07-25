@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-07-24T10:09:37.621Z</updated>
+  <updated>2024-07-25T02:23:52.630Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://ginta.top/2024/07/24/1045/"/>
     <id>https://ginta.top/2024/07/24/1045/</id>
     <published>2024-07-24T17:41:25.000Z</published>
-    <updated>2024-07-24T10:09:37.621Z</updated>
+    <updated>2024-07-25T02:23:52.630Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;开发环境下的 gitlab https 没有认证，使用ssh一直提示输入密码，所以需要使用 access token的方式，总之关键点就是 access token，https和ssl，还有默认配置文件&lt;br&gt;注意: 以下环境实在 ubuntu 上操作的，其他环境可能略有不同&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;创建 &lt;code&gt;~/.gitconfig&lt;/code&gt; 文件，内容如下&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[http]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        # 禁用ssl验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sslverify = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        extraheader = PRIVATE-TOKEN: balabababa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[user]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        name = ginta&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        email = 7756ssss@qq.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[url &amp;quot;https://ginta:balabababa@gitlab.devdd.com/&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        insteadOf = https://gitlab.devdd.com/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[credential]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        helper = store&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;go env 关键部分如下， 重点关注 &lt;strong&gt;GOINSECURE&lt;/strong&gt;， &lt;strong&gt;GONOPROXY&lt;/strong&gt;， 和&lt;strong&gt;GOPRIVATE&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GOINSECURE=&amp;#x27;gitlab.devdd.com/*&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GONOPROXY=&amp;#x27;https://ginta:balabababa@gitlab.devdd.com/devdd&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GONOSUMDB=&amp;#x27;https://ginta:balabababa@gitlab.devdd.com/devdd&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GOPRIVATE=&amp;#x27;https://ginta:balabababa@gitlab.devdd.com/devdd&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;创建 &lt;code&gt;~/.gitconfig&lt;/code&gt; 文件，内容如下&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[http]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        # 禁用ssl验证&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sslverify = false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        extraheader = PRIVATE-TOKEN: balabababa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[user]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        name = ginta&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        email = 7756ssss@qq.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[url &amp;quot;https://ginta:balabababa@gitlab.devdd.com/&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        insteadOf = https://gitlab.devdd.com/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[credential]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        helper = store&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary>
     
     
@@ -47,7 +43,7 @@
     <link href="https://ginta.top/2024/07/22/1044/"/>
     <id>https://ginta.top/2024/07/22/1044/</id>
     <published>2024-07-22T17:25:23.000Z</published>
-    <updated>2024-07-24T10:09:37.621Z</updated>
+    <updated>2024-07-25T02:23:52.630Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;内存布局-Cell&quot;&gt;&lt;a href=&quot;#内存布局-Cell&quot; class=&quot;headerlink&quot; title=&quot;内存布局-Cell&quot;&gt;&lt;/a&gt;内存布局-Cell&lt;/h3&gt;&lt;p&gt;Ton链所有的合约，数据等信息都存在一种称为 Cell 的结构中，每个 Cell 只能存放 1023位大小的数据，但是每个 Cell 同时可以引用（单向）4个其它的 Cell，这意味着它可以无限扩展，支持任意大小的合约。&lt;/p&gt;
@@ -65,7 +61,7 @@
     <link href="https://ginta.top/2024/07/02/1043/"/>
     <id>https://ginta.top/2024/07/02/1043/</id>
     <published>2024-07-02T08:28:21.000Z</published>
-    <updated>2024-07-24T10:09:37.621Z</updated>
+    <updated>2024-07-25T02:23:52.630Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;零压力社交&quot;&gt;&lt;a href=&quot;#零压力社交&quot; class=&quot;headerlink&quot; title=&quot;零压力社交&quot;&gt;&lt;/a&gt;零压力社交&lt;/h3&gt;&lt;p&gt;周末 &lt;strong&gt;PPD&lt;/strong&gt; 邀请参加 &lt;strong&gt;李奕&lt;/strong&gt; 的新书线下见面活动，在此之前从来没有参与过类似活动。书名叫《零压力社交》，鉴于有一定程度的社恐就去看看，整个见面会氛围还是挺好的，座无虚席。&lt;strong&gt;PPD&lt;/strong&gt; 在第一排帮我占了个座位，大部分人提前就到场了，我去的时候刚好开始，当着那么多人面走到第一排显得有些突出，于是找了个低调的位置站着听。重点还是要多出去与人沟通，即使说错了其实别人也不会那么关注。&lt;/p&gt;
@@ -85,7 +81,7 @@
     <link href="https://ginta.top/2024/04/16/1042/"/>
     <id>https://ginta.top/2024/04/16/1042/</id>
     <published>2024-04-16T14:17:54.000Z</published>
-    <updated>2024-07-24T10:09:37.621Z</updated>
+    <updated>2024-07-25T02:23:52.630Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;“新朋友”-Rain&quot;&gt;&lt;a href=&quot;#“新朋友”-Rain&quot; class=&quot;headerlink&quot; title=&quot;“新朋友” Rain&quot;&gt;&lt;/a&gt;“新朋友” Rain&lt;/h3&gt;&lt;p&gt;和 &lt;em&gt;Steve&lt;/em&gt; 一样，和 &lt;em&gt;Rain&lt;/em&gt; 也是因为项目合作结识的，最近他参加香港的web3会议刚好顺道来深圳看看我，惯例叫上了同方向的 &lt;em&gt;PPD&lt;/em&gt;。&lt;br&gt;起初是约在经常和朋友聚餐的一家海底捞见面，奈何周五生意太火了，等不急的我们最终妥协了旁边一家湘菜馆，或许对他们来说还不算是妥协。期间聊了一些web3的新闻，&lt;em&gt;Rain&lt;/em&gt; 说前一阵在新加坡旅游，我问为什么不顺便去迪拜看看，那边web3也蛮火的，他说有机会可以一去。还聊了关于消息机器人的内容，刚好最近我也在做就互相交换信息。&lt;em&gt;Rain&lt;/em&gt; 第二天还有面试所以吃完我们就回家了。&lt;/p&gt;
