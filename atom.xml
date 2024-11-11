@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-11-02T10:55:46.305Z</updated>
+  <updated>2024-11-11T02:25:05.160Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>202307W4 Concerts and Podcasts</title>
+    <link href="https://ginta.top/2024/11/11/1032/"/>
+    <id>https://ginta.top/2024/11/11/1032/</id>
+    <published>2024-11-11T02:25:05.160Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
+&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
+&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>202308W2 go hiking and Devops</title>
+    <link href="https://ginta.top/2024/11/11/1035/"/>
+    <id>https://ginta.top/2024/11/11/1035/</id>
+    <published>2024-11-11T02:25:05.160Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;This week, I focused on learning the networking part of Docker, an area I had limited knowledge of before. I also took some time to set</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>golang module 私有仓库</title>
     <link href="https://ginta.top/2024/07/24/1045/"/>
     <id>https://ginta.top/2024/07/24/1045/</id>
-    <published>2024-07-24T20:41:25.000Z</published>
-    <updated>2024-11-02T10:55:46.305Z</updated>
+    <published>2024-07-24T09:41:25.000Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;开发环境下的 gitlab https 没有认证，使用ssh一直提示输入密码，所以需要使用 access token的方式，总之关键点就是 access token，https和ssl，还有默认配置文件&lt;br&gt;注意: 以下环境实在 ubuntu 上操作的，其他环境可能略有不同&lt;/p&gt;
@@ -42,8 +84,8 @@
     <title>ton</title>
     <link href="https://ginta.top/2024/07/22/1044/"/>
     <id>https://ginta.top/2024/07/22/1044/</id>
-    <published>2024-07-22T20:25:23.000Z</published>
-    <updated>2024-11-02T10:57:49.610Z</updated>
+    <published>2024-07-22T09:25:23.000Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;内存布局-Cell&quot;&gt;&lt;a href=&quot;#内存布局-Cell&quot; class=&quot;headerlink&quot; title=&quot;内存布局-Cell&quot;&gt;&lt;/a&gt;内存布局-Cell&lt;/h3&gt;&lt;p&gt;Ton链所有的合约，数据等信息都存在一种称为 Cell 的结构中，每个 Cell 只能存放 1023位大小的数据，但是每个 Cell 同时可以引用（单向）4个其它的 Cell，这意味着它可以无限扩展，支持任意大小的合约。&lt;/p&gt;
@@ -60,8 +102,8 @@
     <title>202406W4 可以不看屏幕编程？</title>
     <link href="https://ginta.top/2024/07/02/1043/"/>
     <id>https://ginta.top/2024/07/02/1043/</id>
-    <published>2024-07-02T11:28:21.000Z</published>
-    <updated>2024-07-02T01:22:28.941Z</updated>
+    <published>2024-07-02T00:28:21.000Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;零压力社交&quot;&gt;&lt;a href=&quot;#零压力社交&quot; class=&quot;headerlink&quot; title=&quot;零压力社交&quot;&gt;&lt;/a&gt;零压力社交&lt;/h3&gt;&lt;p&gt;周末 &lt;strong&gt;PPD&lt;/strong&gt; 邀请参加 &lt;strong&gt;李奕&lt;/strong&gt; 的新书线下见面活动，在此之前从来没有参与过类似活动。书名叫《零压力社交》，鉴于有一定程度的社恐就去看看，整个见面会氛围还是挺好的，座无虚席。&lt;strong&gt;PPD&lt;/strong&gt; 在第一排帮我占了个座位，大部分人提前就到场了，我去的时候刚好开始，当着那么多人面走到第一排显得有些突出，于是找了个低调的位置站着听。重点还是要多出去与人沟通，即使说错了其实别人也不会那么关注。&lt;/p&gt;
@@ -80,8 +122,8 @@
     <title>202404W2 拳皇97，面基Rain</title>
     <link href="https://ginta.top/2024/04/16/1042/"/>
     <id>https://ginta.top/2024/04/16/1042/</id>
-    <published>2024-04-16T17:17:54.000Z</published>
-    <updated>2024-06-29T00:30:49.143Z</updated>
+    <published>2024-04-16T06:17:54.000Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;“新朋友”-Rain&quot;&gt;&lt;a href=&quot;#“新朋友”-Rain&quot; class=&quot;headerlink&quot; title=&quot;“新朋友” Rain&quot;&gt;&lt;/a&gt;“新朋友” Rain&lt;/h3&gt;&lt;p&gt;和 &lt;em&gt;Steve&lt;/em&gt; 一样，和 &lt;em&gt;Rain&lt;/em&gt; 也是因为项目合作结识的，最近他参加香港的web3会议刚好顺道来深圳看看我，惯例叫上了同方向的 &lt;em&gt;PPD&lt;/em&gt;。&lt;br&gt;起初是约在经常和朋友聚餐的一家海底捞见面，奈何周五生意太火了，等不急的我们最终妥协了旁边一家湘菜馆，或许对他们来说还不算是妥协。期间聊了一些web3的新闻，&lt;em&gt;Rain&lt;/em&gt; 说前一阵在新加坡旅游，我问为什么不顺便去迪拜看看，那边web3也蛮火的，他说有机会可以一去。还聊了关于消息机器人的内容，刚好最近我也在做就互相交换信息。&lt;em&gt;Rain&lt;/em&gt; 第二天还有面试所以吃完我们就回家了。&lt;/p&gt;
@@ -101,7 +143,7 @@
     <link href="https://ginta.top/2024/04/09/1041/"/>
     <id>https://ginta.top/2024/04/09/1041/</id>
     <published>2024-04-09T02:44:08.000Z</published>
-    <updated>2024-04-09T04:05:50.618Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;p&gt;很久没有写周报了，可能是因为感觉没什么可以记录的，想了一下还是可以写点最近几个月的活动。&lt;br&gt;之后的周报打算写中英式的，英式单独放在一个目录。&lt;/p&gt;
@@ -121,7 +163,7 @@
     <link href="https://ginta.top/2024/01/23/1040/"/>
     <id>https://ginta.top/2024/01/23/1040/</id>
     <published>2024-01-23T03:42:03.000Z</published>
-    <updated>2024-01-23T03:53:35.595Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;p&gt;I was using ssh to clone a repo from Github on wsl, and http proxy not work.&lt;/p&gt;
@@ -139,7 +181,7 @@
     <link href="https://ginta.top/2024/01/08/1039/"/>
     <id>https://ginta.top/2024/01/08/1039/</id>
     <published>2024-01-08T22:24:35.000Z</published>
-    <updated>2024-01-23T03:35:47.311Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;p&gt;对比以往，今年的年终总结晚了一周，是因为周末都在户外，所以就拖更一点点。按照习惯写之前会看一下去年立的 &lt;em&gt;flag&lt;/em&gt;， 结果大部分 &lt;em&gt;flag&lt;/em&gt; 依旧是flag～&lt;/p&gt;
@@ -159,8 +201,8 @@
     <title>202310W1 National Day and Family</title>
     <link href="https://ginta.top/2023/10/11/1038/"/>
     <id>https://ginta.top/2023/10/11/1038/</id>
-    <published>2023-10-11T22:12:03.000Z</published>
-    <updated>2023-12-13T07:17:21.846Z</updated>
+    <published>2023-10-11T14:12:03.000Z</published>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -185,7 +227,7 @@
     <link href="https://ginta.top/2023/08/19/1037/"/>
     <id>https://ginta.top/2023/08/19/1037/</id>
     <published>2023-08-19T07:27:44.000Z</published>
-    <updated>2024-04-09T02:41:51.896Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -208,7 +250,7 @@
     <link href="https://ginta.top/2023/08/15/1036/"/>
     <id>https://ginta.top/2023/08/15/1036/</id>
     <published>2023-08-15T14:41:38.000Z</published>
-    <updated>2023-08-19T10:28:06.130Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;iptables&quot;&gt;&lt;a href=&quot;#iptables&quot; class=&quot;headerlink&quot; title=&quot;iptables&quot;&gt;&lt;/a&gt;iptables&lt;/h2&gt;&lt;h3 id=&quot;三张表&quot;&gt;&lt;a href=&quot;#三张表&quot; class=&quot;headerlink&quot; title=&quot;三张表&quot;&gt;&lt;/a&gt;三张表&lt;/h3&gt;&lt;ul&gt;
@@ -229,34 +271,11 @@
   </entry>
   
   <entry>
-    <title>202308W2 go hiking and Devops</title>
-    <link href="https://ginta.top/2023/08/12/1035/"/>
-    <id>https://ginta.top/2023/08/12/1035/</id>
-    <published>2023-08-12T09:34:45.941Z</published>
-    <updated>2023-08-14T15:13:55.360Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;This week, I focused on learning the networking part of Docker, an area I had limited knowledge of before. I also took some time to set</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>test istio https requests local(macos)</title>
     <link href="https://ginta.top/2023/08/07/1034/"/>
     <id>https://ginta.top/2023/08/07/1034/</id>
     <published>2023-08-07T02:57:14.000Z</published>
-    <updated>2023-08-19T23:17:40.057Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;generate-certificate&quot;&gt;&lt;a href=&quot;#generate-certificate&quot; class=&quot;headerlink&quot; title=&quot;generate certificate&quot;&gt;&lt;/a&gt;generate certificate&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install mkcert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;brew install nss&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/.cert&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkcert -key-file ~/.cert/key.pem -cert-file ~/.cert/cert.pem &amp;quot;api.ginta.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -276,7 +295,7 @@
     <link href="https://ginta.top/2023/08/06/1033/"/>
     <id>https://ginta.top/2023/08/06/1033/</id>
     <published>2023-08-06T15:17:58.000Z</published>
-    <updated>2023-08-12T09:38:04.264Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -293,30 +312,11 @@
   </entry>
   
   <entry>
-    <title>202307W4 Concerts and Podcasts</title>
-    <link href="https://ginta.top/2023/07/30/1032/"/>
-    <id>https://ginta.top/2023/07/30/1032/</id>
-    <published>2023-07-30T00:40:46.896Z</published>
-    <updated>2023-08-12T10:08:04.840Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
-&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
-&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>202306W2 Discord and Trancy</title>
     <link href="https://ginta.top/2023/06/18/1030/"/>
     <id>https://ginta.top/2023/06/18/1030/</id>
     <published>2023-06-18T10:18:00.000Z</published>
-    <updated>2023-06-18T10:45:25.448Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -341,7 +341,7 @@
     <link href="https://ginta.top/2023/06/11/1029/"/>
     <id>https://ginta.top/2023/06/11/1029/</id>
     <published>2023-06-11T11:40:08.000Z</published>
-    <updated>2023-06-14T09:48:11.349Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -366,7 +366,7 @@
     <link href="https://ginta.top/2023/05/23/1028/"/>
     <id>https://ginta.top/2023/05/23/1028/</id>
     <published>2023-05-23T14:11:52.000Z</published>
-    <updated>2023-05-23T14:31:03.370Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -391,7 +391,7 @@
     <link href="https://ginta.top/2023/04/27/1027/"/>
     <id>https://ginta.top/2023/04/27/1027/</id>
     <published>2023-04-27T16:23:26.000Z</published>
-    <updated>2023-04-27T16:46:06.027Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -416,7 +416,7 @@
     <link href="https://ginta.top/2023/04/02/1026/"/>
     <id>https://ginta.top/2023/04/02/1026/</id>
     <published>2023-04-02T13:47:16.000Z</published>
-    <updated>2023-04-06T07:31:27.781Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
       
@@ -441,7 +441,7 @@
     <link href="https://ginta.top/2023/03/24/1025/"/>
     <id>https://ginta.top/2023/03/24/1025/</id>
     <published>2023-03-24T14:38:16.000Z</published>
-    <updated>2023-08-01T02:21:33.329Z</updated>
+    <updated>2024-11-11T02:25:05.160Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
