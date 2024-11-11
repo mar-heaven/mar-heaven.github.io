@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2024-11-11T02:25:05.160Z</updated>
+  <updated>2024-11-11T03:26:00.125Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -17,44 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>202307W4 Concerts and Podcasts</title>
-    <link href="https://ginta.top/2024/11/11/1032/"/>
-    <id>https://ginta.top/2024/11/11/1032/</id>
-    <published>2024-11-11T02:25:05.160Z</published>
-    <updated>2024-11-11T02:25:05.160Z</updated>
+    <title>202411W1-W2 穿越机，Faker再次夺冠</title>
+    <link href="https://ginta.top/2024/11/11/1046/"/>
+    <id>https://ginta.top/2024/11/11/1046/</id>
+    <published>2024-11-11T10:45:36.000Z</published>
+    <updated>2024-11-11T03:26:00.125Z</updated>
     
     
-    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
-&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
-&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>202308W2 go hiking and Devops</title>
-    <link href="https://ginta.top/2024/11/11/1035/"/>
-    <id>https://ginta.top/2024/11/11/1035/</id>
-    <published>2024-11-11T02:25:05.160Z</published>
-    <updated>2024-11-11T02:25:05.160Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;This week, I focused on learning the networking part of Docker, an area I had limited knowledge of before. I also took some time to set</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;时速超100KM的玩具&quot;&gt;&lt;a href=&quot;#时速超100KM的玩具&quot; class=&quot;headerlink&quot; title=&quot;时速超100KM的玩具&quot;&gt;&lt;/a&gt;时速超100KM的玩具&lt;/h3&gt;&lt;p&gt;前一段时间在观看旅游视频的时候注意到了拍摄用的穿越机，小小的玩具竟然可以达到150KM&amp;#x2F;h的速度，再搭配上飞行眼镜体验感拉满了。&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/mar-heaven/image-repo/main/blogs/pictures/a917be5159cd5cc2d3f28a68b23664f.jpg&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://raw.githubusercontent.com/mar-heaven/image-repo/main/blogs/pictures/12b3452e513f6310a23279ccc2533b6.jpg&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;5冠的飞&quot;&gt;&lt;a href=&quot;#5冠的飞&quot; class=&quot;headerlink&quot; title=&quot;5冠的飞&quot;&gt;&lt;/a&gt;5冠的飞&lt;/h3&gt;</summary>
     
     
     
     <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
     
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
@@ -271,6 +249,31 @@
   </entry>
   
   <entry>
+    <title>202308W2 go hiking and Devops</title>
+    <link href="https://ginta.top/2023/08/12/1035/"/>
+    <id>https://ginta.top/2023/08/12/1035/</id>
+    <published>2023-08-12T09:34:45.000Z</published>
+    <updated>2024-11-11T02:42:36.819Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;This week, I focused on learning the networking part of Docker, an area I had limited knowledge of before. I also took some time to set</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>test istio https requests local(macos)</title>
     <link href="https://ginta.top/2023/08/07/1034/"/>
     <id>https://ginta.top/2023/08/07/1034/</id>
@@ -308,6 +311,27 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>202307W4 Concerts and Podcasts</title>
+    <link href="https://ginta.top/2023/07/30/1032/"/>
+    <id>https://ginta.top/2023/07/30/1032/</id>
+    <published>2023-07-30T00:40:46.000Z</published>
+    <updated>2024-11-11T02:42:16.408Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;It’s been a while since I went for a run, but this week I’m gradually getting back to my previous level of exercise. I’ve been indulging in hotpot and barbecue lately, and my weight reached nearly 137 pounds. Although it’s still within the normal range, but I want to control it at 135 pounds to avoid excessive weight gain from consuming too many snacks. So, once it goes over 135, I’ll start running.&lt;/p&gt;
+&lt;p&gt;I’ve been following a star photographer, Ziyi Ye, who has been traveling around the world alone for 18 years to capture solar eclipses. I really admire such a girl. I often watch documentaries about the universe, but in Shenzhen, it’s almost impossible to see the stars. When I saw the solar eclipse video she took, I was amazed.&lt;/p&gt;
+&lt;p&gt;I attended Zhou Chuanxiong’s concert for the first time, and I really love his songs. Before this, I had never spent money to attend a concert, I’m looking forward to him coming to Shenzhen again!&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
     
   </entry>
   
@@ -433,26 +457,6 @@
     
     
     <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kubernetes 架构</title>
-    <link href="https://ginta.top/2023/03/24/1025/"/>
-    <id>https://ginta.top/2023/03/24/1025/</id>
-    <published>2023-03-24T14:38:16.000Z</published>
-    <updated>2024-11-11T02:25:05.160Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;作为云原生时代的当红人物，一直想精读一下 k8s 的源码，本篇文章会从其架构，源码来深入剖析 k8s 的设计思路。&lt;/p&gt;
-&lt;h2 id=&quot;K8S组件与职责&quot;&gt;&lt;a href=&quot;#K8S组件与职责&quot; class=&quot;headerlink&quot; title=&quot;K8S组件与职责&quot;&gt;&lt;/a&gt;K8S组件与职责&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="kubernetes" scheme="https://ginta.top/categories/kubernetes/"/>
-    
-    
-    <category term="云原生" scheme="https://ginta.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
     
   </entry>
   
