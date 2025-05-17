@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2025-05-17T09:50:26.856Z</updated>
+  <updated>2025-05-17T09:53:38.056Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ginta.top/2025/05/17/1048/"/>
     <id>https://ginta.top/2025/05/17/1048/</id>
     <published>2025-05-17T13:51:19.000Z</published>
-    <updated>2025-05-17T09:50:26.856Z</updated>
+    <updated>2025-05-17T09:53:38.056Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;账户&quot;&gt;&lt;a href=&quot;#账户&quot; class=&quot;headerlink&quot; title=&quot;账户&quot;&gt;&lt;/a&gt;账户&lt;/h3&gt;&lt;p&gt;solana上一切都是数据&lt;/p&gt;
@@ -32,6 +32,8 @@
     
     
     <category term="区块链" scheme="https://ginta.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="solana" scheme="https://ginta.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/solana/"/>
     
     
     <category term="solana" scheme="https://ginta.top/tags/solana/"/>
