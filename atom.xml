@@ -6,7 +6,7 @@
   <link href="https://ginta.top/atom.xml" rel="self"/>
   
   <link href="https://ginta.top/"/>
-  <updated>2025-02-14T09:55:42.940Z</updated>
+  <updated>2025-05-17T09:50:26.856Z</updated>
   <id>https://ginta.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>solana</title>
+    <link href="https://ginta.top/2025/05/17/1048/"/>
+    <id>https://ginta.top/2025/05/17/1048/</id>
+    <published>2025-05-17T13:51:19.000Z</published>
+    <updated>2025-05-17T09:50:26.856Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;账户&quot;&gt;&lt;a href=&quot;#账户&quot; class=&quot;headerlink&quot; title=&quot;账户&quot;&gt;&lt;/a&gt;账户&lt;/h3&gt;&lt;p&gt;solana上一切都是数据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任何人都可以向账户中充值，读取数据，只有账户的所有者可以扣除金额和修改数据&lt;br&gt;账户数据结构&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="区块链" scheme="https://ginta.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+    <category term="solana" scheme="https://ginta.top/tags/solana/"/>
+    
+  </entry>
   
   <entry>
     <title>2024年总结</title>
@@ -419,31 +441,6 @@
         
         
     <summary type="html">&lt;p&gt;It has been three weeks since the last time I wrote a weekly report. Recently, I’ve been wanting to go back to the northern region to</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://ginta.top/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="周报" scheme="https://ginta.top/tags/%E5%91%A8%E6%8A%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>202304W4 playing and playing</title>
-    <link href="https://ginta.top/2023/04/27/1027/"/>
-    <id>https://ginta.top/2023/04/27/1027/</id>
-    <published>2023-04-27T16:23:26.000Z</published>
-    <updated>2024-11-11T02:25:05.160Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;I have taken a guitar lesson for 2 weeks, from half a month ago, I started playing guitar as before. There are some interesting friends</summary>
         
       
     
